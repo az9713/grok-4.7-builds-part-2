@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swarm Brief — waterline</title>
+  <style>
+    :root { --ink:#10140f; --mint:#9dcea8; --fail:#ff8b7a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--ink); color: #d7efe4; font-family: ui-monospace, monospace; }
+    header { padding: 16px; border-bottom: 1px solid #2a3a30; }
+    .kicker { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mint); }
+    .dag { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 16px; }
+    .col { background: #182018; padding: 10px; border: 1px solid #2a3a30; }
+    .card { border: 1px solid #3a4a40; padding: 8px; margin: 8px 0; font-size: 12px; }
+    .ok { border-color: var(--mint); } .fail { border-color: var(--fail); }
+    a { color: var(--mint); }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Swarm Brief · fixture run</p>
+    <h1>Why the waterline rusts</h1>
+    <p>Watchable DAG. Artifact: <a href="../explainer/index.html">explainer</a>. Script: <code>workflows/waterline.rhai</code>.</p>
+  </header>
+  <div class="dag" id="dag"></div>
+  <script>
+    const run = {
+      Research: [
+        { label: "r-oxygen-cell", ok: true, note: "Splash zone is an oxygen concentration cell." },
+        { label: "r-splash-zone", ok: true, note: "Wet-dry cycling breaks mill scale." },
+        { label: "r-mill-scale", ok: true, note: "Cathodic mill scale vs anodic steel." },
+        { label: "r-paint-holiday", ok: true, note: "Holidays at the boot-top concentrate attack." }
+      ],
+      Figures: [
+        { label: "fig-hull", ok: true, note: "hull-plate.jpg lock present" },
+        { label: "fig-no-text", ok: true, note: "No letters in the plate" }
+      ],
+      Compose: [
+        { label: "compose", ok: true, note: "explainer/index.html written" }
+      ]
+    };
+    const dag = document.getElementById("dag");
+    Object.entries(run).forEach(([phase, cards]) => {
+      const col = document.createElement("div");
+      col.className = "col";
+      col.innerHTML = "<h2>" + phase + "</h2>";
+      cards.forEach((c) => {
+        const d = document.createElement("div");
+        d.className = "card " + (c.ok ? "ok" : "fail");
+        d.innerHTML = "<strong>" + c.label + "</strong><p>" + c.note + "</p>";
+        col.appendChild(d);
+      });
+      dag.appendChild(col);
+    });
+  </script>
+</body>
+</html>

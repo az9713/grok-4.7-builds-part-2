@@ -1,0 +1,254 @@
+{
+  "run_id": "sodium-night-001",
+  "title": "Sodium Night continuity",
+  "canonical": {
+    "id": "passenger-lock",
+    "src": "../art/passenger.jpg",
+    "label": "Passenger canonical"
+  },
+  "threshold": 0.8,
+  "fail_closed": true,
+  "skeptics": ["identity", "wardrobe", "lighting"],
+  "frames": [
+    {
+      "id": "SN-01",
+      "src": "../art/passenger.jpg",
+      "label": "Seated interior, window",
+      "shot": "01",
+      "scores": {
+        "identity": {
+          "value": 1.0,
+          "pass": true,
+          "reason": "Canonical lock. Same face, bruise, wet hairline."
+        },
+        "wardrobe": {
+          "value": 1.0,
+          "pass": true,
+          "reason": "Navy hooded jacket, frayed hood lining, wet shoulders."
+        },
+        "lighting": {
+          "value": 1.0,
+          "pass": true,
+          "reason": "Sodium strike through wet glass. Reference key."
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SN-02",
+      "src": "../art/passenger-wide.jpg",
+      "label": "Wide aisle, still seated",
+      "shot": "02",
+      "scores": {
+        "identity": {
+          "value": 0.94,
+          "pass": true,
+          "reason": "Same man, same bruise placement, same hair wetness."
+        },
+        "wardrobe": {
+          "value": 0.96,
+          "pass": true,
+          "reason": "Identical jacket cut and hood interior. No extra logos."
+        },
+        "lighting": {
+          "value": 0.91,
+          "pass": true,
+          "reason": "Overhead cool mix plus sodium window. Palette holds."
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SN-03",
+      "src": "../art/passenger-step.jpg",
+      "label": "Step off, wet street",
+      "shot": "03",
+      "scores": {
+        "identity": {
+          "value": 0.92,
+          "pass": true,
+          "reason": "Face matches lock under rain. Bruise still left-side."
+        },
+        "wardrobe": {
+          "value": 0.93,
+          "pass": true,
+          "reason": "Same navy shell, same hood, rain beading consistent."
+        },
+        "lighting": {
+          "value": 0.88,
+          "pass": true,
+          "reason": "Exterior sodium, wet asphalt bounce. Still the same lamps."
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SN-04",
+      "src": "../art/passenger-away.jpg",
+      "label": "Turned, empty road",
+      "shot": "04",
+      "scores": {
+        "identity": {
+          "value": 0.86,
+          "pass": true,
+          "reason": "Rear three-quarter. Hairline, ear, jaw match. Face occluded but not replaced."
+        },
+        "wardrobe": {
+          "value": 0.94,
+          "pass": true,
+          "reason": "Jacket back seams and hood volume match the lock."
+        },
+        "lighting": {
+          "value": 0.9,
+          "pass": true,
+          "reason": "Twin sodium street lamps, wet specular road. No daylight sneak."
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "ADV-01",
+      "src": "../art/hero.jpg",
+      "label": "Adversary: moth-grey operative",
+      "shot": "X1",
+      "scores": {
+        "identity": {
+          "value": 0.12,
+          "pass": false,
+          "reason": "Different person. Cartoon lock, no bruise, different skull."
+        },
+        "wardrobe": {
+          "value": 0.18,
+          "pass": false,
+          "reason": "Work jacket and oxide lanyard. Not the navy rain shell."
+        },
+        "lighting": {
+          "value": 0.22,
+          "pass": false,
+          "reason": "Flat magenta key. Not sodium night."
+        }
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "ADV-02",
+      "src": "../art/hero-archive.jpg",
+      "label": "Adversary: archive aisle",
+      "shot": "X2",
+      "scores": {
+        "identity": {
+          "value": 0.14,
+          "pass": false,
+          "reason": "Same drifted operative as ADV-01. Not the passenger."
+        },
+        "wardrobe": {
+          "value": 0.21,
+          "pass": false,
+          "reason": "Grey contractor kit. Wrong garment family."
+        },
+        "lighting": {
+          "value": 0.35,
+          "pass": false,
+          "reason": "Cool fluorescent stacks. No wet sodium."
+        }
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "ADV-03",
+      "src": "../art/hero-elevator.jpg",
+      "label": "Adversary: freight doors",
+      "shot": "X3",
+      "scores": {
+        "identity": {
+          "value": 0.13,
+          "pass": false,
+          "reason": "Operative lock again. Identity fail-closed."
+        },
+        "wardrobe": {
+          "value": 0.2,
+          "pass": false,
+          "reason": "Lanyard and cargo pockets persist. Not the passenger coat."
+        },
+        "lighting": {
+          "value": 0.31,
+          "pass": false,
+          "reason": "Interior practicals on rusted steel. Wrong world."
+        }
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "ADV-04",
+      "src": "../art/hero-side.jpg",
+      "label": "Adversary: operative profile",
+      "shot": "X4",
+      "scores": {
+        "identity": {
+          "value": 0.11,
+          "pass": false,
+          "reason": "Profile does not match passenger nose, brow, or bruise."
+        },
+        "wardrobe": {
+          "value": 0.17,
+          "pass": false,
+          "reason": "Side cargo pocket and lanyard. Fail."
+        },
+        "lighting": {
+          "value": 0.19,
+          "pass": false,
+          "reason": "Magenta field. No practical source."
+        }
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "ADV-05",
+      "src": "../art/guard.jpg",
+      "label": "Adversary: night guard",
+      "shot": "X5",
+      "scores": {
+        "identity": {
+          "value": 0.08,
+          "pass": false,
+          "reason": "Different lock entirely. Older, heavier, no bruise."
+        },
+        "wardrobe": {
+          "value": 0.11,
+          "pass": false,
+          "reason": "Security sweater, badge, belt kit."
+        },
+        "lighting": {
+          "value": 0.19,
+          "pass": false,
+          "reason": "Studio magenta. Fail."
+        }
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "ADV-06",
+      "src": "../art/lamp.jpg",
+      "label": "Adversary: object lock",
+      "shot": "X6",
+      "scores": {
+        "identity": {
+          "value": 0.02,
+          "pass": false,
+          "reason": "Not a person. Object lock from another project."
+        },
+        "wardrobe": {
+          "value": 0.01,
+          "pass": false,
+          "reason": "No garment. Fail-closed."
+        },
+        "lighting": {
+          "value": 0.44,
+          "pass": false,
+          "reason": "Soft studio sweep, tungsten bulb. Not sodium street."
+        }
+      },
+      "verdict": "fail"
+    }
+  ]
+}

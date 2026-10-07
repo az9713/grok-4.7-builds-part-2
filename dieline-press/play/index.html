@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dieline Press</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <p class="kicker">Dieline Press · bottle lock</p>
+    <h1>The glass does not change.</h1>
+  </header>
+  <main>
+    <figure>
+      <img id="pack" src="art/bottle.jpg" alt="Bergamot bottle, blank kraft label">
+      <figcaption id="cap">Bergamot · blank kraft · cork</figcaption>
+    </figure>
+    <section>
+      <div class="skus">
+        <button data-sku="bergamot" class="on">Bergamot</button>
+        <button data-sku="smoke">Smoke</button>
+        <button data-sku="hibiscus">Hibiscus</button>
+      </div>
+      <svg id="net" viewBox="0 0 520 260" role="img" aria-label="Label dieline">
+        <rect class="bleed" x="8" y="8" width="504" height="244" />
+        <rect class="trim" x="24" y="28" width="472" height="204" />
+        <line class="fold" x1="182" y1="28" x2="182" y2="232" />
+        <line class="fold" x1="340" y1="28" x2="340" y2="232" />
+        <text x="100" y="130" text-anchor="middle">Front</text>
+        <text x="261" y="130" text-anchor="middle">Spine</text>
+        <text x="422" y="130" text-anchor="middle">Back</text>
+        <text class="flavor" id="flavor" x="100" y="160" text-anchor="middle">BERGAMOT</text>
+      </svg>
+      <p class="note">Bleed 8 · trim 24 · two folds. Letters are SVG. The bitmap label is blank on purpose.</p>
+      <button type="button" id="print">Print net</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

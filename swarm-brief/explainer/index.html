@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The waterline cell</title>
+  <style>
+    body { margin: 0; background: #f4efe4; color: #221c14; font-family: Georgia, serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 28px 18px 64px; }
+    .kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #6a4a28; }
+    h1 { font-size: 36px; letter-spacing: -0.03em; }
+    figure { margin: 18px 0; }
+    img { width: 100%; display: block; }
+    figcaption { font: 12px/1.4 ui-monospace, monospace; color: #5a4a38; padding-top: 6px; }
+    svg { width: 100%; background: #efe8d6; border: 1px solid #cbb892; }
+    p { line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Swarm Brief · frozen question</p>
+    <h1>Why ships rust at the waterline</h1>
+    <p>Steel in full immersion is starved of oxygen compared with steel in the splash. The wet–dry band at the boot-top becomes an oxygen concentration cell: the aerated splash is cathodic, the waterline is anodic, and iron goes into solution there first.</p>
+    <figure>
+      <img src="art/hull-plate.jpg" alt="Copperplate hull cross-section at the waterline, no letters">
+      <figcaption>Figure A · Imagine lock. No numerals in the plate. Labels below are SVG.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 520 160" role="img" aria-label="Oxygen cell schematic">
+        <rect x="20" y="70" width="480" height="40" fill="#9bb8c8" />
+        <rect x="20" y="40" width="480" height="30" fill="#c9ddd8" />
+        <text x="40" y="28" font-family="ui-monospace, monospace" font-size="12">splash (O₂ high) cathode</text>
+        <text x="40" y="130" font-family="ui-monospace, monospace" font-size="12">immersion (O₂ low) anode → Fe²⁺</text>
+        <line x1="260" y1="40" x2="260" y2="110" stroke="#6a3b1e" stroke-width="2" />
+      </svg>
+      <figcaption>Figure B · drawn in SVG so the O₂ labels cannot garble.</figcaption>
+    </figure>
+    <p>Mill scale is a cathode against bare steel. Paint holidays at the waterline expose anodes the size of a pin. Cyclic wetting cracks the scale. The swarm’s job was to keep that story to one hull, one plate, and numbers that live in code.</p>
+  </main>
+</body>
+</html>

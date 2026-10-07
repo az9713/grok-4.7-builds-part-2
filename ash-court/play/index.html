@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ash Court</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <p class="kicker">Ash Court · one lock · eighteen cards</p>
+    <h1>Follow the moth.</h1>
+    <p>You vs the bench. Lead any card. Follow suit if you hold it. Highest of the led suit takes the trick.</p>
+    <button type="button" id="print">Print rulebook</button>
+  </header>
+  <section class="table">
+    <div>
+      <h2>Bench</h2>
+      <div id="opp" class="hand hidden-hand"></div>
+    </div>
+    <div class="trick" id="trick"></div>
+    <p id="msg">Your lead.</p>
+    <div>
+      <h2>You</h2>
+      <div id="you" class="hand"></div>
+    </div>
+    <p class="score">You <strong id="ys">0</strong> · Bench <strong id="os">0</strong></p>
+  </section>
+  <article class="rules" id="rules">
+    <h2>Ash Court — rulebook</h2>
+    <ol>
+      <li>Eighteen cards, three suits (Moth, Staff, Cloak), ranks 1–6.</li>
+      <li>Deal nine each. Non-dealer leads.</li>
+      <li>Follow suit if able. Highest card of the led suit wins.</li>
+      <li>The bench hand stays face down until that card enters the trick.</li>
+      <li>First to five tricks wins the sitting.</li>
+    </ol>
+    <p>Illustration lock: magistrate woodcut. Rain is an edit. Type is not in the plate.</p>
+  </article>
+  <script src="app.js"></script>
+</body>
+</html>

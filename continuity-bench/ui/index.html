@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuity Bench</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="kicker">Fail-closed stills bench</p>
+      <h1>Continuity Bench</h1>
+    </div>
+    <dl class="run-meta" id="run-meta">
+      <div><dt>Run</dt><dd id="run-id">—</dd></div>
+      <div><dt>Threshold</dt><dd id="threshold">—</dd></div>
+      <div><dt>Fail-closed</dt><dd id="fail-closed">—</dd></div>
+      <div><dt>Verdict</dt><dd id="run-verdict">loading</dd></div>
+    </dl>
+  </header>
+
+  <section class="canon" id="canon"></section>
+
+  <section class="sheet" aria-label="Contact sheet">
+    <header class="sheet-head">
+      <h2>Contact sheet</h2>
+      <p id="tally">Identity · wardrobe · lighting. Red fails the frame.</p>
+    </header>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="detail" id="detail" hidden>
+    <h2 id="detail-title">Frame</h2>
+    <div class="detail-body">
+      <img id="detail-img" alt="">
+      <div>
+        <ul class="reasons" id="reasons"></ul>
+      </div>
+    </div>
+  </section>
+
+  <p class="err" id="err" hidden></p>
+  <script src="app.js"></script>
+</body>
+</html>

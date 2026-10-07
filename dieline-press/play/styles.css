@@ -1,0 +1,19 @@
+:root { --grey:#d5d0c8; --ink:#2a2724; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #efeee9; color: var(--ink); font-family: "Helvetica Neue", Helvetica, sans-serif; }
+header, main { max-width: 980px; margin: 0 auto; padding: 16px; }
+.kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #7a7368; }
+main { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+img { width: 100%; background: #cfc9c0; }
+.skus { display: flex; gap: 8px; margin-bottom: 12px; }
+button { border: 1px solid #2a2724; background: transparent; padding: 7px 10px; cursor: pointer; }
+button.on { background: #2a2724; color: #efeee9; }
+svg { width: 100%; background: #fff; border: 1px dashed #888; }
+.bleed { fill: none; stroke: #c45; stroke-dasharray: 4 3; }
+.trim { fill: #f7f4ee; stroke: #2a2724; }
+.fold { stroke: #2a2724; stroke-dasharray: 6 4; }
+text { font: 12px ui-monospace, monospace; fill: #2a2724; }
+.flavor { font-size: 14px; font-weight: 700; }
+.note { font-size: 13px; color: #5c564e; }
+@media (max-width: 800px) { main { grid-template-columns: 1fr; } }
+@media print { header, figure, .skus, .note, #print { display: none; } svg { border: 0; } }

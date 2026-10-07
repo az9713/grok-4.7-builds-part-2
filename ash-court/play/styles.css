@@ -1,0 +1,22 @@
+:root { --paper:#f3ead4; --ink:#2a1c12; --umber:#6a3b1e; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #3a2a1c; color: var(--paper); font-family: Georgia, serif; }
+header, .table, .rules { max-width: 920px; margin: 0 auto; padding: 16px; }
+.kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #d4b48a; }
+h1 { margin: 4px 0 8px; }
+.hand { display: flex; gap: 8px; flex-wrap: wrap; min-height: 160px; }
+.card {
+  width: 110px; background: var(--paper); color: var(--ink); border: 1px solid #cbb892;
+  cursor: pointer; position: relative;
+}
+.card img { width: 100%; display: block; }
+.badge {
+  position: absolute; top: 6px; left: 6px; background: var(--ink); color: var(--paper);
+  font: 11px/1 ui-monospace, monospace; padding: 3px 5px;
+}
+.hidden-hand .card img { filter: brightness(0.2); }
+.card .back { display: block; height: 148px; background: #2a1c12; }
+.trick { display: flex; gap: 16px; justify-content: center; min-height: 170px; }
+button { font-family: ui-monospace, monospace; background: var(--umber); color: var(--paper); border: 0; padding: 8px 12px; cursor: pointer; }
+.rules { background: var(--paper); color: var(--ink); }
+@media print { header, .table { display: none; } .rules { background: white; } }
