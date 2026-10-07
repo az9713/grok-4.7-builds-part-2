@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Slip</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Slip · one plank</p>
+    <h1>Find the slip angle.</h1>
+    <p class="lead">The friction coefficient is 0.50. You set the plank angle. The block slips when the tangent of the angle meets 0.50.</p>
+  </header>
+  <div class="layout">
+    <canvas id="bench" width="680" height="420" aria-label="A plank, a block, and the floor."></canvas>
+    <section>
+      <label>Angle, degrees
+        <input id="angle" type="range" min="0" max="45" step="1" value="0">
+      </label>
+      <dl>
+        <div><dt>Angle</dt><dd id="a-val">0°</dd></div>
+        <div><dt>Tangent</dt><dd id="t-val">0.000</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The friction coefficient is 0.50.</li>
+        <li>The page compares the tangent of the angle with 0.50.</li>
+        <li>The angle is a whole number from 0 to 45.</li>
+        <li>A hit is within 0.01 of 0.50.</li>
+        <li>27° reads 0.510. That is the only hit. The line says <code>The plank is at the slip angle.</code></li>
+        <li>26° reads 0.488. 28° reads 0.532. 45° reads 1.000. Those miss.</li>
+        <li>Every other angle says <code>The plank is not at the slip angle.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

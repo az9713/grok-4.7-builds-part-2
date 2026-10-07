@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Slit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Slit · one minimum</p>
+    <h1>Put the minimum on 2.00 mm.</h1>
+    <p class="lead">Light of 500 nm meets one slit. The screen is 2.00 m away. You choose the slit width. The curve is the brightness on the screen.</p>
+  </header>
+  <div class="layout">
+    <canvas id="screen" width="680" height="420" aria-label="A single-slit brightness curve and the 2.00 mm marks."></canvas>
+    <section>
+      <p class="label">Slit width</p>
+      <div class="picks" id="bin">
+        <button type="button" data-w="0.25" aria-pressed="true">0.25 mm</button>
+        <button type="button" data-w="0.40" aria-pressed="false">0.40 mm</button>
+        <button type="button" data-w="0.50" aria-pressed="false">0.50 mm</button>
+        <button type="button" data-w="0.80" aria-pressed="false">0.80 mm</button>
+        <button type="button" data-w="1.00" aria-pressed="false">1.00 mm</button>
+      </div>
+      <dl>
+        <div><dt>Width</dt><dd id="w-val">0.25 mm</dd></div>
+        <div><dt>First minimum</dt><dd id="y-val">4.00 mm</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The wavelength is 500 nm. The screen is 2.00 m from the slit.</li>
+        <li>The first minimum is 1 / width millimetres, with the width in millimetres.</li>
+        <li>That position is 2.00 m × 500 nm / width.</li>
+        <li>The mark is 2.00 mm. A hit is within 0.05 mm.</li>
+        <li>0.50 mm is the hit. The line says <code>The minimum meets the mark.</code></li>
+        <li>0.25 mm reads 4.00 mm. 0.40 mm reads 2.50 mm. 0.80 mm reads 1.25 mm. 1.00 mm reads 1.00 mm.</li>
+        <li>Those four miss. The line says <code>The minimum misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

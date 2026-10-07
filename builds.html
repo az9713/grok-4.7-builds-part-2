@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Forty-two browser builds. Twenty-four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Forty-six browser builds. Twenty-eight of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -658,6 +658,69 @@
       <li>The stop is 1002.00 mm. A hit is within 0.009 mm.</li>
       <li>100°C says <code>The rod meets the stop.</code></li>
       <li>99°C reads 1001.98 mm. 101°C reads 1002.02 mm. Both miss, and so does every other temperature.</li>
+    </ol>
+  </article>
+
+  <article id="coulomb">
+    <p class="kind">Game</p>
+    <h2>43 Coulomb</h2>
+    <p class="open"><a href="coulomb/play/">Open Coulomb</a></p>
+    <h3>What it is</h3>
+    <p>Two charges of 1 µC on a rail. You set the separation. The page draws the charges and a force bar.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Each charge is 1 µC. Force is 0.009 / r² newtons. r is the separation in metres.</li>
+      <li>The mark is 0.100 N. A hit is within 0.010 N.</li>
+      <li>0.30 m says <code>The force meets the mark.</code> The readout is 0.100 N.</li>
+      <li>0.15 m reads 0.400 N. 0.20 m reads 0.225 N. 0.45 m reads 0.044 N. 0.60 m reads 0.025 N. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="kepler">
+    <p class="kind">Game</p>
+    <h2>44 Kepler</h2>
+    <p class="open"><a href="kepler/play/">Open Kepler</a></p>
+    <h3>What it is</h3>
+    <p>One circular orbit around a fixed sun. You set the radius. The page draws that orbit beside the 4 AU mark.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The radius is in astronomical units. The period is in years.</li>
+      <li>Period is radius to the power 1.5.</li>
+      <li>The mark is 8.00 years. A hit is within 0.20 years.</li>
+      <li>4 AU says <code>The period meets the mark.</code> The readout is 8.00 years.</li>
+      <li>1 AU reads 1.00 years. 2 AU reads 2.83 years. 5 AU reads 11.18 years. 8 AU reads 22.63 years. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="slip">
+    <p class="kind">Game</p>
+    <h2>45 Slip</h2>
+    <p class="open"><a href="slip/play/">Open Slip</a></p>
+    <h3>What it is</h3>
+    <p>A block on a plank. You set the angle. The page compares the tangent of that angle with the friction coefficient.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The friction coefficient is 0.50.</li>
+      <li>The angle is a whole number from 0 to 45.</li>
+      <li>A hit is a tangent within 0.01 of 0.50.</li>
+      <li>27° reads 0.510 and says <code>The plank is at the slip angle.</code></li>
+      <li>26° reads 0.488. 28° reads 0.532. 45° reads 1.000. Those miss, and so does every other angle.</li>
+    </ol>
+  </article>
+
+  <article id="slit">
+    <p class="kind">Game</p>
+    <h2>46 Slit</h2>
+    <p class="open"><a href="slit/play/">Open Slit</a></p>
+    <h3>What it is</h3>
+    <p>One slit and a screen. You set the slit width. The page draws the brightness and the first dark band.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The wavelength is 500 nm. The screen is 2.00 m from the slit.</li>
+      <li>The first minimum is 1 / width millimetres, with the width in millimetres. That is 2.00 m × 500 nm / width.</li>
+      <li>The mark is 2.00 mm. A hit is within 0.05 mm.</li>
+      <li>0.50 mm says <code>The minimum meets the mark.</code> The readout is 2.00 mm.</li>
+      <li>0.25 mm reads 4.00 mm. 0.40 mm reads 2.50 mm. 0.80 mm reads 1.25 mm. 1.00 mm reads 1.00 mm. All four miss.</li>
     </ol>
   </article>
 </body>

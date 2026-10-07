@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Kepler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Kepler · one orbit</p>
+    <h1>Set the period to 8.00 years.</h1>
+    <p class="lead">The sun stays fixed. You choose the orbit radius in astronomical units. The period is radius to the power 1.5.</p>
+  </header>
+  <div class="layout">
+    <canvas id="sky" width="680" height="420" aria-label="A sun and one circular orbit."></canvas>
+    <section>
+      <p class="label">Radius</p>
+      <div class="picks" id="bin">
+        <button type="button" data-a="1" aria-pressed="true">1 AU</button>
+        <button type="button" data-a="2" aria-pressed="false">2 AU</button>
+        <button type="button" data-a="4" aria-pressed="false">4 AU</button>
+        <button type="button" data-a="5" aria-pressed="false">5 AU</button>
+        <button type="button" data-a="8" aria-pressed="false">8 AU</button>
+      </div>
+      <dl>
+        <div><dt>Radius</dt><dd id="a-val">1 AU</dd></div>
+        <div><dt>Period</dt><dd id="p-val">1.00 years</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The radius is in astronomical units. The period is in years.</li>
+        <li>Period is radius to the power 1.5.</li>
+        <li>The mark is 8.00 years. A hit is within 0.20 years.</li>
+        <li>4 AU is the hit. The line says <code>The period meets the mark.</code></li>
+        <li>1 AU reads 1.00 years. 2 AU reads 2.83 years. 5 AU reads 11.18 years. 8 AU reads 22.63 years.</li>
+        <li>Those four miss. The line says <code>The period misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

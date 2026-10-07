@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Coulomb</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Coulomb · two charges</p>
+    <h1>Set the force to 0.100 N.</h1>
+    <p class="lead">Each charge is 1 µC. The charges repel. You choose the separation. The bar shows the force.</p>
+  </header>
+  <div class="layout">
+    <canvas id="bench" width="680" height="420" aria-label="Two charges on a rail and a force bar."></canvas>
+    <section>
+      <p class="label">Separation</p>
+      <div class="picks" id="bin">
+        <button type="button" data-r="0.15" aria-pressed="true">0.15 m</button>
+        <button type="button" data-r="0.20" aria-pressed="false">0.20 m</button>
+        <button type="button" data-r="0.30" aria-pressed="false">0.30 m</button>
+        <button type="button" data-r="0.45" aria-pressed="false">0.45 m</button>
+        <button type="button" data-r="0.60" aria-pressed="false">0.60 m</button>
+      </div>
+      <dl>
+        <div><dt>Separation</dt><dd id="r-val">0.15 m</dd></div>
+        <div><dt>Force</dt><dd id="f-val">0.400 N</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Each charge is 1 µC.</li>
+        <li>Force is 0.009 / r² newtons. r is the separation in metres.</li>
+        <li>The mark is 0.100 N. A hit is within 0.010 N.</li>
+        <li>0.30 m is the hit. The line says <code>The force meets the mark.</code></li>
+        <li>0.15 m reads 0.400 N. 0.20 m reads 0.225 N. 0.45 m reads 0.044 N. 0.60 m reads 0.025 N.</li>
+        <li>Those four miss. The line says <code>The force misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
