@@ -1,0 +1,77 @@
+{
+  "title": "Service Door",
+  "subtitle": "Trailer",
+  "logline": "Night-shift contractor. Brutalist archive. One guard. One freight elevator.",
+  "duration_ms": 36000,
+  "still_root": "../shots/",
+  "video_root": "video/",
+  "shots": [
+    {
+      "id": "aisle",
+      "index": 1,
+      "slug": "AISLE 3",
+      "title": "Archive aisle",
+      "action": "Fluorescent wash. Box stacks. The contractor is already inside.",
+      "duration_ms": 6000,
+      "still": "../shots/hero-archive.jpg",
+      "video": null,
+      "ken": "in"
+    },
+    {
+      "id": "hold",
+      "index": 2,
+      "slug": "HOLD",
+      "title": "Idle cycle",
+      "action": "Same face, same lanyard. Harvested idle — not a new gen.",
+      "duration_ms": 6000,
+      "still": "../shots/hero.jpg",
+      "video": "video/hero-idle.mp4",
+      "ken": "hold"
+    },
+    {
+      "id": "walk",
+      "index": 3,
+      "slug": "WALK",
+      "title": "Walk cycle",
+      "action": "Past the shelves. Boot scuff. Camera follows, clamped.",
+      "duration_ms": 6000,
+      "still": "../shots/hero-archive.jpg",
+      "video": "video/hero-walk.mp4",
+      "ken": "left"
+    },
+    {
+      "id": "patrol",
+      "index": 4,
+      "slug": "PATROL",
+      "title": "One guard",
+      "action": "A different lock. Two points. Flashlight and keys.",
+      "duration_ms": 6000,
+      "still": "../shots/guard.jpg",
+      "video": null,
+      "ken": "out"
+    },
+    {
+      "id": "freight",
+      "index": 5,
+      "slug": "FREIGHT",
+      "title": "Elevator doors",
+      "action": "Oxide stripe. Reach the trigger. Doors, then out.",
+      "duration_ms": 6000,
+      "still": "../shots/hero-elevator.jpg",
+      "video": null,
+      "ken": "in"
+    },
+    {
+      "id": "cut",
+      "index": 6,
+      "slug": "CUT",
+      "title": "Hold on the lock",
+      "action": "The playable character is the poster. End card.",
+      "duration_ms": 6000,
+      "still": "../shots/hero.jpg",
+      "video": null,
+      "ken": "hold",
+      "overlay": "SERVICE DOOR"
+    }
+  ]
+}

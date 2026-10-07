@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service Door — Trailer</title>
+  <style>
+    :root {
+      --void: #0b0c0d;
+      --well: #121416;
+      --panel: #181b1e;
+      --line: #2c3136;
+      --oxide: #d45a28;
+      --oxide-dim: rgba(212, 90, 40, 0.16);
+      --fluorescent: #d7e2cc;
+      --concrete: #9aa0a6;
+      --text: #ece8e1;
+      --muted: #7e868e;
+      --danger: #e25b6a;
+      --sans: "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+      --mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--void); color: var(--text); }
+    body {
+      font-family: var(--sans);
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(212, 90, 40, 0.05), transparent 28%),
+        repeating-linear-gradient(90deg, transparent 0 47px, rgba(255,255,255,0.015) 47px 48px),
+        var(--void);
+    }
+    button { font-family: inherit; cursor: pointer; }
+    .shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 18px 18px 40px;
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: 16px;
+    }
+    header.top {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--oxide);
+      margin: 0 0 6px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .lede { margin: 6px 0 0; color: var(--muted); font-size: 13px; max-width: 54ch; }
+    .clock {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      color: var(--fluorescent);
+      background: var(--well);
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      min-width: 11ch;
+      text-align: right;
+    }
+    .clock small { display: block; color: var(--muted); font-size: 10px; letter-spacing: 0.18em; }
+    .list {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .list h2 {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+    }
+    .shot-btn {
+      display: grid;
+      grid-template-columns: 36px 64px 1fr;
+      gap: 8px;
+      align-items: center;
+      text-align: left;
+      background: transparent;
+      color: var(--text);
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+    }
+    .shot-btn:hover { background: rgba(255,255,255,0.03); }
+    .shot-btn.active {
+      background: var(--oxide-dim);
+      box-shadow: inset 3px 0 0 var(--oxide);
+    }
+    .shot-btn .n {
+      font-family: var(--mono);
+      color: var(--oxide);
+      font-size: 12px;
+    }
+    .shot-btn img {
+      width: 64px;
+      height: 40px;
+      object-fit: cover;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .shot-btn .meta { min-width: 0; }
+    .shot-btn .slug {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      display: block;
+    }
+    .shot-btn .sub {
+      color: var(--muted);
+      font-size: 11px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .stage-wrap { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .modes {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .modes button, .transport button {
+      background: var(--well);
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 7px 11px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .modes button.on, .transport button.primary {
+      background: var(--oxide);
+      color: #1a0d08;
+      border-color: var(--oxide);
+    }
+    .boards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .boards.storyboard { grid-template-columns: 1fr; }
+    .boards.storyboard .pane.footage { display: none; }
+    .boards.footage { grid-template-columns: 1fr; }
+    .boards.footage .pane.story { display: none; }
+    .pane {
+      background: #000;
+      border: 1px solid var(--line);
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+    .pane .tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 3;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.62);
+      color: var(--fluorescent);
+      padding: 4px 7px;
+    }
+    .pane img, .pane video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #090909;
+      display: block;
+    }
+    .pane .missing {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background:
+        repeating-linear-gradient(45deg, #141414 0 8px, #101010 8px 16px);
+    }
+    .overlay-title {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+      pointer-events: none;
+      font-family: var(--sans);
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: clamp(18px, 3vw, 36px);
+      color: var(--fluorescent);
+      text-shadow: 0 0 24px rgba(0,0,0,0.8);
+      opacity: 0;
+      transition: opacity 400ms ease;
+    }
+    .overlay-title.show { opacity: 1; }
+    .ken-in { animation: ken-in 6s linear both; }
+    .ken-out { animation: ken-out 6s linear both; }
+    .ken-left { animation: ken-left 6s linear both; }
+    .ken-hold { animation: ken-hold 6s linear both; }
+    @keyframes ken-in {
+      from { transform: scale(1); }
+      to { transform: scale(1.12); }
+    }
+    @keyframes ken-out {
+      from { transform: scale(1.12); }
+      to { transform: scale(1); }
+    }
+    @keyframes ken-left {
+      from { transform: scale(1.06) translateX(2%); }
+      to { transform: scale(1.06) translateX(-2%); }
+    }
+    @keyframes ken-hold {
+      from { transform: scale(1.02); }
+      to { transform: scale(1.05); }
+    }
+    .paused .ken-in, .paused .ken-out, .paused .ken-left, .paused .ken-hold {
+      animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ken-in, .ken-out, .ken-left, .ken-hold { animation: none; }
+    }
+    .transport {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .bar {
+      position: relative;
+      flex: 1 1 220px;
+      height: 18px;
+      background: var(--well);
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+    .bar .fill {
+      height: 100%;
+      width: 0;
+      background: var(--oxide);
+    }
+    .bar .marks { position: absolute; inset: 0; pointer-events: none; }
+    .bar .marks span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.28);
+    }
+    .action {
+      font-size: 13px;
+      color: var(--concrete);
+      min-height: 1.4em;
+    }
+    .hint {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      .boards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div>
+        <p class="kicker">Film · identity lock</p>
+        <h1>Service Door</h1>
+        <p class="lede" id="logline">Night-shift contractor. Brutalist archive. One guard. One freight elevator.</p>
+      </div>
+      <div class="clock" aria-live="polite">
+        <small>TIMECODE</small>
+        <span id="tc">00:00:00:00</span>
+      </div>
+    </header>
+
+    <aside class="list">
+      <h2>Shot list</h2>
+      <div id="shots"></div>
+    </aside>
+
+    <section class="stage-wrap">
+      <div class="modes" role="tablist" aria-label="View">
+        <button type="button" data-mode="split" class="on">Split</button>
+        <button type="button" data-mode="storyboard">Storyboard</button>
+        <button type="button" data-mode="footage">Footage</button>
+      </div>
+      <div class="boards split" id="boards">
+        <div class="pane story">
+          <span class="tag">Storyboard</span>
+          <img id="board" alt="Storyboard still" />
+        </div>
+        <div class="pane footage" id="footage-pane">
+          <span class="tag" id="footage-tag">Footage</span>
+          <img id="still-tape" alt="Still used as footage" />
+          <video id="tape" muted playsinline loop></video>
+          <div class="missing" id="missing" hidden>No tape — still hold</div>
+          <div class="overlay-title" id="overlay"></div>
+        </div>
+      </div>
+      <div class="transport">
+        <button type="button" class="primary" id="play">Play</button>
+        <button type="button" id="prev">Prev</button>
+        <button type="button" id="next">Next</button>
+        <div class="bar" id="bar" role="slider" aria-label="Timeline" aria-valuemin="0" aria-valuemax="36">
+          <div class="fill" id="fill"></div>
+          <div class="marks" id="marks"></div>
+        </div>
+      </div>
+      <p class="action" id="action"></p>
+      <p class="hint">Space play/pause · ← → shots · 1 split · 2 storyboard · 3 footage</p>
+    </section>
+  </div>
+  <script>
+    const EMBEDDED = {
+      title: "Service Door",
+      subtitle: "Trailer",
+      logline: "Night-shift contractor. Brutalist archive. One guard. One freight elevator.",
+      duration_ms: 36000,
+      shots: [
+        { id: "aisle", index: 1, slug: "AISLE 3", title: "Archive aisle", action: "Fluorescent wash. Box stacks. The contractor is already inside.", duration_ms: 6000, still: "../shots/hero-archive.jpg", video: null, ken: "in" },
+        { id: "hold", index: 2, slug: "HOLD", title: "Idle cycle", action: "Same face, same lanyard. Harvested idle — not a new gen.", duration_ms: 6000, still: "../shots/hero.jpg", video: "video/hero-idle.mp4", ken: "hold" },
+        { id: "walk", index: 3, slug: "WALK", title: "Walk cycle", action: "Past the shelves. Boot scuff. Camera follows, clamped.", duration_ms: 6000, still: "../shots/hero-archive.jpg", video: "video/hero-walk.mp4", ken: "left" },
+        { id: "patrol", index: 4, slug: "PATROL", title: "One guard", action: "A different lock. Two points. Flashlight and keys.", duration_ms: 6000, still: "../shots/guard.jpg", video: null, ken: "out" },
+        { id: "freight", index: 5, slug: "FREIGHT", title: "Elevator doors", action: "Oxide stripe. Reach the trigger. Doors, then out.", duration_ms: 6000, still: "../shots/hero-elevator.jpg", video: null, ken: "in" },
+        { id: "cut", index: 6, slug: "CUT", title: "Hold on the lock", action: "The playable character is the poster. End card.", duration_ms: 6000, still: "../shots/hero.jpg", video: null, ken: "hold", overlay: "SERVICE DOOR" }
+      ]
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const state = {
+      data: EMBEDDED,
+      index: 0,
+      playing: false,
+      mode: "split",
+      elapsed: 0,
+      last: 0,
+      raf: 0
+    };
+
+    function totalMs(data) {
+      return data.shots.reduce((n, s) => n + s.duration_ms, 0);
+    }
+    function offsetMs(data, index) {
+      let n = 0;
+      for (let i = 0; i < index; i++) n += data.shots[i].duration_ms;
+      return n;
+    }
+    function pad(n, w) {
+      return String(n).padStart(w, "0");
+    }
+    function tc(ms) {
+      const f = Math.floor((ms % 1000) / (1000 / 24));
+      const s = Math.floor(ms / 1000) % 60;
+      const m = Math.floor(ms / 60000) % 60;
+      const h = Math.floor(ms / 3600000);
+      return pad(h, 2) + ":" + pad(m, 2) + ":" + pad(s, 2) + ":" + pad(f, 2);
+    }
+
+    function renderList() {
+      const root = $("shots");
+      root.innerHTML = "";
+      state.data.shots.forEach((shot, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "shot-btn" + (i === state.index ? " active" : "");
+        btn.innerHTML =
+          '<span class="n">' + pad(shot.index, 2) + '</span>' +
+          '<img alt="" src="' + shot.still + '">' +
+          '<span class="meta"><span class="slug">' + shot.slug + '</span>' +
+          '<span class="sub">' + shot.title + (shot.video ? " · tape" : " · still") + '</span></span>';
+        btn.addEventListener("click", () => jump(i, true));
+        root.appendChild(btn);
+      });
+    }
+
+    function renderMarks() {
+      const marks = $("marks");
+      marks.innerHTML = "";
+      const total = totalMs(state.data);
+      let acc = 0;
+      state.data.shots.forEach((shot) => {
+        const span = document.createElement("span");
+        span.style.left = (acc / total * 100) + "%";
+        marks.appendChild(span);
+        acc += shot.duration_ms;
+      });
+    }
+
+    function applyKen(el, name) {
+      el.classList.remove("ken-in", "ken-out", "ken-left", "ken-hold");
+      void el.offsetWidth;
+      if (name) el.classList.add("ken-" + name);
+    }
+
+    function loadShot(resetElapsed) {
+      const shot = state.data.shots[state.index];
+      const board = $("board");
+      const still = $("still-tape");
+      const tape = $("tape");
+      const missing = $("missing");
+      const overlay = $("overlay");
+      const tag = $("footage-tag");
+      board.src = shot.still;
+      still.src = shot.still;
+      $("action").textContent = pad(shot.index, 2) + "  " + shot.slug + " — " + shot.action;
+      overlay.textContent = shot.overlay || "";
+      overlay.classList.toggle("show", Boolean(shot.overlay));
+      if (resetElapsed) state.elapsed = 0;
+
+      const hasVideo = Boolean(shot.video);
+      tape.hidden = !hasVideo;
+      still.hidden = hasVideo;
+      missing.hidden = true;
+      tag.textContent = hasVideo ? "Footage" : "Footage · still hold";
+      applyKen(still, hasVideo ? null : shot.ken);
+      applyKen(board, shot.ken);
+
+      if (hasVideo) {
+        if (tape.getAttribute("src") !== shot.video) {
+          tape.src = shot.video;
+        }
+        tape.currentTime = 0;
+        const playIf = () => {
+          if (state.playing) {
+            const p = tape.play();
+            if (p && p.catch) p.catch(() => {});
+          } else {
+            tape.pause();
+          }
+        };
+        if (tape.readyState >= 2) playIf();
+        else tape.onloadeddata = playIf;
+        tape.onerror = () => {
+          tape.hidden = true;
+          still.hidden = false;
+          missing.hidden = false;
+          tag.textContent = "Footage · still hold";
+          applyKen(still, shot.ken);
+        };
+      } else {
+        tape.pause();
+      }
+
+      renderList();
+      document.body.classList.toggle("paused", !state.playing);
+    }
+
+    function setPlaying(on) {
+      state.playing = on;
+      $("play").textContent = on ? "Pause" : "Play";
+      document.body.classList.toggle("paused", !on);
+      const tape = $("tape");
+      const shot = state.data.shots[state.index];
+      if (on) {
+        state.last = performance.now();
+        if (shot.video && !tape.hidden) {
+          const p = tape.play();
+          if (p && p.catch) p.catch(() => {});
+        }
+        loop();
+      } else {
+        tape.pause();
+        if (state.raf) cancelAnimationFrame(state.raf);
+      }
+    }
+
+    function jump(i, pauseAtStart) {
+      state.index = Math.max(0, Math.min(i, state.data.shots.length - 1));
+      loadShot(true);
+      if (pauseAtStart) setPlaying(false);
+      paintClock();
+    }
+
+    function nextShot() {
+      if (state.index >= state.data.shots.length - 1) {
+        setPlaying(false);
+        state.elapsed = state.data.shots[state.index].duration_ms;
+        paintClock();
+        return;
+      }
+      state.index += 1;
+      loadShot(true);
+    }
+
+    function paintClock() {
+      const shot = state.data.shots[state.index];
+      const global = offsetMs(state.data, state.index) + Math.min(state.elapsed, shot.duration_ms);
+      const total = totalMs(state.data);
+      $("tc").textContent = tc(global);
+      $("fill").style.width = (global / total * 100) + "%";
+      $("bar").setAttribute("aria-valuenow", Math.round(global / 1000));
+    }
+
+    function loop(now) {
+      if (!state.playing) return;
+      const t = now || performance.now();
+      const dt = t - state.last;
+      state.last = t;
+      state.elapsed += dt;
+      const shot = state.data.shots[state.index];
+      if (state.elapsed >= shot.duration_ms) nextShot();
+      paintClock();
+      state.raf = requestAnimationFrame(loop);
+    }
+
+    function scrub(clientX) {
+      const rect = $("bar").getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      let target = p * totalMs(state.data);
+      let i = 0;
+      for (; i < state.data.shots.length; i++) {
+        if (target < state.data.shots[i].duration_ms) break;
+        target -= state.data.shots[i].duration_ms;
+      }
+      if (i >= state.data.shots.length) {
+        i = state.data.shots.length - 1;
+        target = state.data.shots[i].duration_ms;
+      }
+      state.index = i;
+      state.elapsed = target;
+      loadShot(false);
+      const tape = $("tape");
+      if (state.data.shots[i].video && tape.src) {
+        tape.currentTime = (target / 1000) % Math.max(tape.duration || 6, 0.1);
+      }
+      paintClock();
+    }
+
+    function setMode(mode) {
+      state.mode = mode;
+      $("boards").className = "boards " + mode;
+      document.querySelectorAll(".modes button").forEach((b) => {
+        b.classList.toggle("on", b.getAttribute("data-mode") === mode);
+      });
+    }
+
+    function bind() {
+      $("play").addEventListener("click", () => setPlaying(!state.playing));
+      $("prev").addEventListener("click", () => jump(state.index - 1, false));
+      $("next").addEventListener("click", () => jump(state.index + 1, false));
+      document.querySelectorAll(".modes button").forEach((b) => {
+        b.addEventListener("click", () => setMode(b.getAttribute("data-mode")));
+      });
+      $("bar").addEventListener("click", (e) => scrub(e.clientX));
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") { e.preventDefault(); setPlaying(!state.playing); }
+        if (e.key === "ArrowRight") jump(state.index + 1, false);
+        if (e.key === "ArrowLeft") jump(state.index - 1, false);
+        if (e.key === "1") setMode("split");
+        if (e.key === "2") setMode("storyboard");
+        if (e.key === "3") setMode("footage");
+      });
+    }
+
+    async function boot() {
+      let data = EMBEDDED;
+      try {
+        const r = await fetch("shots.json", { cache: "no-store" });
+        if (r.ok) data = await r.json();
+      } catch (err) { /* file:// fallback */ }
+      state.data = data;
+      $("logline").textContent = data.logline || "";
+      renderList();
+      renderMarks();
+      bind();
+      loadShot(true);
+      paintClock();
+    }
+    boot();
+  </script>
+</body>
+</html>

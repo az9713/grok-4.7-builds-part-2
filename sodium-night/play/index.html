@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sodium Night</title>
+  <style>
+    :root {
+      --void: #050402;
+      --amber: #f0a020;
+      --amber-hot: #ffc14a;
+      --wet: #0c1418;
+      --teal: #1b3338;
+      --text: #f3e6c8;
+      --muted: #9a8060;
+      --sans: Georgia, "Times New Roman", serif;
+      --ui: "Segoe UI", system-ui, sans-serif;
+      --mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--void); color: var(--text); }
+    body {
+      font-family: var(--ui);
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 420px at 80% -10%, rgba(240, 160, 32, 0.16), transparent 55%),
+        radial-gradient(700px 500px at 0% 100%, rgba(20, 50, 55, 0.45), transparent 50%),
+        var(--void);
+    }
+    button { font-family: var(--mono); cursor: pointer; }
+    .grain, .rain {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 8;
+    }
+    .grain {
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    .rain {
+      background: repeating-linear-gradient(
+        105deg,
+        transparent 0 14px,
+        rgba(255, 230, 180, 0.035) 14px 15px
+      );
+      animation: rain 0.45s linear infinite;
+    }
+    @keyframes rain {
+      from { background-position: 0 0; }
+      to { background-position: 18px 46px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rain { animation: none; }
+      .ken-in, .ken-out, .ken-left, .ken-hold { animation: none; }
+    }
+    .shell {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 20px 18px 48px;
+      display: grid;
+      grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    header.top {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      border-bottom: 1px solid rgba(240, 160, 32, 0.28);
+      padding-bottom: 14px;
+    }
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin: 0 0 8px;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lede {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-style: italic;
+      font-size: 15px;
+      max-width: 46ch;
+    }
+    .clock {
+      font-family: var(--mono);
+      font-size: 16px;
+      letter-spacing: 0.12em;
+      color: var(--amber-hot);
+      text-align: right;
+    }
+    .clock small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+    .list {
+      border: 1px solid rgba(240, 160, 32, 0.22);
+      background: rgba(8, 6, 2, 0.7);
+    }
+    .list h2 {
+      margin: 0;
+      padding: 10px 12px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(240, 160, 32, 0.18);
+    }
+    .shot-btn {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 8px;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: var(--text);
+      border: 0;
+      border-bottom: 1px solid rgba(240, 160, 32, 0.12);
+      padding: 11px 12px;
+    }
+    .shot-btn:hover { background: rgba(240, 160, 32, 0.06); }
+    .shot-btn.active {
+      background: rgba(240, 160, 32, 0.12);
+      box-shadow: inset 2px 0 0 var(--amber);
+    }
+    .shot-btn .n { font-family: var(--mono); color: var(--amber); font-size: 11px; }
+    .shot-btn .slug {
+      font-family: var(--sans);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .shot-btn .sub {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-family: var(--ui);
+    }
+    .stage-wrap { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .modes, .transport { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .modes button, .transport button {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(240, 160, 32, 0.35);
+      padding: 7px 12px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .modes button.on, .transport button.primary {
+      background: var(--amber);
+      color: #1a0e02;
+      border-color: var(--amber);
+    }
+    .boards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .boards.storyboard { grid-template-columns: 1fr; }
+    .boards.storyboard .pane.footage { display: none; }
+    .boards.footage { grid-template-columns: 1fr; }
+    .boards.footage .pane.story { display: none; }
+    .pane {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+      aspect-ratio: 2.39 / 1;
+      box-shadow: 0 0 0 1px rgba(240, 160, 32, 0.2), 0 20px 50px rgba(0,0,0,0.45);
+    }
+    .pane .tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 3;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber-hot);
+      background: rgba(0,0,0,0.55);
+      padding: 3px 6px;
+    }
+    .pane img, .pane video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .grade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        radial-gradient(70% 80% at 70% 30%, rgba(255, 176, 48, 0.12), transparent 55%),
+        linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(8, 4, 0, 0.4));
+      mix-blend-mode: overlay;
+    }
+    .overlay-title {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      z-index: 4;
+      pointer-events: none;
+      font-family: var(--sans);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-size: clamp(16px, 2.6vw, 32px);
+      color: var(--text);
+      text-shadow: 0 0 28px rgba(240, 160, 32, 0.45);
+      opacity: 0;
+      transition: opacity 700ms ease;
+    }
+    .overlay-title.show { opacity: 1; }
+    .ken-in { animation: ken-in 6s linear both; }
+    .ken-out { animation: ken-out 6s linear both; }
+    .ken-left { animation: ken-left 6s linear both; }
+    .ken-hold { animation: ken-hold 6s linear both; }
+    @keyframes ken-in { from { transform: scale(1); } to { transform: scale(1.1); } }
+    @keyframes ken-out { from { transform: scale(1.1); } to { transform: scale(1); } }
+    @keyframes ken-left { from { transform: scale(1.05) translateX(1.5%); } to { transform: scale(1.05) translateX(-1.5%); } }
+    @keyframes ken-hold { from { transform: scale(1.03); } to { transform: scale(1.06); } }
+    .paused .ken-in, .paused .ken-out, .paused .ken-left, .paused .ken-hold { animation-play-state: paused; }
+    .bar {
+      position: relative;
+      flex: 1 1 200px;
+      height: 10px;
+      background: #1a140c;
+      border: 1px solid rgba(240, 160, 32, 0.28);
+      cursor: pointer;
+    }
+    .bar .fill { height: 100%; width: 0; background: var(--amber); }
+    .bar .marks { position: absolute; inset: 0; pointer-events: none; }
+    .bar .marks span {
+      position: absolute; top: 0; bottom: 0; width: 1px;
+      background: rgba(255, 210, 140, 0.35);
+    }
+    .action {
+      font-family: var(--sans);
+      font-style: italic;
+      color: var(--muted);
+      margin: 0;
+      min-height: 1.4em;
+    }
+    .hint {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #6e5a40;
+      letter-spacing: 0.08em;
+    }
+    .missing {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      .boards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="rain" aria-hidden="true"></div>
+  <div class="shell">
+    <header class="top">
+      <div>
+        <p class="kicker">Original short · not a game trailer</p>
+        <h1>Sodium Night</h1>
+        <p class="lede" id="logline">Last bus. Wet street. One passenger who does not get off clean.</p>
+      </div>
+      <div class="clock">
+        <small>TIMECODE</small>
+        <span id="tc">00:00:00:00</span>
+      </div>
+    </header>
+    <aside class="list">
+      <h2>Six shots</h2>
+      <div id="shots"></div>
+    </aside>
+    <section class="stage-wrap">
+      <div class="modes">
+        <button type="button" data-mode="split" class="on">Split</button>
+        <button type="button" data-mode="storyboard">Storyboard</button>
+        <button type="button" data-mode="footage">Footage</button>
+      </div>
+      <div class="boards split" id="boards">
+        <div class="pane story">
+          <span class="tag">Storyboard</span>
+          <img id="board" alt="Storyboard still" />
+          <div class="grade"></div>
+        </div>
+        <div class="pane footage">
+          <span class="tag" id="footage-tag">Footage · still hold</span>
+          <img id="still-tape" alt="Footage still" />
+          <video id="tape" muted playsinline loop hidden></video>
+          <div class="missing" id="missing" hidden>No tape — still hold</div>
+          <div class="grade"></div>
+          <div class="overlay-title" id="overlay"></div>
+        </div>
+      </div>
+      <div class="transport">
+        <button type="button" class="primary" id="play">Play</button>
+        <button type="button" id="prev">Prev</button>
+        <button type="button" id="next">Next</button>
+        <div class="bar" id="bar">
+          <div class="fill" id="fill"></div>
+          <div class="marks" id="marks"></div>
+        </div>
+      </div>
+      <p class="action" id="action"></p>
+      <p class="hint">Space · ← → · 1 split · 2 storyboard · 3 footage. Wet sodium, last-frame continuity, not Service Door IP.</p>
+    </section>
+  </div>
+  <script>
+    const EMBEDDED = {
+      title: "Sodium Night",
+      logline: "Last bus. Wet street. One passenger who does not get off clean.",
+      shots: [
+        { id: "bus", index: 1, slug: "LAST BUS", title: "Empty deck", action: "Lower deck, one body. Rain on the glass. Sodium smear.", duration_ms: 6000, still: "../shots/passenger-wide.jpg", video: null, ken: "in", overlay: "SODIUM NIGHT" },
+        { id: "glass", index: 2, slug: "GLASS", title: "Window", action: "Bruise, wet hood, lamp through the pane. He does not look at the camera.", duration_ms: 6000, still: "../shots/passenger.jpg", video: null, ken: "hold" },
+        { id: "stop", index: 3, slug: "STOP", title: "The bell", action: "Same seat, tighter. The street slides. He has already decided.", duration_ms: 6000, still: "../shots/passenger.jpg", video: null, ken: "in" },
+        { id: "step", index: 4, slug: "STEP", title: "Off the bus", action: "Rain vertical. Door light. One step onto the wet road.", duration_ms: 6000, still: "../shots/passenger-step.jpg", video: null, ken: "left" },
+        { id: "look", index: 5, slug: "LOOK BACK", title: "Over the shoulder", action: "The bus is gone from the frame. Lamps recede. He checks the empty street.", duration_ms: 6000, still: "../shots/passenger-away.jpg", video: null, ken: "out" },
+        { id: "lamps", index: 6, slug: "LAMPS", title: "Into the sodium", action: "He walks the wet line of lamps. End.", duration_ms: 6000, still: "../shots/passenger-away.jpg", video: null, ken: "hold", overlay: "END" }
+      ]
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const state = { data: EMBEDDED, index: 0, playing: false, mode: "split", elapsed: 0, last: 0, raf: 0 };
+
+    function totalMs(data) { return data.shots.reduce((n, s) => n + s.duration_ms, 0); }
+    function offsetMs(data, index) {
+      let n = 0;
+      for (let i = 0; i < index; i++) n += data.shots[i].duration_ms;
+      return n;
+    }
+    function pad(n, w) { return String(n).padStart(w, "0"); }
+    function tc(ms) {
+      const f = Math.floor((ms % 1000) / (1000 / 24));
+      const s = Math.floor(ms / 1000) % 60;
+      const m = Math.floor(ms / 60000) % 60;
+      const h = Math.floor(ms / 3600000);
+      return pad(h, 2) + ":" + pad(m, 2) + ":" + pad(s, 2) + ":" + pad(f, 2);
+    }
+
+    function renderList() {
+      const root = $("shots");
+      root.innerHTML = "";
+      state.data.shots.forEach((shot, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "shot-btn" + (i === state.index ? " active" : "");
+        btn.innerHTML =
+          '<span class="n">' + pad(shot.index, 2) + '</span>' +
+          '<span><span class="slug">' + shot.slug + '</span><span class="sub">' + shot.title + '</span></span>';
+        btn.addEventListener("click", () => jump(i, true));
+        root.appendChild(btn);
+      });
+    }
+    function renderMarks() {
+      const marks = $("marks");
+      marks.innerHTML = "";
+      const total = totalMs(state.data);
+      let acc = 0;
+      state.data.shots.forEach((shot) => {
+        const span = document.createElement("span");
+        span.style.left = (acc / total * 100) + "%";
+        marks.appendChild(span);
+        acc += shot.duration_ms;
+      });
+    }
+    function applyKen(el, name) {
+      el.classList.remove("ken-in", "ken-out", "ken-left", "ken-hold");
+      void el.offsetWidth;
+      if (name) el.classList.add("ken-" + name);
+    }
+    function loadShot(resetElapsed) {
+      const shot = state.data.shots[state.index];
+      const board = $("board");
+      const still = $("still-tape");
+      const tape = $("tape");
+      const missing = $("missing");
+      const overlay = $("overlay");
+      board.src = shot.still;
+      still.src = shot.still;
+      $("action").textContent = pad(shot.index, 2) + "  " + shot.slug + " — " + shot.action;
+      overlay.textContent = shot.overlay || "";
+      overlay.classList.toggle("show", Boolean(shot.overlay));
+      if (resetElapsed) state.elapsed = 0;
+      const hasVideo = Boolean(shot.video);
+      tape.hidden = !hasVideo;
+      still.hidden = hasVideo;
+      missing.hidden = true;
+      $("footage-tag").textContent = hasVideo ? "Footage" : "Footage · still hold";
+      applyKen(still, hasVideo ? null : shot.ken);
+      applyKen(board, shot.ken);
+      if (hasVideo) {
+        if (tape.getAttribute("src") !== shot.video) tape.src = shot.video;
+        tape.currentTime = 0;
+        if (state.playing) {
+          const p = tape.play();
+          if (p && p.catch) p.catch(() => {});
+        } else tape.pause();
+        tape.onerror = () => {
+          tape.hidden = true;
+          still.hidden = false;
+          missing.hidden = false;
+          applyKen(still, shot.ken);
+        };
+      } else tape.pause();
+      renderList();
+      document.body.classList.toggle("paused", !state.playing);
+    }
+    function setPlaying(on) {
+      state.playing = on;
+      $("play").textContent = on ? "Pause" : "Play";
+      document.body.classList.toggle("paused", !on);
+      const tape = $("tape");
+      const shot = state.data.shots[state.index];
+      if (on) {
+        state.last = performance.now();
+        if (shot.video && !tape.hidden) {
+          const p = tape.play();
+          if (p && p.catch) p.catch(() => {});
+        }
+        loop();
+      } else {
+        tape.pause();
+        if (state.raf) cancelAnimationFrame(state.raf);
+      }
+    }
+    function jump(i, pauseAtStart) {
+      state.index = Math.max(0, Math.min(i, state.data.shots.length - 1));
+      loadShot(true);
+      if (pauseAtStart) setPlaying(false);
+      paintClock();
+    }
+    function nextShot() {
+      if (state.index >= state.data.shots.length - 1) {
+        setPlaying(false);
+        state.elapsed = state.data.shots[state.index].duration_ms;
+        paintClock();
+        return;
+      }
+      state.index += 1;
+      loadShot(true);
+    }
+    function paintClock() {
+      const shot = state.data.shots[state.index];
+      const global = offsetMs(state.data, state.index) + Math.min(state.elapsed, shot.duration_ms);
+      const total = totalMs(state.data);
+      $("tc").textContent = tc(global);
+      $("fill").style.width = (global / total * 100) + "%";
+    }
+    function loop(now) {
+      if (!state.playing) return;
+      const t = now || performance.now();
+      state.elapsed += t - state.last;
+      state.last = t;
+      if (state.elapsed >= state.data.shots[state.index].duration_ms) nextShot();
+      paintClock();
+      state.raf = requestAnimationFrame(loop);
+    }
+    function scrub(clientX) {
+      const rect = $("bar").getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      let target = p * totalMs(state.data);
+      let i = 0;
+      for (; i < state.data.shots.length; i++) {
+        if (target < state.data.shots[i].duration_ms) break;
+        target -= state.data.shots[i].duration_ms;
+      }
+      if (i >= state.data.shots.length) {
+        i = state.data.shots.length - 1;
+        target = state.data.shots[i].duration_ms;
+      }
+      state.index = i;
+      state.elapsed = target;
+      loadShot(false);
+      paintClock();
+    }
+    function setMode(mode) {
+      state.mode = mode;
+      $("boards").className = "boards " + mode;
+      document.querySelectorAll(".modes button").forEach((b) => {
+        b.classList.toggle("on", b.getAttribute("data-mode") === mode);
+      });
+    }
+    async function boot() {
+      let data = EMBEDDED;
+      try {
+        const r = await fetch("shots.json", { cache: "no-store" });
+        if (r.ok) data = await r.json();
+      } catch (err) { /* file:// */ }
+      state.data = data;
+      $("logline").textContent = data.logline || "";
+      renderList();
+      renderMarks();
+      $("play").addEventListener("click", () => setPlaying(!state.playing));
+      $("prev").addEventListener("click", () => jump(state.index - 1, false));
+      $("next").addEventListener("click", () => jump(state.index + 1, false));
+      document.querySelectorAll(".modes button").forEach((b) => {
+        b.addEventListener("click", () => setMode(b.getAttribute("data-mode")));
+      });
+      $("bar").addEventListener("click", (e) => scrub(e.clientX));
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") { e.preventDefault(); setPlaying(!state.playing); }
+        if (e.key === "ArrowRight") jump(state.index + 1, false);
+        if (e.key === "ArrowLeft") jump(state.index - 1, false);
+        if (e.key === "1") setMode("split");
+        if (e.key === "2") setMode("storyboard");
+        if (e.key === "3") setMode("footage");
+      });
+      loadShot(true);
+      paintClock();
+    }
+    boot();
+  </script>
+</body>
+</html>

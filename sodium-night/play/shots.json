@@ -1,0 +1,76 @@
+{
+  "title": "Sodium Night",
+  "subtitle": "a six-shot short",
+  "logline": "Last bus. Wet street. One passenger who does not get off clean.",
+  "duration_ms": 36000,
+  "shots": [
+    {
+      "id": "bus",
+      "index": 1,
+      "slug": "LAST BUS",
+      "title": "Empty deck",
+      "action": "Lower deck, one body. Rain on the glass. Sodium smear.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger-wide.jpg",
+      "video": null,
+      "ken": "in",
+      "overlay": "SODIUM NIGHT"
+    },
+    {
+      "id": "glass",
+      "index": 2,
+      "slug": "GLASS",
+      "title": "Window",
+      "action": "Bruise, wet hood, lamp through the pane. He does not look at the camera.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger.jpg",
+      "video": null,
+      "ken": "hold"
+    },
+    {
+      "id": "stop",
+      "index": 3,
+      "slug": "STOP",
+      "title": "The bell",
+      "action": "Same seat, tighter. The street slides. He has already decided.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger.jpg",
+      "video": null,
+      "ken": "in"
+    },
+    {
+      "id": "step",
+      "index": 4,
+      "slug": "STEP",
+      "title": "Off the bus",
+      "action": "Rain vertical. Door light. One step onto the wet road.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger-step.jpg",
+      "video": null,
+      "ken": "left"
+    },
+    {
+      "id": "look",
+      "index": 5,
+      "slug": "LOOK BACK",
+      "title": "Over the shoulder",
+      "action": "The bus is gone from the frame. Lamps recede. He checks the empty street.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger-away.jpg",
+      "video": null,
+      "ken": "out"
+    },
+    {
+      "id": "lamps",
+      "index": 6,
+      "slug": "LAMPS",
+      "title": "Into the sodium",
+      "action": "He walks the wet line of lamps. End.",
+      "duration_ms": 6000,
+      "still": "../shots/passenger-away.jpg",
+      "video": null,
+      "ken": "hold",
+      "overlay": "END"
+    }
+  ]
+}

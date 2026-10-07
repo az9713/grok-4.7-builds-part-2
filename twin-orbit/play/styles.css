@@ -1,0 +1,18 @@
+:root {
+  --void: #ff00aa;
+  --ink: #1a0812;
+  --foam: #f7eef4;
+  --teal: #2a8f88;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--ink); color: var(--foam); font-family: "Segoe UI", system-ui, sans-serif; }
+header { padding: 16px 20px 8px; max-width: 960px; margin: 0 auto; }
+.kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin: 0 0 6px; }
+h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.03em; }
+.hint { color: #c9a3b8; font-size: 14px; margin: 0; }
+kbd { font-family: ui-monospace, monospace; border: 1px solid #5a3148; padding: 0 5px; background: #2a121c; }
+#game { display: block; width: min(960px, 100%); height: auto; margin: 12px auto; background: var(--void); image-rendering: pixelated; }
+.status { text-align: center; font-family: ui-monospace, monospace; font-size: 13px; color: #e7c4d6; }
+.locks { display: flex; gap: 16px; justify-content: center; padding: 12px 20px 40px; }
+.locks img { width: 120px; height: 120px; object-fit: cover; background: var(--void); }
+.locks figcaption { font: 11px/1.3 ui-monospace, monospace; color: #c9a3b8; text-align: center; }

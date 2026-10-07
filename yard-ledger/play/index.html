@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yard Ledger</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <p class="kicker">Yard Ledger · isometric lock</p>
+    <h1>Keep the switch book clean.</h1>
+    <p>Click a numbered switch. SW0 sends Ash 4 to the siding. SW1 sends Brick 12 off the main and onto the east spur. Pause with <kbd>Space</kbd>. A red cell is two consists claiming the same sleeper.</p>
+  </header>
+  <div class="board">
+    <canvas id="iso" width="980" height="560"></canvas>
+    <aside>
+      <h2>Ledger</h2>
+      <ol id="log"></ol>
+      <p id="crash" class="ok">Clear.</p>
+      <button type="button" id="reset">Reset yard</button>
+    </aside>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

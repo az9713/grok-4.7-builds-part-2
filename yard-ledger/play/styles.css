@@ -1,0 +1,14 @@
+:root { --ink:#1b2418; --paper:#e7e1c8; --rust:#9a3b24; --moss:#3a6b4a; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--ink); color: var(--paper); font-family: Georgia, serif; }
+header { max-width: 1100px; margin: 0 auto; padding: 18px 16px 8px; }
+.kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #c4a36a; }
+h1 { font-size: 30px; margin: 4px 0; }
+.board { display: grid; grid-template-columns: 1fr 240px; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 8px 16px 40px; }
+canvas { width: 100%; background: #2a3d30; display: block; }
+aside { background: #12180f; padding: 12px; border: 1px solid #3d5344; }
+aside ol { font: 12px/1.5 ui-monospace, monospace; padding-left: 18px; max-height: 320px; overflow: auto; }
+.ok { color: #9dcea8; } .bad { color: #ff8b7a; }
+button, kbd { font-family: ui-monospace, monospace; }
+button { background: var(--rust); color: var(--paper); border: 0; padding: 8px 10px; cursor: pointer; }
+@media (max-width: 800px) { .board { grid-template-columns: 1fr; } }
