@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Thirty-eight browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. The license is MIT.
+Forty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all thirty-eight pages. The twenty games have their rules on that page.
+[What each build is](builds.html) explains all forty-two pages. The twenty-four games have their rules on that page.
 
 ## Open locally
 
@@ -66,6 +66,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 36 | [decay/play/](https://az9713.github.io/grok-4.7-builds-part-2/decay/play/) | Half-life. Leave 100 counts at 12 hours |
 | 37 | [draft/play/](https://az9713.github.io/grok-4.7-builds-part-2/draft/play/) | Box hull. Set the waterline on the chalk |
 | 38 | [shot/play/](https://az9713.github.io/grok-4.7-builds-part-2/shot/play/) | Level-ground shot. Land on 34.64 m |
+| 39 | [beats/play/](https://az9713.github.io/grok-4.7-builds-part-2/beats/play/) | Two tones. Set the beat to 4 Hz |
+| 40 | [boyle/play/](https://az9713.github.io/grok-4.7-builds-part-2/boyle/play/) | Fixed-temperature gas. Hit 250 kPa |
+| 41 | [lever/play/](https://az9713.github.io/grok-4.7-builds-part-2/lever/play/) | Balance beam. Level a 24 cm arm |
+| 42 | [rod/play/](https://az9713.github.io/grok-4.7-builds-part-2/rod/play/) | Thermal rod. Meet a stop at 1002.00 mm |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

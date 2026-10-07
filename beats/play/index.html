@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Beats</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Beats · two tones</p>
+    <h1>Set the beat to 4 Hz.</h1>
+    <p class="lead">One tone stays at 440 Hz. You choose the second tone. The curve is the loudness envelope for 0.50 s.</p>
+  </header>
+  <div class="layout">
+    <canvas id="scope" width="680" height="360" aria-label="A beat envelope over one half second."></canvas>
+    <section>
+      <p class="label">Second tone</p>
+      <div class="picks" id="bin">
+        <button type="button" data-f="442" aria-pressed="true">442 Hz</button>
+        <button type="button" data-f="444" aria-pressed="false">444 Hz</button>
+        <button type="button" data-f="446" aria-pressed="false">446 Hz</button>
+        <button type="button" data-f="448" aria-pressed="false">448 Hz</button>
+        <button type="button" data-f="450" aria-pressed="false">450 Hz</button>
+      </div>
+      <dl>
+        <div><dt>Second tone</dt><dd id="f-val">442 Hz</dd></div>
+        <div><dt>Beat</dt><dd id="beat-val">2 Hz</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The first tone is 440 Hz.</li>
+        <li>The beat is the absolute difference of the two tones.</li>
+        <li>The mark is 4 Hz. A hit is within 0.5 Hz.</li>
+        <li>444 Hz is the hit. The line says <code>The beat meets the mark.</code></li>
+        <li>442, 446, 448, and 450 Hz miss. The line says <code>The beat misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Boyle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Boyle · fixed temperature</p>
+    <h1>Bring the gauge to 250 kPa.</h1>
+    <p class="lead">A trapped gas keeps a fixed temperature. You choose the volume. Pressure times volume stays 400 kPa·L.</p>
+  </header>
+  <div class="layout">
+    <canvas id="cylinder" width="680" height="420" aria-label="A piston, a gas volume, and a pressure gauge."></canvas>
+    <section>
+      <p class="label">Volume</p>
+      <div class="picks" id="bin">
+        <button type="button" data-v="4" aria-pressed="true">4.0 L</button>
+        <button type="button" data-v="2.5" aria-pressed="false">2.5 L</button>
+        <button type="button" data-v="2" aria-pressed="false">2.0 L</button>
+        <button type="button" data-v="1.6" aria-pressed="false">1.6 L</button>
+        <button type="button" data-v="1" aria-pressed="false">1.0 L</button>
+      </div>
+      <dl>
+        <div><dt>Volume</dt><dd id="v-val">4.0 L</dd></div>
+        <div><dt>Pressure</dt><dd id="p-val">100.0 kPa</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Temperature stays fixed. Pressure is 400 divided by the volume in litres.</li>
+        <li>The mark is 250 kPa. A hit is within 5 kPa.</li>
+        <li>1.6 L is the hit. The line says <code>The pressure meets the mark.</code></li>
+        <li>4.0 L reads 100.0 kPa. 2.5 L reads 160.0. 2.0 L reads 200.0. 1.0 L reads 400.0.</li>
+        <li>Those four volumes say <code>The pressure misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
