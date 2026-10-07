@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cam</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Cam · plate and follower</p>
+    <h1>Cut the rise, dwell, and fall.</h1>
+    <p class="lead">A flat follower rides a plate cam. The rise and the fall are simple harmonic. The ticket is four equal arcs. The base is 50 mm and the lift is 30 mm.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plate" width="640" height="640" aria-label="Plate cam. The teal line is the ticket. The orange line is the cut."></canvas>
+    <section>
+      <div class="pair">
+        <label>Rise, degrees
+          <input id="rise" type="number" min="0" max="360" step="1" value="360">
+        </label>
+        <label>High dwell, degrees
+          <input id="high" type="number" min="0" max="360" step="1" value="0">
+        </label>
+        <label>Fall, degrees
+          <input id="fall" type="number" min="0" max="360" step="1" value="0">
+        </label>
+        <label>Low dwell, degrees
+          <input id="low" type="number" min="0" max="360" step="1" value="0">
+        </label>
+        <label>Base, mm
+          <input id="base" type="number" min="30" max="70" step="1" value="50">
+        </label>
+        <label>Lift, mm
+          <input id="lift" type="number" min="0" max="40" step="1" value="30">
+        </label>
+      </div>
+      <label>Cam angle under the follower
+        <input id="scrub" type="range" min="0" max="359" step="1" value="0">
+      </label>
+      <dl>
+        <div><dt>Follower radius</dt><dd id="radius">50.0</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Angle 0 is the start of the rise. Angle grows clockwise.</li>
+        <li>On a rise of B degrees, the lift at angle A is half the lift times (1 − cos(180° A / B)).</li>
+        <li>The fall is the same curve in reverse. A dwell holds the radius still.</li>
+        <li>The four arcs must sum to 360. Any other sum says <code>The circle is 360 degrees.</code></li>
+        <li>The ticket is rise 90, high dwell 90, fall 90, low dwell 90, base 50 mm, lift 30 mm.</li>
+        <li>At 45° the ticket radius is 65 mm. A match says <code>The follower matches the ticket.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

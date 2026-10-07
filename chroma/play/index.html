@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Chroma</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Chroma · CIE 1931 2°</p>
+    <h1>Read one wavelength.</h1>
+    <p class="lead">The table is the CIE 1931 2° standard observer, every 5 nm from 380 nm to 780 nm. The patch is linear sRGB after a clip to the range 0 to 1. A spectral color can sit outside that range. The bench has no score.</p>
+  </header>
+  <div class="layout">
+    <div>
+      <canvas id="strip" width="720" height="160" aria-label="Clipped sRGB color at each 5 nm step."></canvas>
+      <div id="swatch"></div>
+    </div>
+    <section>
+      <label>Wavelength, nm
+        <input id="nm" type="range" min="380" max="780" step="5" value="555">
+      </label>
+      <div class="row">
+        <button type="button" id="green">Show 555 nm</button>
+        <button type="button" id="red">Show 650 nm</button>
+      </div>
+      <dl>
+        <div><dt>Wavelength</dt><dd id="wave">555 nm</dd></div>
+        <div><dt>X Y Z</dt><dd id="xyz">0.5121 1.0000 0.0057</dd></div>
+        <div><dt>Linear RGB</dt><dd id="linear">0.119 1.380 -0.169</dd></div>
+        <div><dt>Bytes</dt><dd id="bytes">97 255 0</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>What the bench uses</h2>
+      <ol>
+        <li>X, Y, and Z are the CIE 1931 2° colour-matching values at that wavelength.</li>
+        <li>Linear sRGB uses the IEC 61966-2-1 matrix. The first row is 3.2404542, −1.5371385, −0.4985314.</li>
+        <li>The second row is −0.9692660, 1.8760108, 0.0415560. The third row is 0.0556434, −0.2040259, 1.0572252.</li>
+        <li>Each linear channel is clipped to 0..1. Then the sRGB curve is applied. At or below 0.0031308 the curve is 12.92 times the channel. Above that it is 1.055 times the channel to the power 1/2.4, minus 0.055.</li>
+        <li>555 nm reads green after the clip. The bytes are 97, 255, 0. The line says <code>555 nm reads green after the clip.</code></li>
+        <li>650 nm reads red after the clip. The bytes are 225, 0, 0. The line says <code>650 nm reads red after the clip.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

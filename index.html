@@ -58,7 +58,7 @@
 </head>
 <body>
   <h1>Grok Build demos</h1>
-  <p class="meta">Twenty-six completed browser demos. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the ten games.</p>
+  <p class="meta">Thirty completed browser demos. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the twelve games.</p>
 
   <h2 class="round">Round 1</h2>
   <div class="grid">
@@ -252,6 +252,52 @@
         <circle cx="118" cy="128" r="8" fill="#e6b15a"/>
       </svg>
       <div class="copy"><span class="num">26</span><h2>Hour Angle</h2><p>A gnomon casts a shadow from latitude, day, and solar hour. Declination uses Cooper's formula. The dial has no score.</p><p><span class="do">Do this.</span> Move the three sliders. At latitude 51.5, day 81, and hour 12, the altitude reads 38.5 degrees. A sun below the horizon leaves no shadow.</p></div>
+    </a>
+  </div>
+
+  <h2 class="round">Round 5</h2>
+  <div class="grid">
+    <a class="card" href="cam/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A plate cam and a flat follower">
+        <rect width="320" height="180" fill="#16130f"/>
+        <circle cx="150" cy="96" r="46" fill="none" stroke="#7f9c98" stroke-width="2"/>
+        <path d="M150 50 C190 50 196 70 196 96 C196 130 170 150 150 150 C110 150 104 110 104 96 C104 70 120 50 150 50 Z" fill="none" stroke="#e07a3d" stroke-width="3"/>
+        <rect x="132" y="28" width="36" height="8" fill="#c8c2b4"/>
+      </svg>
+      <div class="copy"><span class="num">27</span><h2>Cam</h2><p>A flat follower rides a plate cam. The rise and the fall are simple harmonic. The ticket is four equal arcs.</p><p><span class="do">Do this.</span> Set rise 90, high dwell 90, fall 90, and low dwell 90. Base 50 mm and lift 30 mm match the ticket. At 45 degrees the radius is 65 mm.</p></div>
+    </a>
+    <a class="card" href="pendulum/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Two linked pendulum bobs">
+        <rect width="320" height="180" fill="#10141c"/>
+        <polyline points="150,28 210,70 188,130" fill="none" stroke="#d9d3c7" stroke-width="3"/>
+        <circle cx="210" cy="70" r="8" fill="#e0c07a"/>
+        <circle cx="188" cy="130" r="8" fill="#e0c07a"/>
+        <path d="M188 130 C160 140 120 120 90 150" fill="none" stroke="#6eb0c4" stroke-width="2"/>
+      </svg>
+      <div class="copy"><span class="num">28</span><h2>Pendulum</h2><p>Two rods and two bobs move under RK4. Energy is motion plus height. The bench has no score.</p><p><span class="do">Do this.</span> Leave the angles at 120 and -10 degrees. Energy reads 0.1490. Press Release, or press Advance 1 second. Drift stays under 0.00001.</p></div>
+    </a>
+    <a class="card" href="chroma/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A strip of clipped spectral colors">
+        <rect width="320" height="180" fill="#141216"/>
+        <rect x="36" y="48" width="28" height="84" fill="#3a2080"/>
+        <rect x="64" y="48" width="28" height="84" fill="#2040c0"/>
+        <rect x="92" y="48" width="28" height="84" fill="#208060"/>
+        <rect x="120" y="48" width="28" height="84" fill="#61ff00"/>
+        <rect x="148" y="48" width="28" height="84" fill="#d0c040"/>
+        <rect x="176" y="48" width="28" height="84" fill="#e03010"/>
+        <rect x="204" y="48" width="28" height="84" fill="#801010"/>
+        <rect x="232" y="48" width="28" height="84" fill="#301010"/>
+      </svg>
+      <div class="copy"><span class="num">29</span><h2>Chroma</h2><p>One wavelength from the CIE 1931 2 degree table becomes a clipped sRGB patch. The bench has no score.</p><p><span class="do">Do this.</span> The slider starts at 555 nm. The bytes read 97, 255, 0. Press Show 650 nm. The bytes read 225, 0, 0.</p></div>
+    </a>
+    <a class="card" href="settle/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A charging curve and a voltage mark">
+        <rect width="320" height="180" fill="#1a1410"/>
+        <line x1="40" y1="40" x2="280" y2="40" stroke="#8fb089" stroke-dasharray="4 4"/>
+        <path d="M40 150 C80 150 90 48 140 46 L280 44" fill="none" stroke="#d4845a" stroke-width="3"/>
+        <line x1="120" y1="30" x2="120" y2="150" stroke="#8fb089" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="copy"><span class="num">30</span><h2>Settle</h2><p>A 10 volt step charges one capacitor through one resistor. The mark is 6.32 volts at 1 second.</p><p><span class="do">Do this.</span> Choose 10 kΩ and 100 µF. That pair is the 1 second time constant. Any other pair in the bin misses the mark.</p></div>
     </a>
   </div>
 </body>

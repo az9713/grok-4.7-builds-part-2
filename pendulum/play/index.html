@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pendulum</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Pendulum · two bobs</p>
+    <h1>Watch the energy stay put.</h1>
+    <p class="lead">Two rods hang from one pivot. Each rod is 1 m. Each bob is 1 kg. Angles are measured from the downward vertical. The step is RK4. The bench has no score.</p>
+  </header>
+  <div class="layout">
+    <canvas id="well" width="640" height="640" aria-label="Double pendulum. Brass bobs and a blue trace of the lower bob."></canvas>
+    <section>
+      <label>Upper angle, degrees
+        <input id="th1" type="range" min="-180" max="180" step="1" value="120">
+      </label>
+      <label>Lower angle, degrees
+        <input id="th2" type="range" min="-180" max="180" step="1" value="-10">
+      </label>
+      <div class="row">
+        <button type="button" id="run" aria-pressed="false">Release</button>
+        <button type="button" id="step">Advance 1 second</button>
+        <button type="button" id="reset">Reset</button>
+      </div>
+      <dl>
+        <div><dt>Upper angle</dt><dd id="a1">120°</dd></div>
+        <div><dt>Lower angle</dt><dd id="a2">-10°</dd></div>
+        <div><dt>Energy</dt><dd id="energy">0.1490</dd></div>
+        <div><dt>Drift from the start</dt><dd id="drift">0.000000</dd></div>
+      </dl>
+      <p id="status" role="status">The bobs are held.</p>
+      <h2>What the bench uses</h2>
+      <ol>
+        <li>g is 9.81 m/s². Both speeds start at 0.</li>
+        <li>The start on the page is 120° and −10°. Energy there is 0.1490.</li>
+        <li>Release runs the motion. Advance 1 second takes 240 steps of 1/240 s. Reset returns to the two sliders.</li>
+        <li>Energy is motion plus height. Height is 0 at the pivot. Drift is the change from the energy at Reset.</li>
+        <li>The bench has no score.</li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

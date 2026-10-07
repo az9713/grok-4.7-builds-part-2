@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Settle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Settle · one resistor, one capacitor</p>
+    <h1>Hit the mark at one second.</h1>
+    <p class="lead">A 10 V step charges a capacitor through a resistor. The mark is 6.32 V at 1 second. That is the voltage for a 1 second time constant.</p>
+  </header>
+  <div class="layout">
+    <canvas id="scope" width="640" height="420" aria-label="Voltage against time. A green mark sits at 1 second and 6.32 volts."></canvas>
+    <section>
+      <p class="label">Resistor</p>
+      <div class="picks" id="resistors">
+        <button type="button" data-r="1000" aria-pressed="true">1 kΩ</button>
+        <button type="button" data-r="2200" aria-pressed="false">2.2 kΩ</button>
+        <button type="button" data-r="4700" aria-pressed="false">4.7 kΩ</button>
+        <button type="button" data-r="10000" aria-pressed="false">10 kΩ</button>
+      </div>
+      <p class="label">Capacitor</p>
+      <div class="picks" id="capacitors">
+        <button type="button" data-c="100" aria-pressed="true">100 µF</button>
+        <button type="button" data-c="220" aria-pressed="false">220 µF</button>
+        <button type="button" data-c="470" aria-pressed="false">470 µF</button>
+      </div>
+      <dl>
+        <div><dt>Time constant</dt><dd id="tau">0.10 s</dd></div>
+        <div><dt>Voltage at 1 s</dt><dd id="volts">10.00</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Voltage is 10 times (1 − e to the power −t / RC). t is in seconds. R is in ohms. C is in farads.</li>
+        <li>The bin is 1 kΩ, 2.2 kΩ, 4.7 kΩ, 10 kΩ, and 100 µF, 220 µF, 470 µF.</li>
+        <li>The mark is 6.32 V at 1 second. A hit is within 0.05 V.</li>
+        <li>10 kΩ and 100 µF win. The line says <code>The node is at the mark.</code></li>
+        <li>Any other pair says <code>The node misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

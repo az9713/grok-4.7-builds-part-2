@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Twenty-six browser builds. Ten of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or an instrument.</p>
+  <p class="meta">Thirty browser builds. Twelve of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -412,6 +412,67 @@
       <li>Azimuth is degrees from south toward west. A negative azimuth is east of south.</li>
       <li>At latitude 51.5°, day 81, and hour 12, altitude is 38.5°.</li>
       <li>When altitude is at or below 0°, the line says <code>The sun is below the horizon.</code></li>
+    </ol>
+  </article>
+
+  <article id="cam">
+    <p class="kind">Game</p>
+    <h2>27 Cam</h2>
+    <p class="open"><a href="cam/play/">Open Cam</a></p>
+    <h3>What it is</h3>
+    <p>A plate cam with a flat follower. You set four arcs, a base radius, and a lift. The teal curve is the ticket. The orange curve is your cut.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The rise and the fall use simple harmonic motion. A dwell holds one radius.</li>
+      <li>The four arcs must sum to 360. Any other sum says <code>The circle is 360 degrees.</code></li>
+      <li>The ticket is rise 90, high dwell 90, fall 90, low dwell 90, base 50 mm, and lift 30 mm.</li>
+      <li>At 45° the ticket radius is 65 mm.</li>
+      <li>The win line is <code>The follower matches the ticket.</code></li>
+    </ol>
+  </article>
+
+  <article id="pendulum">
+    <p class="kind">Instrument</p>
+    <h2>28 Pendulum</h2>
+    <p class="open"><a href="pendulum/play/">Open Pendulum</a></p>
+    <h3>What it is</h3>
+    <p>A double pendulum. Each rod is 1 m. Each bob is 1 kg. The step is RK4 at 1/240 second. The bench has no score and no winner.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Angles are measured from the downward vertical. The page starts at 120° and −10°, with both speeds at 0.</li>
+      <li>Energy at that start is 0.1490. Height is 0 at the pivot. g is 9.81 m/s².</li>
+      <li>Press Release to run. Press Advance 1 second for 240 steps. Press Reset to return to the sliders.</li>
+      <li>Drift is the change from the energy at the last reset. On this start it stays under 0.00001.</li>
+    </ol>
+  </article>
+
+  <article id="chroma">
+    <p class="kind">Instrument</p>
+    <h2>29 Chroma</h2>
+    <p class="open"><a href="chroma/play/">Open Chroma</a></p>
+    <h3>What it is</h3>
+    <p>A wavelength bench. The table is the CIE 1931 2° standard observer from 380 nm to 780 nm in 5 nm steps. The patch is clipped sRGB. The bench has no score and no winner.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Move the slider, or press Show 555 nm or Show 650 nm.</li>
+      <li>Linear sRGB uses the IEC 61966-2-1 matrix. Channels outside 0 to 1 are clipped before the sRGB curve.</li>
+      <li>555 nm gives bytes 97, 255, 0. The line says <code>555 nm reads green after the clip.</code></li>
+      <li>650 nm gives bytes 225, 0, 0. The line says <code>650 nm reads red after the clip.</code></li>
+    </ol>
+  </article>
+
+  <article id="settle">
+    <p class="kind">Game</p>
+    <h2>30 Settle</h2>
+    <p class="open"><a href="settle/play/">Open Settle</a></p>
+    <h3>What it is</h3>
+    <p>One resistor and one capacitor take a 10 V step. You pick both parts from a short bin. A mark sits at 1 second.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Voltage is 10 times (1 − e to the power −t / RC).</li>
+      <li>The mark is 6.32 V at 1 second. A hit is within 0.05 V.</li>
+      <li>10 kΩ and 100 µF are the winning pair. The line says <code>The node is at the mark.</code></li>
+      <li>Any other pair says <code>The node misses the mark.</code></li>
     </ol>
   </article>
 </body>
