@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Lorentz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Lorentz · one rod</p>
+    <h1>Set the length to 0.80 m.</h1>
+    <p class="lead">The rod is 1.00 m at rest. You choose the speed. The page shortens the rod.</p>
+  </header>
+  <div class="layout">
+    <canvas id="track" width="720" height="360" aria-label="A rod beside a length mark."></canvas>
+    <section>
+      <p class="label">Speed</p>
+      <div class="picks" id="bin">
+        <button type="button" data-b="0" aria-pressed="true">0.00 c</button>
+        <button type="button" data-b="0.4" aria-pressed="false">0.40 c</button>
+        <button type="button" data-b="0.6" aria-pressed="false">0.60 c</button>
+        <button type="button" data-b="0.8" aria-pressed="false">0.80 c</button>
+        <button type="button" data-b="0.9" aria-pressed="false">0.90 c</button>
+      </div>
+      <dl>
+        <div><dt>Speed</dt><dd id="b-val">0.00 c</dd></div>
+        <div><dt>Length</dt><dd id="l-val">1.00 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The rest length is 1.00 m.</li>
+        <li>Length is the square root of (1 − β × β) metres. β is the speed as a fraction of c.</li>
+        <li>The mark is 0.80 m. A hit is within 0.02 m.</li>
+        <li>0.60 c is the hit. The line says <code>The length meets the mark.</code></li>
+        <li>0.00 c reads 1.00 m. 0.40 c reads 0.92 m. 0.80 c reads 0.60 m. 0.90 c reads 0.44 m.</li>
+        <li>Those four miss. The line says <code>The length misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Fifty-four browser builds. Thirty-six of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Fifty-eight browser builds. Forty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -842,6 +842,66 @@
       <li>The mark is 10.0 mm. A hit is within 0.2 mm.</li>
       <li>4 N says <code>The spring meets the mark.</code> The readout is 10.0 mm.</li>
       <li>2 N reads 5.0 mm. 3 N reads 7.5 mm. 5 N reads 12.5 mm. 8 N reads 20.0 mm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="balmer">
+    <p class="kind">Game</p>
+    <h2>55 Balmer</h2>
+    <p class="open"><a href="balmer/play/">Open Balmer</a></p>
+    <h3>What it is</h3>
+    <p>One hydrogen line from level n down to level 2. You set n. The page draws that wavelength.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The Rydberg constant is 1.097e7 per metre. Wavelength is 1e9 / (1.097e7 × (1/4 − 1/n²)) nanometres.</li>
+      <li>The mark is 486.2 nm. A hit is within 0.2 nm.</li>
+      <li>n = 4 says <code>The line meets the mark.</code> The readout is 486.2 nm.</li>
+      <li>n = 3 reads 656.3 nm. n = 5 reads 434.1 nm. n = 6 reads 410.2 nm. n = 7 reads 397.0 nm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="bernoulli">
+    <p class="kind">Game</p>
+    <h2>56 Bernoulli</h2>
+    <p class="open"><a href="bernoulli/play/">Open Bernoulli</a></p>
+    <h3>What it is</h3>
+    <p>Air through a narrow throat. You set the speed. The page draws the throat pressure.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Still air is 101300 Pa. Density is 1.20 kg/m³. Throat pressure is (101300 − (3 × speed × speed) / 5) / 1000 kilopascals.</li>
+      <li>The mark is 99.80 kPa. A hit is within 0.05 kPa.</li>
+      <li>50 m/s says <code>The pressure meets the mark.</code> The readout is 99.80 kPa.</li>
+      <li>20 m/s reads 101.06 kPa. 30 m/s reads 100.76 kPa. 40 m/s reads 100.34 kPa. 60 m/s reads 99.14 kPa. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="lorentz">
+    <p class="kind">Game</p>
+    <h2>57 Lorentz</h2>
+    <p class="open"><a href="lorentz/play/">Open Lorentz</a></p>
+    <h3>What it is</h3>
+    <p>A rod of rest length 1.00 m. You set the speed. The page shortens the rod.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Length is the square root of (1 − β × β) metres. β is the speed as a fraction of c.</li>
+      <li>The mark is 0.80 m. A hit is within 0.02 m.</li>
+      <li>0.60 c says <code>The length meets the mark.</code> The readout is 0.80 m.</li>
+      <li>0.00 c reads 1.00 m. 0.40 c reads 0.92 m. 0.80 c reads 0.60 m. 0.90 c reads 0.44 m. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="pipe">
+    <p class="kind">Game</p>
+    <h2>58 Pipe</h2>
+    <p class="open"><a href="pipe/play/">Open Pipe</a></p>
+    <h3>What it is</h3>
+    <p>A pipe closed at one end. You set the length. The page draws one quarter of a sound wave.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Sound speed is 340 m/s. Frequency is 85000 / length hertz. Length is in millimetres.</li>
+      <li>The mark is 250 Hz. A hit is within 1 Hz.</li>
+      <li>0.34 m says <code>The pitch meets the mark.</code> The readout is 250 Hz.</li>
+      <li>0.20 m reads 425 Hz. 0.25 m reads 340 Hz. 0.50 m reads 170 Hz. 0.85 m reads 100 Hz. All four miss.</li>
     </ol>
   </article>
 </body>

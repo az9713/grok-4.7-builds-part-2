@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pipe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Pipe · one closed tube</p>
+    <h1>Set the pitch to 250 Hz.</h1>
+    <p class="lead">Sound moves at 340 m/s. You choose the length. A closed pipe sounds at one quarter wave.</p>
+  </header>
+  <div class="layout">
+    <canvas id="tube" width="720" height="360" aria-label="A closed pipe and a length mark."></canvas>
+    <section>
+      <p class="label">Length</p>
+      <div class="picks" id="bin">
+        <button type="button" data-mm="200" aria-pressed="true">0.20 m</button>
+        <button type="button" data-mm="250" aria-pressed="false">0.25 m</button>
+        <button type="button" data-mm="340" aria-pressed="false">0.34 m</button>
+        <button type="button" data-mm="500" aria-pressed="false">0.50 m</button>
+        <button type="button" data-mm="850" aria-pressed="false">0.85 m</button>
+      </div>
+      <dl>
+        <div><dt>Length</dt><dd id="m-val">0.20 m</dd></div>
+        <div><dt>Pitch</dt><dd id="f-val">425 Hz</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The pipe is closed at one end. Sound speed is 340 m/s.</li>
+        <li>Frequency is 85000 / length hertz. Length is in millimetres.</li>
+        <li>The mark is 250 Hz. A hit is within 1 Hz.</li>
+        <li>0.34 m is the hit. The line says <code>The pitch meets the mark.</code></li>
+        <li>0.20 m reads 425 Hz. 0.25 m reads 340 Hz. 0.50 m reads 170 Hz. 0.85 m reads 100 Hz.</li>
+        <li>Those four miss. The line says <code>The pitch misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
