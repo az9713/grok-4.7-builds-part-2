@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Wien</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Wien · one peak</p>
+    <h1>Set the peak to 579.6 nm.</h1>
+    <p class="lead">A hot body has one peak wavelength. You choose the temperature. The mark is 579.6 nm.</p>
+  </header>
+  <div class="layout">
+    <canvas id="axis" width="680" height="360" aria-label="A wavelength axis and a 579.6 nm mark."></canvas>
+    <section>
+      <p class="label">Temperature</p>
+      <div class="picks" id="bin">
+        <button type="button" data-t="4500" aria-pressed="true">4500 K</button>
+        <button type="button" data-t="4800" aria-pressed="false">4800 K</button>
+        <button type="button" data-t="5000" aria-pressed="false">5000 K</button>
+        <button type="button" data-t="5200" aria-pressed="false">5200 K</button>
+        <button type="button" data-t="5800" aria-pressed="false">5800 K</button>
+      </div>
+      <dl>
+        <div><dt>Temperature</dt><dd id="t-val">4500 K</dd></div>
+        <div><dt>Peak</dt><dd id="p-val">644.0 nm</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Peak wavelength is 2,898,000 / temperature nanometres. Temperature is in kelvin.</li>
+        <li>The mark is 579.6 nm. A hit is within 2 nm.</li>
+        <li>5000 K is the hit. The line says <code>The peak meets the mark.</code></li>
+        <li>4500 K reads 644.0 nm. 4800 K reads 603.8 nm. 5200 K reads 557.3 nm. 5800 K reads 499.7 nm.</li>
+        <li>Those four miss. The line says <code>The peak misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

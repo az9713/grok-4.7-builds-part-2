@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Swing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Swing · one bob</p>
+    <h1>Set the period to 2.00 s.</h1>
+    <p class="lead">Gravity is 9.81 m/s². You choose the length. The page hangs the bob at that length.</p>
+  </header>
+  <div class="layout">
+    <canvas id="well" width="680" height="420" aria-label="A pendulum and a 2.00 s length mark."></canvas>
+    <section>
+      <p class="label">Length</p>
+      <div class="picks" id="bin">
+        <button type="button" data-l="0.50" aria-pressed="true">0.50 m</button>
+        <button type="button" data-l="0.75" aria-pressed="false">0.75 m</button>
+        <button type="button" data-l="0.99" aria-pressed="false">0.99 m</button>
+        <button type="button" data-l="1.25" aria-pressed="false">1.25 m</button>
+        <button type="button" data-l="1.60" aria-pressed="false">1.60 m</button>
+      </div>
+      <dl>
+        <div><dt>Length</dt><dd id="l-val">0.50 m</dd></div>
+        <div><dt>Period</dt><dd id="p-val">1.42 s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Gravity is 9.81 m/s².</li>
+        <li>Period is 2 × π × the square root of length / 9.81. Length is in metres. Period is in seconds.</li>
+        <li>The mark is 2.00 s. A hit is within 0.02 s.</li>
+        <li>0.99 m is the hit. The line says <code>The period meets the mark.</code></li>
+        <li>0.50 m reads 1.42 s. 0.75 m reads 1.74 s. 1.25 m reads 2.24 s. 1.60 m reads 2.54 s.</li>
+        <li>Those four miss. The line says <code>The period misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
