@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Grok Build showcase — status — 2026-10-06</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line: #334155;
+      --accent: #fb923c;
+      --ok: #2dd4bf;
+      --bad: #f87171;
+      --warn: #fbbf24;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); }
+    body {
+      font: 16px/1.45 "Segoe UI", sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+    h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+    h2 { font-size: 20px; margin: 32px 0 10px; }
+    p, li { color: #cbd5e1; }
+    a { color: var(--accent); }
+    code { font-family: ui-monospace, Consolas, monospace; font-size: 0.92em; color: #e2e8f0; }
+    .meta { color: var(--muted); margin: 0 0 16px; }
+    .card, .warn {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    .warn { border-color: #92400e; }
+    .warn strong { color: var(--warn); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0 16px; }
+    th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: 8px 6px; }
+    th { color: var(--muted); font-weight: 600; }
+    .ok { color: var(--ok); }
+    .bad { color: var(--bad); }
+    .mid { color: var(--warn); }
+    caption { text-align: left; color: var(--muted); margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Grok Build showcase — current status</h1>
+  <p class="meta">Record date: 2026-10-06. Later checks: 2026-10-07. Folder name: <code>grok_build</code>. This page has no Windows user path.</p>
+
+  <h2>Result</h2>
+  <p>Eighteen browser slices are on disk. Eight slices are round 1. Ten slices are round 2. The root <code>README.md</code> line 3 matches that count. <code>SHOWCASE.md</code> line 7 says the round-1 hold is closed. The eight-row table stays the round-1 spec.</p>
+  <p>There is no <code>.git</code> directory. <code>LICENSE</code> is MIT. The copyright line is “Copyright (c) 2026 Grok Build showcase”.</p>
+  <p>The visitor plays <code>service-door/play/</code> in the browser. This update did not replace that folder with a Unity WebGL export.</p>
+
+  <h2>Browser checks</h2>
+  <p>Chrome opened the pages through <code>python -m http.server</code> on port 8766. The checks below are the text the page showed.</p>
+  <table>
+    <caption>Played on 2026-10-06. Port 8766.</caption>
+    <thead><tr><th>Page</th><th>Action</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Service Door</td>
+        <td>Hold D to the lift. Do not press Space.</td>
+        <td class="ok">Status: <code>lift locked · put the guard down</code></td>
+      </tr>
+      <tr>
+        <td>Service Door</td>
+        <td>Walk back. Hold D. Press Space 25 times.</td>
+        <td class="ok">Status: <code>shift over · R to restart</code></td>
+      </tr>
+      <tr>
+        <td>Yard Ledger</td>
+        <td>Leave both switches normal for 4.5 s.</td>
+        <td class="ok"><code>Occupancy clash on M3</code></td>
+      </tr>
+      <tr>
+        <td>Yard Ledger</td>
+        <td>Fresh load. Throw SW1. Wait 6.5 s.</td>
+        <td class="ok"><code>Clear.</code></td>
+      </tr>
+      <tr>
+        <td>Yard Ledger</td>
+        <td>Fresh load. Throw SW0. Wait 6.5 s.</td>
+        <td class="ok"><code>Clear.</code></td>
+      </tr>
+      <tr>
+        <td>Ash Court</td>
+        <td>Viewport 390×844.</td>
+        <td class="ok">Bench backs: 9. Bench badges: 0.</td>
+      </tr>
+      <tr>
+        <td>Ash Court</td>
+        <td>Desktop. Play the first card in your hand.</td>
+        <td class="ok">Trick cards: 2. Trick badges: 2. Bench backs: 8. Bench badges: 0.</td>
+      </tr>
+      <tr>
+        <td>Broadcast Kit</td>
+        <td>Away +1, then Home +1.</td>
+        <td class="ok">Score text: <code>1–1</code></td>
+      </tr>
+      <tr>
+        <td>Broadcast Kit</td>
+        <td>Load at 390×844 and at 1100×800.</td>
+        <td class="ok">End card is hidden. Mobile stage shows <code>KITE 1–1 12:04</code>.</td>
+      </tr>
+      <tr>
+        <td>Broadcast Kit</td>
+        <td>Click End card. Click End card again.</td>
+        <td class="ok">The card shows, then hides. The score stays <code>1–1</code>.</td>
+      </tr>
+      <tr>
+        <td>Night Shift</td>
+        <td>Open the first dock icon (mail).</td>
+        <td class="ok">Bar text: <code>Shift note read. Socket on Orbit-2 stays dark.</code></td>
+      </tr>
+      <tr>
+        <td>Dieline Press</td>
+        <td>Click Hibiscus.</td>
+        <td class="ok">Caption: <code>Hibiscus · blank kraft · cork</code></td>
+      </tr>
+      <tr>
+        <td>Twin Orbit</td>
+        <td>Read the hint.</td>
+        <td class="ok"><code>Pilot WASD · Mechanic ↑←↓→ · E/. pick up · F// throw</code></td>
+      </tr>
+      <tr>
+        <td>Kiln Reel</td>
+        <td>Open the page. Click 02 Trim. Click 03 Finish. Repeat 02 Trim at 390×844.</td>
+        <td class="ok">The replacement <code>trim.mp4</code> plays at 736×400 for 6.041667 seconds. The element is not paused.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Service Door clip</h2>
+  <p><code>service-door/clip.mp4</code> is a recording of that browser play. Duration: 17.68 seconds. Size: 854×480. File length: 479,348 bytes. That length is under the 15 MB limit in <code>SHOWCASE.md</code> line 147.</p>
+  <p>SHA-256: <code>5B92815557C7B0591A652B9B50E40922373454944CE3212B08DAE8959DD02985</code>.</p>
+  <p>The walk-cycle file <code>_shared/video/hero-walk.mp4</code> still starts with <code>18F3C42EB2AC00E3</code>. The new clip starts with <code>5B92815557C7B059</code>. The two files are not the same bytes.</p>
+  <p>A frame at 3 seconds shows the walk toward the guard. A frame at 8 seconds shows the status <code>lift locked · put the guard down</code>. A frame at 14 seconds shows the guard down, the hero at the lift, and the status <code>shift over · R to restart</code>.</p>
+
+  <h2>Text and logic that changed</h2>
+  <ul>
+    <li><code>answers.json</code> no longer contains a Windows user path. A search for that user name in the file returned no match.</li>
+    <li><code>service-door/play/game.js</code> requires <code>guard.down</code> before the lift win. The browser check above confirms it.</li>
+    <li><code>PlayerController.cs</code> returns when <code>body</code> is null. <code>ElevatorWin.cs</code> returns when <code>player</code> is null. If <code>guard</code> is set, the win also requires <code>guard.down</code>. The editor did not compile these files. See the Unity section.</li>
+    <li><code>twin-orbit/README.md</code> names the same keys as the hint: E or period to pick up, F or slash to throw.</li>
+    <li><code>dieline-press/README.md</code> names hibiscus. The Hibiscus button sets the caption above.</li>
+    <li><code>broadcast-kit</code> has Home +1 and Away +1. Both buttons change the score.</li>
+    <li><code>ash-court</code> draws a bench card as a back until that card is in the trick. The counts above match that rule.</li>
+    <li><code>night-shift-os</code> sets the shift bar when mail opens.</li>
+    <li>Yard SW0 still sends Ash 4 onto the siding. Yard SW1 sends Brick 12 off the main before column 3. The path then uses siding columns 3 and 4 to reach columns 5 to 7. A path that stays on the main until column 5 meets Ash 4 at M3.</li>
+    <li><code>broadcast-kit/play/styles.css</code> now has <code>.end[hidden] { display: none; }</code>. Before that line, <code>.end { display: grid }</code> kept the end card visible while the <code>hidden</code> attribute was set.</li>
+  </ul>
+
+  <div class="warn">
+    <p><strong>Unity stop.</strong> Editor 6000.5.7f1 is installed. A third <code>-batchmode -executeMethod BuildSlice.Run</code> run returned code 198 at 2026-10-07T01:39:17Z. The log says: “No valid Unity Editor license found. Please activate your license.” The same log says the access token is unavailable, the client found 0 entitlement groups, and <code>com.unity.editor.headless</code> was not found.</p>
+    <p><code>BuildSlice.Run</code> did not run. <code>Assets/Scenes/ServiceDoor.unity</code> does not exist. <code>SliceTests</code> were not executed. This update did not activate a license. The Unity <code>Library</code> folder was not deleted.</p>
+  </div>
+
+  <h2>Files added for a later editor run</h2>
+  <p><code>service-door/Packages/manifest.json</code> lists built-in packages at the versions in editor 6000.5.7f1. <code>service-door/Assets/Editor/BuildSlice.cs</code> is the scene builder. <code>service-door/Assets/Editor/SliceTests.cs</code> is the edit-mode test file. The root <code>.gitignore</code> ignores <code>Library</code>, <code>Temp</code>, <code>Obj</code>, <code>Logs</code>, <code>UserSettings</code>, and generated project files. It does not ignore the scene, the scripts, or the manifest.</p>
+
+  <h2>Kiln Reel trim</h2>
+  <p><code>kiln-reel/play/video/trim.mp4</code> was replaced. Size: 736×400. Frame rate: 24 fps. Duration: 6.04 seconds. File length: 583,418 bytes. The throw file and the finish file are also 736×400.</p>
+  <p>SHA-256: <code>660E41B3AD34E79C97074178D0187DB93161583EE32DDC42804EF690A07BC6BD</code>.</p>
+  <p>The first frame is the throw still. The last frame is the trimmed still. The frame at 3 seconds keeps one bowl and one rim. The extra clay form from the previous file is absent.</p>
+
+  <h2>Strike sheet</h2>
+  <p><code>service-door/play/art/hero-strike.png</code> is 1536×192. Eight cells use one scale, 0.4434, from the standing bbox height of 415 px. Opaque cell heights are 183, 183, 178, 178, 177, 177, 182, and 183 px. The sheet has 461 orange pixels and 0 green pixels. Space plays those 8 frames in 0.8 seconds.</p>
+  <p>The browser reached <code>lift locked · put the guard down</code>. The next frame shows the lunge with the guard down. The run then reached <code>shift over · R to restart</code>. At 390×844 the canvas shows <code>SHIFT COMPLETE</code>.</p>
+
+  <h2>Left as they were</h2>
+  <ul>
+    <li>Sodium Night has no new tape. The slice README forbids a film the shot list does not already name. <code>SHOWCASE.md</code> asked for a film. This update followed the slice README.</li>
+    <li>Gimbal Goods keeps 6 plates. <code>SHOWCASE.md</code> asked for 12 plates. The README and the page keep 6.</li>
+    <li>Phylum Tray keeps the sine-bob walk. No per-morph walk videos were added.</li>
+    <li>Locksmith and Swarm Brief still replay fixtures. The pages do not execute the <code>.rhai</code> files.</li>
+    <li><code>locksmith/runs/demo.json</code> was not rewritten. Node <code>sk-hero</code> fails. Later nodes <code>gen-hero-edit</code> and <code>sk-hero-2</code> pass. The top status <code>passed</code> matches that order.</li>
+    <li>No git repository was created. Nothing was pushed.</li>
+  </ul>
+
+  <h2>Ports</h2>
+  <p>The slice server stays on port 8766. <code>server.py</code> stays on port 8765. The two servers were not merged. Continuity Bench, Gimbal Goods, and Phylum Tray READMEs now say port 8766.</p>
+</body>
+</html>

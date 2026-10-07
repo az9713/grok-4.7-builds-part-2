@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Grok Build — demos</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --body: #cbd5e1;
+      --line: #334155;
+      --accent: #fb923c;
+      --ok: #2dd4bf;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); }
+    body {
+      font: 16px/1.45 "Segoe UI", sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+    h1 { font-size: 32px; line-height: 1.15; margin: 0 0 8px; }
+    h2 { font-size: 18px; margin: 0; }
+    .meta { color: var(--muted); margin: 0 0 28px; }
+    .round { margin: 28px 0 12px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ok); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .do { display: block; margin-top: 8px; color: var(--accent); font-size: 12px; letter-spacing: 0.04em; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      min-height: 100%;
+    }
+    a.card, .card a { color: inherit; text-decoration: none; }
+    a.card:hover, a.card:focus-visible, .card:hover, .card:focus-within { border-color: var(--accent); }
+    a.card:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--accent); }
+    .card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .thumb { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; background: #0b1220; display: block; }
+    .tri { aspect-ratio: 16 / 9; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: #07110d; }
+    .tri img { width: 100%; height: 100%; object-fit: cover; }
+    .copy { display: block; padding: 12px 12px 14px; }
+    .num { color: var(--accent); font-size: 12px; font-variant-numeric: tabular-nums; }
+    p { margin: 6px 0 0; color: var(--body); font-size: 14px; }
+    .more { margin: 0; padding: 0 12px 14px; }
+    .more a { color: var(--accent); text-decoration: underline; }
+    .more a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <h1>Grok Build demos</h1>
+  <p class="meta">Eighteen completed browser demos. Eight are round 1. Ten are round 2. Each card says what the page is. The orange line says what to do. Open a card to run that demo.</p>
+
+  <h2 class="round">Round 1</h2>
+  <div class="grid">
+    <a class="card" href="service-door/play/">
+      <img class="thumb" src="_shared/sheets/shot-service-door-play.png" alt="Service Door room">
+      <div class="copy"><span class="num">01</span><h2>Service Door</h2><p>You walk one night-shift worker through one archive room. A guard walks the floor. A freight lift is on the right.</p><p><span class="do">Do this.</span> Press W, A, S, or D to walk. The arrow keys also walk. Walk to the guard. Press Space. The guard falls. Walk into the lift. The lift stays shut until the guard is down. Press R after the win to start again.</p></div>
+    </a>
+    <a class="card" href="service-door-reel/play/">
+      <img class="thumb" src="_shared/sheets/shot-service-door-reel-play.png" alt="Service Door reel player">
+      <div class="copy"><span class="num">02</span><h2>Service Door Reel</h2><p>This is a film player for the same worker. You do not walk anyone.</p><p><span class="do">Do this.</span> Press Play. Press Prev or Next to change the shot. Press Split, Storyboard, or Footage to change the view. Press Space to start the film or to pause the film. The left and right arrow keys change the shot.</p></div>
+    </a>
+    <a class="card" href="locksmith/ui/">
+      <img class="thumb" src="_shared/sheets/shot-locksmith-ui.png" alt="Locksmith DAG">
+      <div class="copy"><span class="num">03</span><h2>Locksmith</h2><p>This page replays a saved art-production run. It does not run the script live.</p><p><span class="do">Do this.</span> Press Replay DAG. Each box is one step. A failed step is marked fail. A later step can still pass.</p></div>
+    </a>
+    <a class="card" href="phylum-tray/play/">
+      <img class="thumb" src="_shared/sheets/shot-phylum-tray-play.png" alt="Phylum Tray terrarium">
+      <div class="copy"><span class="num">04</span><h2>Phylum Tray</h2><p>You place copies of one beetle into a glass box. Each copy is the same animal with a small change.</p><p><span class="do">Do this.</span> Click a picture in the tray. The animal falls into the box and walks. Click the glass to drop another copy at that point. Press Evacuate habitat to clear the box.</p></div>
+    </a>
+    <a class="card" href="sodium-night/play/">
+      <img class="thumb" src="_shared/sheets/shot-sodium-night-play.png" alt="Sodium Night passenger">
+      <div class="copy"><span class="num">05</span><h2>Sodium Night</h2><p>This is a six-shot short film. You watch it. You do not move a character.</p><p><span class="do">Do this.</span> Press Play. Press Prev or Next to change the shot. Press Split, Storyboard, or Footage to change the view. The keys 1, 2, and 3 do the same three views. Press Space to start the film or to pause the film.</p></div>
+    </a>
+    <a class="card" href="closed-stack/">
+      <img class="thumb" src="_shared/sheets/shot-closed-stack.png" alt="Closed Stack press page">
+      <div class="copy"><span class="num">06</span><h2>Closed Stack</h2><p>This is a press page for the Service Door story. Read it like a studio handout.</p><p><span class="do">Do this.</span> Read the fact sheet and the synopsis. Press Play the slice to open the playable room.</p></div>
+    </a>
+    <a class="card" href="continuity-bench/ui/">
+      <img class="thumb" src="_shared/sheets/shot-continuity-bench-ui.png" alt="Continuity Bench scores">
+      <div class="copy"><span class="num">07</span><h2>Continuity Bench</h2><p>This page scores pictures. The test is whether each picture keeps the same person, clothes, and light.</p><p><span class="do">Do this.</span> Read the green and red marks. Green means that check passed. Red means it failed. One red mark fails that picture. One failed picture fails the whole run. Click a picture to read the reasons.</p></div>
+    </a>
+    <a class="card" href="gimbal-goods/play/">
+      <img class="thumb" src="_shared/sheets/shot-gimbal-goods-play.png" alt="Gimbal Goods lamp catalog">
+      <div class="copy"><span class="num">08</span><h2>Gimbal Goods</h2><p>This is a shop page for one lamp. The pictures show the same lamp.</p><p><span class="do">Do this.</span> Click a picture to make it large. Press All plates, Studio, In situ, or Finish to filter. Press Add to hold. Press Hold. Press Stamp ticket. The hold remains after you reload the page.</p></div>
+    </a>
+  </div>
+
+  <h2 class="round">Round 2</h2>
+  <div class="grid">
+    <a class="card" href="twin-orbit/play/">
+      <img class="thumb" src="twin-orbit/play/art/pilot.jpg" alt="Twin Orbit pilot">
+      <div class="copy"><span class="num">09</span><h2>Twin Orbit</h2><p>Two people must carry one battery to the socket on the right ledge.</p><p><span class="do">Do this.</span> The pilot uses W, A, S, and D. Press E to pick the battery up. Press F to throw it. The mechanic uses the arrow keys. Press the period key to pick up. Press the slash key to throw.</p></div>
+    </a>
+    <a class="card" href="yard-ledger/play/">
+      <img class="thumb" src="yard-ledger/play/art/locomotive.jpg" alt="Yard Ledger locomotive">
+      <div class="copy"><span class="num">10</span><h2>Yard Ledger</h2><p>Two trains move on a yard. You do not drive the trains. You set the track switches.</p><p><span class="do">Do this.</span> Click a numbered switch. SW0 sends the train Ash 4 onto the side track. SW1 sends the train Brick 12 off the main track. A red cell means both trains claim the same track. Press Space to pause. Press Reset yard to start again.</p></div>
+    </a>
+    <a class="card" href="ash-court/play/">
+      <img class="thumb" src="ash-court/play/art/magistrate.jpg" alt="Ash Court magistrate">
+      <div class="copy"><span class="num">11</span><h2>Ash Court</h2><p>This is a short card game with 18 cards. Your cards are face up. The other hand is face down until a card is played.</p><p><span class="do">Do this.</span> Click a card in your hand. The suits are Moth, Staff, and Cloak. If the other side played a suit first and you hold that suit, play a card of that suit. The highest card of that suit wins the group. Press Print rulebook for the full rules.</p></div>
+    </a>
+    <a class="card" href="glass-index/">
+      <img class="thumb" src="glass-index/art/sculpture.jpg" alt="Glass Index sculpture">
+      <div class="copy"><span class="num">12</span><h2>Glass Index</h2><p>This is a museum page for one repaired glass vessel. The gold line marks the same object.</p><p><span class="do">Do this.</span> Press All plates, North window, Raking, or Night. The light changes. The vessel stays the same.</p></div>
+    </a>
+    <a class="card" href="dieline-press/play/">
+      <img class="thumb" src="dieline-press/play/art/bottle.jpg" alt="Dieline Press bottle">
+      <div class="copy"><span class="num">13</span><h2>Dieline Press</h2><p>One bottle holds three liquids. The bottle shape does not change.</p><p><span class="do">Do this.</span> Press Bergamot, Smoke, or Hibiscus. Press Print net to open the flat cut-out pattern of the package.</p></div>
+    </a>
+    <a class="card" href="night-shift-os/play/">
+      <span class="tri">
+        <img src="night-shift-os/play/art/icon-mail.jpg" alt="Mail icon">
+        <img src="night-shift-os/play/art/icon-kettle.jpg" alt="Kettle icon">
+        <img src="night-shift-os/play/art/icon-map.jpg" alt="Map icon">
+      </span>
+      <div class="copy"><span class="num">14</span><h2>Night Shift OS</h2><p>This is a small fake computer. The story is inside the mail program.</p><p><span class="do">Do this.</span> Click an icon in the left column. The icons are Mail, Map, and Kettle. One extra mail icon does nothing. A window opens. Drag the window by its title bar. Press × to close the window. Open Mail. The top bar changes from Shift open to Shift note read.</p></div>
+    </a>
+    <a class="card" href="kiln-reel/play/">
+      <img class="thumb" src="kiln-reel/play/art/pot.jpg" alt="Kiln Reel bowl">
+      <div class="copy"><span class="num">15</span><h2>Kiln Reel</h2><p>This is a short film of one bowl on a pottery wheel. You do not shape the clay.</p><p><span class="do">Do this.</span> Press 01 Throw, 02 Trim, or 03 Finish. Each button plays that stage of the same bowl.</p></div>
+    </a>
+    <a class="card" href="cutaway-house/play/">
+      <img class="thumb" src="cutaway-house/play/art/house.jpg" alt="Cutaway House front">
+      <div class="copy"><span class="num">16</span><h2>Cutaway House</h2><p>You see one house and a simple floor plan. A click changes the picture of that same house.</p><p><span class="do">Do this.</span> Click Kitchen on the plan. The picture changes to the kitchen. Click Front or Stair. The picture returns to the outside.</p></div>
+    </a>
+    <a class="card" href="broadcast-kit/play/">
+      <img class="thumb" src="broadcast-kit/play/art/jersey.jpg" alt="Broadcast Kit jersey">
+      <div class="copy"><span class="num">17</span><h2>Broadcast Kit</h2><p>This is a sports graphic for a fictional match. You change the score. You do not play the match.</p><p><span class="do">Do this.</span> Press Home +1 or Away +1. The score changes. Press Replay wipe for the transition. Press End card to show the end card. Press End card again to hide it.</p></div>
+    </a>
+    <article class="card">
+      <a href="swarm-brief/ui/">
+        <img class="thumb" src="swarm-brief/explainer/art/hull-plate.jpg" alt="Swarm Brief hull plate">
+        <div class="copy"><span class="num">18</span><h2>Swarm Brief</h2><p>This page shows the saved steps behind a short report on ship rust. It does not run the script live.</p><p><span class="do">Do this.</span> Read the boxes. A green border means that step passed. Open the explainer link for the written page.</p></div>
+      </a>
+      <p class="more"><a href="swarm-brief/explainer/index.html">Open the explainer</a></p>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.venv/
+service-door/Library/
+service-door/Temp/
+service-door/Obj/
+service-door/Logs/
+service-door/UserSettings/
+service-door/*.csproj
+service-door/*.sln
+service-door/.vs/

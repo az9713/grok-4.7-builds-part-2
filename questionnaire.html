@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Grill — Grok Build showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@380;500;650&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0e1a24;
+      --panel: #152330;
+      --panel-2: #1b2c3c;
+      --line: #2a4258;
+      --text: #e6eef4;
+      --muted: #8aa0b3;
+      --ember: #ff7a45;
+      --ember-dim: rgba(255, 122, 69, 0.16);
+      --mint: #7ddcb0;
+      --mint-dim: rgba(125, 220, 176, 0.14);
+      --danger: #ff6b8a;
+      --radius: 14px;
+      --sans: "Outfit", "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: var(--sans);
+      font-weight: 380;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255, 122, 69, 0.12), transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, rgba(125, 220, 176, 0.08), transparent 50%),
+        var(--ink);
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 22px 80px;
+    }
+    .shell > * { min-width: 0; max-width: 100%; }
+
+    header.top {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    header.top > div:first-child {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    .lede {
+      color: var(--muted);
+      margin: 8px 0 0;
+      width: 100%;
+      max-width: 52ch;
+      font-size: 15px;
+      line-height: 1.45;
+      overflow-wrap: break-word;
+    }
+    .why { overflow-wrap: break-word; }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    button {
+      font-family: var(--sans);
+      cursor: pointer;
+      border: 0;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .btn-primary {
+      background: var(--ember);
+      color: #1a0d08;
+    }
+    .btn-primary:hover { filter: brightness(1.06); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-ghost:hover { border-color: var(--muted); }
+
+    .save-state {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .save-state.ok { color: var(--mint); }
+    .save-state.err { color: var(--danger); }
+
+    .questions { display: flex; flex-direction: column; gap: 22px; }
+
+    .q {
+      background: linear-gradient(180deg, var(--panel) 0%, #12202c 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 20px 16px;
+    }
+
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .q-id {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+
+    .why {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+
+    .opts { display: flex; flex-direction: column; gap: 8px; }
+
+    label.opt {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel-2);
+      cursor: pointer;
+    }
+    label.opt:hover { border-color: #3c5a74; }
+    label.opt:has(:checked) {
+      border-color: var(--ember);
+      background: var(--ember-dim);
+    }
+    label.opt input { margin-top: 3px; accent-color: var(--ember); }
+    .opt-body { min-width: 0; overflow-wrap: break-word; }
+    .opt-title { font-weight: 500; font-size: 15px; }
+    .opt-desc { color: var(--muted); font-size: 13px; line-height: 1.4; margin-top: 2px; }
+    .rec {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mint);
+      background: var(--mint-dim);
+      border-radius: 999px;
+      padding: 4px 8px;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .override, .notes {
+      width: 100%;
+      margin-top: 12px;
+      background: #0f1c26;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-family: var(--sans);
+      font-size: 14px;
+      resize: vertical;
+      min-height: 44px;
+    }
+    .override:focus, .notes:focus {
+      outline: 2px solid var(--ember);
+      outline-offset: 1px;
+    }
+    .field-label {
+      display: block;
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brief {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+      background: #101c27;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+    }
+    .brief h3 {
+      margin: 0 0 4px;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mint);
+      font-family: var(--mono);
+      font-weight: 500;
+    }
+    .brief p.hint {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    #brief-text {
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .progress {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    footer.note {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+    code { font-family: var(--mono); font-size: 12px; color: var(--mint); }
+
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; padding-bottom: 100px; }
+      .brief { position: static; max-height: none; }
+      header.top { flex-direction: column; align-items: stretch; }
+      .opt-title, .opt-desc { display: block; }
+      label.opt { grid-template-columns: 18px minmax(0, 1fr); }
+      .rec { grid-column: 2; justify-self: start; margin-top: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div>
+        <p class="kicker">Round 1 · Design tree</p>
+        <h1>The Grill</h1>
+        <p class="lede">Six decisions that change the showcase list. Recommended answers are pre-selected. Override anything, then save — I read <code>answers.json</code> in this folder.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost" type="button" id="reset">Reset to recommended</button>
+        <button class="btn btn-primary" type="button" id="save">Save answers</button>
+      </div>
+    </header>
+
+    <main class="questions">
+      <p class="progress" id="progress">0 / 6 settled</p>
+
+      <section class="q" id="q1">
+        <div class="q-meta"><span class="q-id">Q1 · Purpose</span></div>
+        <h2>What is this list for?</h2>
+        <p class="why">Who sees the finished projects, and what should they conclude?</p>
+        <div class="opts" data-name="q1_purpose" data-type="single">
+          <label class="opt">
+            <input type="radio" name="q1_purpose" value="public_bakeoff" />
+            <span class="opt-body">
+              <span class="opt-title">Public bakeoff</span>
+              <span class="opt-desc">Run the same briefs on Grok Build, Claude Code, and Codex, then publish the artifacts.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q1_purpose" value="capability_reel" checked />
+            <span class="opt-body">
+              <span class="opt-title">Capability reel</span>
+              <span class="opt-desc">Screen recordings of Grok doing things the others physically cannot. No required head-to-head.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q1_purpose" value="personal_portfolio" />
+            <span class="opt-body">
+              <span class="opt-title">Personal portfolio</span>
+              <span class="opt-desc">Keep the repos as “I built this with Grok Build.”</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q1_purpose" value="internal_eval" />
+            <span class="opt-body">
+              <span class="opt-title">Internal eval</span>
+              <span class="opt-desc">Pick a stack. The list is a decision tool, not content.</span>
+            </span>
+          </label>
+        </div>
+        <label class="opt" style="margin-top:8px">
+          <input type="checkbox" name="q1_also_bakeoff_filter" checked />
+          <span class="opt-body">
+            <span class="opt-title">Also use as a bakeoff filter</span>
+            <span class="opt-desc">The coding half of each reel project should still be runnable by Claude/Codex so a comparison is possible later.</span>
+          </span>
+          <span class="rec">Rec</span>
+        </label>
+        <label class="field-label" for="q1_override">Override / notes</label>
+        <textarea class="override" id="q1_override" data-field="q1_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="q2">
+        <div class="q-meta"><span class="q-id">Q2 · Token-heavy</span></div>
+        <h2>What does “token-heavy” mean here?</h2>
+        <p class="why">Wrong definition produces a brownfield archaeology list. That is Claude/Codex home turf.</p>
+        <div class="opts" data-name="q2_token_heavy" data-type="single">
+          <label class="opt">
+            <input type="radio" name="q2_token_heavy" value="context_pressure" />
+            <span class="opt-body">
+              <span class="opt-title">Context pressure</span>
+              <span class="opt-desc">Huge existing codebases the agent must navigate.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q2_token_heavy" value="session_length" />
+            <span class="opt-body">
+              <span class="opt-title">Session length</span>
+              <span class="opt-desc">Greenfield builds that take many hours / hundreds of files.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q2_token_heavy" value="multimodal_spend" />
+            <span class="opt-body">
+              <span class="opt-title">Multimodal spend</span>
+              <span class="opt-desc">Image + video + code in one pipeline.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q2_token_heavy" value="agent_fanout" />
+            <span class="opt-body">
+              <span class="opt-title">Agent fan-out</span>
+              <span class="opt-desc">Rhai workflows spawning dozens of subagents.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q2_token_heavy" value="greenfield_multimodal_fanout" checked />
+            <span class="opt-body">
+              <span class="opt-title">Session + multimodal + fan-out</span>
+              <span class="opt-desc">Ambitious greenfield products. Coordinated artifacts, not other people’s code.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+        </div>
+        <label class="field-label" for="q2_override">Override / notes</label>
+        <textarea class="override" id="q2_override" data-field="q2_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="q3">
+        <div class="q-meta"><span class="q-id">Q3 · Distinctiveness</span></div>
+        <h2>What happens to a project Codex or Claude could also ship?</h2>
+        <p class="why">A compiler, a Linear clone, or “Postgres from scratch” does not distinguish Grok Build.</p>
+        <div class="opts" data-name="q3_distinctiveness" data-type="single">
+          <label class="opt">
+            <input type="radio" name="q3_distinctiveness" value="exclude_pure_coding" />
+            <span class="opt-body">
+              <span class="opt-title">Exclude it</span>
+              <span class="opt-desc">Only projects that require Imagine, video, game-asset consistency, or workflow orchestration.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q3_distinctiveness" value="include_coding_marathons" />
+            <span class="opt-body">
+              <span class="opt-title">Include coding marathons anyway</span>
+              <span class="opt-desc">Prove Grok is not “just the art model.”</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q3_distinctiveness" value="coding_inside_multimodal" checked />
+            <span class="opt-body">
+              <span class="opt-title">Hide the coding flex inside a multimodal product</span>
+              <span class="opt-desc">The game engine is the coding proof; the sprites and cinematics are the Grok proof.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+        </div>
+        <label class="field-label" for="q3_override">Override / notes</label>
+        <textarea class="override" id="q3_override" data-field="q3_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="q4">
+        <div class="q-meta"><span class="q-id">Q4 · Deliverable</span></div>
+        <h2>What should come out of this conversation?</h2>
+        <p class="why">Do not start building until the list is agreed.</p>
+        <div class="opts" data-name="q4_deliverable" data-type="single">
+          <label class="opt">
+            <input type="radio" name="q4_deliverable" value="list_only" />
+            <span class="opt-body">
+              <span class="opt-title">Ranked idea list only</span>
+              <span class="opt-desc">You pick later.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q4_deliverable" value="list_plus_spec" checked />
+            <span class="opt-body">
+              <span class="opt-title">Ranked list + one fully specified first build</span>
+              <span class="opt-desc">Spec the winner tightly. Do not start coding yet.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q4_deliverable" value="list_then_build" />
+            <span class="opt-body">
+              <span class="opt-title">Ranked list, then start building #1 here</span>
+              <span class="opt-desc">Use this workspace immediately after the list.</span>
+            </span>
+          </label>
+        </div>
+        <label class="field-label" for="q4_override">Override / notes</label>
+        <textarea class="override" id="q4_override" data-field="q4_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="q5">
+        <div class="q-meta"><span class="q-id">Q5 · Audience</span></div>
+        <h2>Who has to be impressed?</h2>
+        <p class="why">Engineers shrug at pretty pictures. Twitter shrugs at architecture. A showcase that only hits one side gets cut.</p>
+        <div class="opts" data-name="q5_audience" data-type="single">
+          <label class="opt">
+            <input type="radio" name="q5_audience" value="engineers" />
+            <span class="opt-body">
+              <span class="opt-title">Engineers evaluating coding agents</span>
+              <span class="opt-desc">Need a running app, tests, and a non-toy architecture.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q5_audience" value="twitter" />
+            <span class="opt-body">
+              <span class="opt-title">General X / Twitter</span>
+              <span class="opt-desc">Need a 30-second clip that looks impossible.</span>
+            </span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q5_audience" value="both" checked />
+            <span class="opt-body">
+              <span class="opt-title">Both</span>
+              <span class="opt-desc">Must play (engineer) and look like a trailer (everyone else).</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="q5_audience" value="xai_marketing" />
+            <span class="opt-body">
+              <span class="opt-title">xAI product / marketing</span>
+              <span class="opt-desc">Same as both, plus obviously “Grok Build,” not a generic AI app.</span>
+            </span>
+          </label>
+        </div>
+        <label class="opt" style="margin-top:8px">
+          <input type="checkbox" name="q5_may_go_public" checked />
+          <span class="opt-body">
+            <span class="opt-title">This may go public</span>
+            <span class="opt-desc">Treat xAI-recognizable branding as a requirement if we publish.</span>
+          </span>
+          <span class="rec">Rec if public</span>
+        </label>
+        <label class="field-label" for="q5_override">Override / notes</label>
+        <textarea class="override" id="q5_override" data-field="q5_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="q6">
+        <div class="q-meta"><span class="q-id">Q6 · Domain mix</span></div>
+        <h2>Required slots and hard nos</h2>
+        <p class="why">Check every domain that must appear on the list. Hard nos are separate. Recommended: games, visual sites, film/motion, multi-agent. Hard no on AI-wrapper SaaS.</p>
+        <div class="opts" data-name="q6_domains" data-type="multi">
+          <label class="opt">
+            <input type="checkbox" name="q6_domains" value="games" checked />
+            <span class="opt-body">
+              <span class="opt-title">Games / interactive</span>
+              <span class="opt-desc">Sprites, tiles, animation, playable build.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" name="q6_domains" value="visual_sites" checked />
+            <span class="opt-body">
+              <span class="opt-title">Visual product sites</span>
+              <span class="opt-desc">Brand, generated art, working web app, browser-verified.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" name="q6_domains" value="film_motion" checked />
+            <span class="opt-body">
+              <span class="opt-title">Film / motion pipeline</span>
+              <span class="opt-desc">Storyboard → shots → edit → working player.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" name="q6_domains" value="multi_agent" checked />
+            <span class="opt-body">
+              <span class="opt-title">Multi-agent systems</span>
+              <span class="opt-desc">A workflow that is the product.</span>
+            </span>
+            <span class="rec">Rec</span>
+          </label>
+          <label class="opt">
+            <input type="checkbox" name="q6_domains" value="research_to_artifact" />
+            <span class="opt-body">
+              <span class="opt-title">Research-to-artifact</span>
+              <span class="opt-desc">X/web intake → generated report, site, or video.</span>
+            </span>
+          </label>
+        </div>
+        <label class="opt" style="margin-top:8px">
+          <input type="checkbox" name="q6_hard_no_games" />
+          <span class="opt-body">
+            <span class="opt-title">Hard no: games</span>
+            <span class="opt-desc">Skip the strongest Imagine differentiator.</span>
+          </span>
+        </label>
+        <label class="opt" style="margin-top:8px">
+          <input type="checkbox" name="q6_hard_no_ai_wrapper" checked />
+          <span class="opt-body">
+            <span class="opt-title">Hard no: AI-wrapper SaaS</span>
+            <span class="opt-desc">Chat with a skin is the opposite of distinctive.</span>
+          </span>
+          <span class="rec">Rec</span>
+        </label>
+        <label class="field-label" for="q6_override">Override / notes</label>
+        <textarea class="override" id="q6_override" data-field="q6_override" placeholder="Leave blank if the selection stands."></textarea>
+      </section>
+
+      <section class="q" id="extra">
+        <div class="q-meta"><span class="q-id">Anything else</span></div>
+        <h2>Constraints I did not ask</h2>
+        <p class="why">Time budget, languages, must-include IP, “no Unity,” a required public GitHub, whatever would change the list.</p>
+        <textarea class="notes" id="anything_else" data-field="anything_else" rows="5" placeholder="Optional."></textarea>
+      </section>
+    </main>
+
+    <aside class="brief">
+      <h3>The brief</h3>
+      <p class="hint">Updates as you click. This is what I will treat as settled.</p>
+      <p class="save-state" id="save-state">Not saved yet</p>
+      <pre id="brief-text"></pre>
+    </aside>
+
+    <footer class="note">
+      Open via <code>python3 server.py</code> then <code>http://127.0.0.1:8765/questionnaire.html</code>.
+      Save writes <code>answers.json</code> next to this file. If the server is down, Save downloads the JSON instead — put that file in this folder.
+    </footer>
+  </div>
+
+  <script>
+    const LABELS = {
+      q1_purpose: {
+        public_bakeoff: "Public bakeoff against Claude Code and Codex",
+        capability_reel: "Capability reel of Grok-only surfaces",
+        personal_portfolio: "Personal portfolio of Grok Build builds",
+        internal_eval: "Internal eval / stack decision",
+      },
+      q2_token_heavy: {
+        context_pressure: "Brownfield context pressure",
+        session_length: "Long greenfield sessions",
+        multimodal_spend: "Image + video + code spend",
+        agent_fanout: "Rhai workflow fan-out",
+        greenfield_multimodal_fanout: "Greenfield + multimodal + fan-out",
+      },
+      q3_distinctiveness: {
+        exclude_pure_coding: "Exclude anything Codex/Claude could also ship",
+        include_coding_marathons: "Also include pure coding marathons",
+        coding_inside_multimodal: "Coding proof lives inside multimodal products",
+      },
+      q4_deliverable: {
+        list_only: "Ranked list only",
+        list_plus_spec: "Ranked list + fully specified first build, do not code yet",
+        list_then_build: "Ranked list, then start building #1 in this workspace",
+      },
+      q5_audience: {
+        engineers: "Engineers evaluating coding agents",
+        twitter: "General X / Twitter",
+        both: "Engineers and a 30-second public clip",
+        xai_marketing: "xAI product / marketing",
+      },
+      q6_domains: {
+        games: "Games / interactive",
+        visual_sites: "Visual product sites",
+        film_motion: "Film / motion pipeline",
+        multi_agent: "Multi-agent systems",
+        research_to_artifact: "Research-to-artifact",
+      },
+    };
+
+    const RECOMMENDED = {
+      q1_purpose: "capability_reel",
+      q1_also_bakeoff_filter: true,
+      q2_token_heavy: "greenfield_multimodal_fanout",
+      q3_distinctiveness: "coding_inside_multimodal",
+      q4_deliverable: "list_plus_spec",
+      q5_audience: "both",
+      q5_may_go_public: true,
+      q6_domains: ["games", "visual_sites", "film_motion", "multi_agent"],
+      q6_hard_no_games: false,
+      q6_hard_no_ai_wrapper: true,
+    };
+
+    function readState() {
+      const domains = [...document.querySelectorAll('input[name="q6_domains"]:checked')].map((el) => el.value);
+      return {
+        q1_purpose: valueOf("q1_purpose"),
+        q1_also_bakeoff_filter: checked("q1_also_bakeoff_filter"),
+        q1_override: text("q1_override"),
+        q2_token_heavy: valueOf("q2_token_heavy"),
+        q2_override: text("q2_override"),
+        q3_distinctiveness: valueOf("q3_distinctiveness"),
+        q3_override: text("q3_override"),
+        q4_deliverable: valueOf("q4_deliverable"),
+        q4_override: text("q4_override"),
+        q5_audience: valueOf("q5_audience"),
+        q5_may_go_public: checked("q5_may_go_public"),
+        q5_override: text("q5_override"),
+        q6_domains: domains,
+        q6_hard_no_games: checked("q6_hard_no_games"),
+        q6_hard_no_ai_wrapper: checked("q6_hard_no_ai_wrapper"),
+        q6_override: text("q6_override"),
+        anything_else: text("anything_else"),
+      };
+    }
+
+    function valueOf(name) {
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : "";
+    }
+    function checked(name) {
+      const el = document.querySelector(`input[name="${name}"]`);
+      return !!(el && el.checked);
+    }
+    function text(id) {
+      return (document.getElementById(id).value || "").trim();
+    }
+
+    function applyState(state) {
+      setRadio("q1_purpose", state.q1_purpose);
+      setCheck("q1_also_bakeoff_filter", state.q1_also_bakeoff_filter);
+      setText("q1_override", state.q1_override);
+      setRadio("q2_token_heavy", state.q2_token_heavy);
+      setText("q2_override", state.q2_override);
+      setRadio("q3_distinctiveness", state.q3_distinctiveness);
+      setText("q3_override", state.q3_override);
+      setRadio("q4_deliverable", state.q4_deliverable);
+      setText("q4_override", state.q4_override);
+      setRadio("q5_audience", state.q5_audience);
+      setCheck("q5_may_go_public", state.q5_may_go_public);
+      setText("q5_override", state.q5_override);
+      document.querySelectorAll('input[name="q6_domains"]').forEach((el) => {
+        el.checked = (state.q6_domains || []).includes(el.value);
+      });
+      setCheck("q6_hard_no_games", state.q6_hard_no_games);
+      setCheck("q6_hard_no_ai_wrapper", state.q6_hard_no_ai_wrapper);
+      setText("q6_override", state.q6_override);
+      setText("anything_else", state.anything_else);
+      render();
+    }
+
+    function setRadio(name, value) {
+      const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+      if (el) el.checked = true;
+    }
+    function setCheck(name, on) {
+      const el = document.querySelector(`input[name="${name}"]`);
+      if (el) el.checked = !!on;
+    }
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.value = value || "";
+    }
+
+    function briefFrom(state) {
+      const domains = (state.q6_domains || []).map((d) => LABELS.q6_domains[d] || d);
+      const nos = [];
+      if (state.q6_hard_no_games) nos.push("games");
+      if (state.q6_hard_no_ai_wrapper) nos.push("AI-wrapper SaaS");
+      const lines = [
+        "Q1 purpose: " + (LABELS.q1_purpose[state.q1_purpose] || "(unset)"),
+        "    bakeoff filter: " + (state.q1_also_bakeoff_filter ? "yes" : "no"),
+        note("    note", state.q1_override),
+        "Q2 token-heavy: " + (LABELS.q2_token_heavy[state.q2_token_heavy] || "(unset)"),
+        note("    note", state.q2_override),
+        "Q3 distinctiveness: " + (LABELS.q3_distinctiveness[state.q3_distinctiveness] || "(unset)"),
+        note("    note", state.q3_override),
+        "Q4 deliverable: " + (LABELS.q4_deliverable[state.q4_deliverable] || "(unset)"),
+        note("    note", state.q4_override),
+        "Q5 audience: " + (LABELS.q5_audience[state.q5_audience] || "(unset)"),
+        "    may go public: " + (state.q5_may_go_public ? "yes" : "no"),
+        note("    note", state.q5_override),
+        "Q6 domains: " + (domains.length ? domains.join("; ") : "(none)"),
+        "    hard nos: " + (nos.length ? nos.join("; ") : "none"),
+        note("    note", state.q6_override),
+        note("Anything else", state.anything_else),
+      ].filter(Boolean);
+      return lines.join("\n");
+    }
+
+    function note(label, value) {
+      return value ? label + ": " + value : "";
+    }
+
+    function settledCount(state) {
+      let n = 0;
+      if (state.q1_purpose) n += 1;
+      if (state.q2_token_heavy) n += 1;
+      if (state.q3_distinctiveness) n += 1;
+      if (state.q4_deliverable) n += 1;
+      if (state.q5_audience) n += 1;
+      if ((state.q6_domains && state.q6_domains.length) || state.q6_hard_no_games || state.q6_hard_no_ai_wrapper) n += 1;
+      return n;
+    }
+
+    function payload() {
+      const answers = readState();
+      return {
+        saved_at: new Date().toISOString(),
+        cwd: "grok_build",
+        answers,
+        brief: briefFrom(answers),
+      };
+    }
+
+    function render() {
+      const state = readState();
+      document.getElementById("brief-text").textContent = briefFrom(state);
+      document.getElementById("progress").textContent = settledCount(state) + " / 6 settled";
+      localStorage.setItem("grok-grill-draft", JSON.stringify(state));
+    }
+
+    function setSaveState(msg, cls) {
+      const el = document.getElementById("save-state");
+      el.textContent = msg;
+      el.className = "save-state" + (cls ? " " + cls : "");
+    }
+
+    const SAVE_URLS = ["http://127.0.0.1:8765/save"];
+    const LOAD_URLS = ["answers.json", "http://127.0.0.1:8765/answers.json"];
+
+    async function save() {
+      const data = payload();
+      const body = JSON.stringify(data, null, 2);
+      for (const url of SAVE_URLS) {
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body,
+          });
+          if (res.ok) {
+            setSaveState("Saved to answers.json — tell me to read it", "ok");
+            return;
+          }
+        } catch (err) {
+          /* try next */
+        }
+      }
+      try {
+        if (window.showSaveFilePicker) {
+          const handle = await window.showSaveFilePicker({
+            suggestedName: "answers.json",
+            types: [{ description: "JSON", accept: { "application/json": [".json"] } }],
+          });
+          const writable = await handle.createWritable();
+          await writable.write(body + "\n");
+          await writable.close();
+          setSaveState("Wrote answers.json via file picker — keep it in this folder", "ok");
+          return;
+        }
+      } catch (err) {
+        if (err && err.name === "AbortError") {
+          setSaveState("Save cancelled", "err");
+          return;
+        }
+      }
+      const blob = new Blob([body + "\n"], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "answers.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      setSaveState("Server not reachable. Downloaded answers.json — put it in this folder.", "err");
+    }
+
+    async function loadExisting() {
+      for (const url of LOAD_URLS) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.answers) {
+              applyState(data.answers);
+              setSaveState("Loaded existing answers.json", "ok");
+              return;
+            }
+          }
+        } catch (err) {
+          /* try next */
+        }
+      }
+      const draft = localStorage.getItem("grok-grill-draft");
+      if (draft) {
+        try {
+          applyState(JSON.parse(draft));
+          setSaveState("Loaded local draft (not saved to disk yet)");
+          return;
+        } catch (err) {
+          /* ignore */
+        }
+      }
+      render();
+    }
+
+    document.getElementById("save").addEventListener("click", save);
+    document.getElementById("reset").addEventListener("click", () => {
+      localStorage.removeItem("grok-grill-draft");
+      applyState({
+        ...RECOMMENDED,
+        q1_override: "",
+        q2_override: "",
+        q3_override: "",
+        q4_override: "",
+        q5_override: "",
+        q6_override: "",
+        anything_else: "",
+      });
+      setSaveState("Reset to recommended. Save to write answers.json.");
+    });
+    document.querySelector(".questions").addEventListener("input", render);
+    document.querySelector(".questions").addEventListener("change", render);
+    loadExisting();
+  </script>
+</body>
+</html>

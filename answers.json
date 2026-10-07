@@ -1,0 +1,29 @@
+{
+  "saved_at": "2026-09-07T13:56:49.358Z",
+  "cwd": "grok_build",
+  "answers": {
+    "q1_purpose": "personal_portfolio",
+    "q1_also_bakeoff_filter": true,
+    "q1_override": "",
+    "q2_token_heavy": "session_length",
+    "q2_override": "",
+    "q3_distinctiveness": "exclude_pure_coding",
+    "q3_override": "",
+    "q4_deliverable": "list_plus_spec",
+    "q4_override": "",
+    "q5_audience": "both",
+    "q5_may_go_public": true,
+    "q5_override": "",
+    "q6_domains": [
+      "games",
+      "visual_sites",
+      "film_motion",
+      "multi_agent"
+    ],
+    "q6_hard_no_games": false,
+    "q6_hard_no_ai_wrapper": true,
+    "q6_override": "",
+    "anything_else": "all files and folders must be created in the local grok_build folder. \nmultiple sub-folders in grok_build for multiple sub-projects.\neventually will be committed and pushed to github for all to see.\nscrub all personal info and secrets."
+  },
+  "brief": "Q1 purpose: Personal portfolio of Grok Build builds\n    bakeoff filter: yes\nQ2 token-heavy: Long greenfield sessions\nQ3 distinctiveness: Exclude anything Codex/Claude could also ship\nQ4 deliverable: Ranked list + fully specified first build, do not code yet\nQ5 audience: Engineers and a 30-second public clip\n    may go public: yes\nQ6 domains: Games / interactive; Visual product sites; Film / motion pipeline; Multi-agent systems\n    hard nos: AI-wrapper SaaS\nAnything else: all files and folders must be created in the local grok_build folder. \nmultiple sub-folders in grok_build for multiple sub-projects.\neventually will be committed and pushed to github for all to see.\nscrub all personal info and secrets."
+}
