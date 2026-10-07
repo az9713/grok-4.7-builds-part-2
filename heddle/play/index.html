@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Heddle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Heddle · four shafts</p>
+    <h1>Weave the twill ticket.</h1>
+    <p class="lead">Eight warp ends are threaded 1, 2, 3, 4, and then again. A treadle lifts the shafts tied to it. Where a warp stays down, the weft shows. The ticket is eight picks of 2/2 twill.</p>
+  </header>
+  <div class="layout">
+    <div>
+      <p class="label">Tie-up. Rows are shafts 1 to 4. Columns are treadles 1 to 4.</p>
+      <div id="tie" class="tie"></div>
+      <p class="label">Throw a pick</p>
+      <div class="actions">
+        <button type="button" data-treadle="0">Treadle 1</button>
+        <button type="button" data-treadle="1">Treadle 2</button>
+        <button type="button" data-treadle="2">Treadle 3</button>
+        <button type="button" data-treadle="3">Treadle 4</button>
+        <button id="unweave" type="button">Unweave</button>
+      </div>
+    </div>
+    <div>
+      <p class="label">Cloth. First pick at the top. Warp is sand. Weft is madder.</p>
+      <canvas id="cloth" width="360" height="360" aria-label="Woven cloth, eight ends by up to eight picks"></canvas>
+    </div>
+  </div>
+  <p id="status" role="status">Tie the shafts, then throw eight picks.</p>
+  <h2>Rules</h2>
+  <ol>
+    <li>Warp end n is on shaft n, counting 1 to 4 and then repeating. Ends 1 and 5 are on shaft 1.</li>
+    <li>A dark tie-up cell means that shaft rises for that treadle. Click a cell to change it.</li>
+    <li>A risen warp covers the weft. A warp that stays down shows the weft.</li>
+    <li>The cloth holds 8 picks. A ninth throw is refused.</li>
+    <li>Unweave removes the latest pick. The tie-up stays.</li>
+    <li>The ticket is a 2/2 twill. Treadle 1 lifts shafts 1 and 2. Treadle 2 lifts 2 and 3. Treadle 3 lifts 3 and 4. Treadle 4 lifts 4 and 1.</li>
+    <li>Throw treadles 1, 2, 3, 4, and then the same four again. The line says <code>The cloth matches the ticket.</code></li>
+    <li>Eight picks in any other tie-up or order say <code>The cloth does not match the ticket.</code></li>
+  </ol>
+  <script src="app.js"></script>
+</body>
+</html>

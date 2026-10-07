@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Snell</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Snell · tank bench</p>
+    <h1>Bend the ray onto the bell.</h1>
+    <p class="lead">A ray climbs through liquid and meets air at one mark. The air bends the ray away from the normal. Past the critical angle, the ray reflects and never leaves the liquid.</p>
+  </header>
+  <div class="layout">
+    <canvas id="tank" width="720" height="640" aria-label="Tank. Water below, air above, bell in the air."></canvas>
+    <section>
+      <label>Incidence, degrees from the normal
+        <input id="angle" type="range" min="0" max="70" value="0" step="1">
+        <span id="angle-val">0°</span>
+      </label>
+      <label>Index of the liquid
+        <input id="index" type="range" min="1.1" max="1.8" value="1.33" step="0.01">
+        <span id="index-val">1.33</span>
+      </label>
+      <dl>
+        <div><dt>Critical angle</dt><dd id="critical">48.8°</dd></div>
+        <div><dt>Air angle</dt><dd id="air">0.0°</dd></div>
+        <div><dt>Miss</dt><dd id="miss">0.42</dd></div>
+      </dl>
+      <p id="status" role="status">Aim the ray. The bell sits 0.42 tank-units to the right of the mark, 0.85 above the surface.</p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Air has index 1. The liquid index starts at 1.33 and runs from 1.10 to 1.80.</li>
+        <li>The ray meets the surface at one fixed mark. Incidence is the angle from the normal, the upright line.</li>
+        <li>In the air, sin of the exit angle equals the liquid index times sin of the incidence angle.</li>
+        <li>When that product is above 1, the ray reflects. The line says <code>The ray reflects. The angle is past the critical angle.</code></li>
+        <li>The bell is at x 0.42 and height 0.85. You win when the exit ray passes within 0.03 of that x. The line says <code>The ray meets the bell.</code></li>
+        <li>One pair that wins: index 1.33 and incidence 19°.</li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

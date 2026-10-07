@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Twenty-two browser builds. Seven of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or an instrument.</p>
+  <p class="meta">Twenty-six browser builds. Ten of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or an instrument.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -350,6 +350,68 @@
       <li>Each slider sets that partial’s height, from 0 to 1. The fundamental starts at 220 Hz and runs from 110 Hz to 440 Hz.</li>
       <li>Press Sound the partials. Drag the string to write a loudness curve. The curve loops every 2 seconds.</li>
       <li>Press Flat bow. The curve returns to 0.70. Press Silence. The loudness falls to 0. The drawing remains.</li>
+    </ol>
+  </article>
+
+  <article id="snell">
+    <p class="kind">Game</p>
+    <h2>23 Snell</h2>
+    <p class="open"><a href="snell/play/">Open Snell</a></p>
+    <h3>What it is</h3>
+    <p>A ray climbs through liquid and crosses into air at one mark. You choose the incidence angle and the liquid index. A bell hangs in the air.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Air has index 1. The liquid starts at 1.33.</li>
+      <li>sin of the air angle equals the liquid index times sin of the incidence angle.</li>
+      <li>When that product is above 1, the ray reflects. The line says <code>The ray reflects. The angle is past the critical angle.</code></li>
+      <li>The bell is at x 0.42 and height 0.85. The exit ray must pass within 0.03 of that x.</li>
+      <li>The win line is <code>The ray meets the bell.</code> Index 1.33 at 19° wins.</li>
+    </ol>
+  </article>
+
+  <article id="traverse">
+    <p class="kind">Game</p>
+    <h2>24 Traverse</h2>
+    <p class="open"><a href="traverse/play/">Open Traverse</a></p>
+    <h3>What it is</h3>
+    <p>You lay a survey chain from a peg to a mark. The mark is 5 east and 3 north. A pond blocks the straight east line. Bearings run clockwise from north.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>North is 0°. East is 90°. Each leg uses a whole bearing and a whole distance from 1 to 8.</li>
+      <li>The chain holds 4 legs.</li>
+      <li>The pond is centered 2.5 east of the peg. The radius is 0.9. A leg that meets the pond blocks a win. The line says <code>The chain meets the pond.</code></li>
+      <li>You win when the free end is within 0.45 of the mark. The line says <code>The chain closes on the mark.</code></li>
+      <li>North 3, then east 5, wins.</li>
+    </ol>
+  </article>
+
+  <article id="heddle">
+    <p class="kind">Game</p>
+    <h2>25 Heddle</h2>
+    <p class="open"><a href="heddle/play/">Open Heddle</a></p>
+    <h3>What it is</h3>
+    <p>A four-shaft loom with eight warp ends, threaded 1, 2, 3, 4, and then again. You tie shafts to treadles and throw eight picks. Risen warp covers the weft.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The ticket is a 2/2 twill. Treadle 1 lifts shafts 1 and 2. Treadle 2 lifts 2 and 3. Treadle 3 lifts 3 and 4. Treadle 4 lifts 4 and 1.</li>
+      <li>Throw treadles 1, 2, 3, 4, and then the same four again.</li>
+      <li>The cloth holds 8 picks. Unweave removes the latest pick.</li>
+      <li>The win line is <code>The cloth matches the ticket.</code></li>
+    </ol>
+  </article>
+
+  <article id="hour-angle">
+    <p class="kind">Instrument</p>
+    <h2>26 Hour Angle</h2>
+    <p class="open"><a href="hour-angle/play/">Open Hour Angle</a></p>
+    <h3>What it is</h3>
+    <p>A courtyard dial. You set latitude, day, and solar hour. The shadow length is in gnomon heights. The dial has no score and no winner.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Declination uses Cooper's formula: 23.44° times sin of 360° times (284 + day) / 365.</li>
+      <li>Azimuth is degrees from south toward west. A negative azimuth is east of south.</li>
+      <li>At latitude 51.5°, day 81, and hour 12, altitude is 38.5°.</li>
+      <li>When altitude is at or below 0°, the line says <code>The sun is below the horizon.</code></li>
     </ol>
   </article>
 </body>

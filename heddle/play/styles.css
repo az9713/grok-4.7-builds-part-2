@@ -1,0 +1,53 @@
+:root {
+  --bg: #1a1614;
+  --ink: #f0e6d6;
+  --dim: #a89888;
+  --warp: #cbb892;
+  --weft: #6e2f3c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font: 17px/1.45 Georgia, "Palatino Linotype", serif;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 16px 64px;
+}
+.kicker, .label, h2 {
+  font: 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+h1 { font-weight: 500; font-size: 40px; line-height: 1.05; margin: 8px 0; }
+h2 { color: var(--warp); }
+.lead { max-width: 42em; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.tie { display: grid; grid-template-columns: repeat(4, 52px); gap: 6px; margin-bottom: 14px; }
+.tie button {
+  width: 52px;
+  height: 52px;
+  background: #2a2420;
+  border: 1px solid #5c5148;
+  cursor: pointer;
+}
+.tie button[aria-pressed="true"] { background: var(--warp); border-color: var(--warp); }
+.tie button:focus-visible, .actions button:focus-visible { outline: 2px solid var(--warp); outline-offset: 2px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button {
+  font: 15px/1 Georgia, serif;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--dim);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+canvas { width: min(100%, 360px); height: auto; background: #100e0c; border: 1px solid #3a322c; }
+#status { min-height: 3em; }
+ol { padding-left: 1.2em; }
+li { margin: 0 0 8px; }
+code { font-family: Consolas, monospace; font-size: 0.92em; }
+@media (max-width: 720px) {
+  .layout { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+}

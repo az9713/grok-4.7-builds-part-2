@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Hour Angle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Hour Angle · courtyard dial</p>
+    <h1>Read the shadow.</h1>
+    <p class="lead">One gnomon stands in a court. You set the latitude, the day, and the solar hour. Declination uses Cooper's formula. The page states that formula, so the altitude can miss an almanac by about one degree.</p>
+  </header>
+  <div class="layout">
+    <canvas id="court" width="640" height="640" aria-label="Courtyard. North is up. The shadow leaves the gnomon."></canvas>
+    <section>
+      <label>Latitude, degrees. South is negative.
+        <input id="lat" type="range" min="-66" max="66" value="51.5" step="0.5">
+        <span id="lat-val">51.5°</span>
+      </label>
+      <label>Day of the year
+        <input id="day" type="range" min="1" max="365" value="81" step="1">
+        <span id="day-val">81</span>
+      </label>
+      <label>Solar hour
+        <input id="hour" type="range" min="0" max="24" value="12" step="0.5">
+        <span id="hour-val">12.0</span>
+      </label>
+      <dl>
+        <div><dt>Declination</dt><dd id="decl">0.0°</dd></div>
+        <div><dt>Altitude</dt><dd id="alt">38.5°</dd></div>
+        <div><dt>Azimuth from south</dt><dd id="az">0.0°</dd></div>
+        <div><dt>Shadow</dt><dd id="shadow">1.26</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>What the dial uses</h2>
+      <ol>
+        <li>Declination is 23.44° times sin of 360° times (284 + day) / 365. That is Cooper's formula.</li>
+        <li>Hour angle is 15° times (hour − 12). Noon is 0°.</li>
+        <li>sin of altitude is sin(latitude) sin(declination) + cos(latitude) cos(declination) cos(hour angle).</li>
+        <li>Azimuth is atan2 of sin(hour angle), and cos(hour angle) sin(latitude) − tan(declination) cos(latitude). Positive azimuth is west of south. Negative azimuth is east of south.</li>
+        <li>Shadow length is 1 / tan(altitude), in gnomon heights. The gnomon height is 1.</li>
+        <li>At latitude 51.5°, day 81, hour 12, declination is 0° and altitude is 38.5°. That noon altitude is 90° minus the latitude.</li>
+        <li>Altitude at or below 0° means the sun is down. The line says <code>The sun is below the horizon.</code> This dial has no score.</li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

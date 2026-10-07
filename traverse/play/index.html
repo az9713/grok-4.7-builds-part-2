@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Traverse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Traverse · field book</p>
+    <h1>Chain around the pond.</h1>
+    <p class="lead">You start at the peg. The mark is 5 units east and 3 units north. A round pond sits on the east line. Bearings run clockwise from north. You may lay 4 legs.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plot" width="680" height="520" aria-label="Field plot. North is up."></canvas>
+    <section>
+      <label>Bearing, degrees clockwise from north
+        <input id="bearing" type="number" min="0" max="359" value="0" step="1">
+      </label>
+      <label>Distance, units
+        <input id="distance" type="number" min="1" max="8" value="3" step="1">
+      </label>
+      <div class="actions">
+        <button id="add" type="button">Add leg</button>
+        <button id="undo" type="button">Remove last leg</button>
+        <button id="clear" type="button">Clear the chain</button>
+      </div>
+      <p id="legs">No legs yet.</p>
+      <p id="status" role="status">The mark is open. The pond blocks a straight east chain.</p>
+      <h2>Rules</h2>
+      <ol>
+        <li>North is 0°. East is 90°. South is 180°. West is 270°.</li>
+        <li>Each leg has a whole-degree bearing and a whole distance from 1 to 8.</li>
+        <li>The chain holds 4 legs. A fifth leg is refused.</li>
+        <li>The pond center is 2.5 east of the peg, on the east-west line. The radius is 0.9.</li>
+        <li>A leg that meets the pond is kept, and the chain cannot win while that leg remains. The line says <code>The chain meets the pond.</code></li>
+        <li>You win when the free end is within 0.45 of the mark and no leg meets the pond. The line says <code>The chain closes on the mark.</code></li>
+        <li>One chain that wins: north 3, then east 5.</li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Twenty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. The license is MIT.
+Twenty-six browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all twenty-two pages. The seven games have their rules on that page.
+[What each build is](builds.html) explains all twenty-six pages. The ten games have their rules on that page.
 
 ## Open locally
 
@@ -50,6 +50,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 20 | [spillway/play/](https://az9713.github.io/grok-4.7-builds-part-2/spillway/play/) | Roof-flow puzzle. Keep the archive dry |
 | 21 | [sort-case/play/](https://az9713.github.io/grok-4.7-builds-part-2/sort-case/play/) | Letterpress ticket. Mirrored metal, right-reading proof |
 | 22 | [partial/play/](https://az9713.github.io/grok-4.7-builds-part-2/partial/play/) | Four-sine instrument and a bowed loudness curve |
+| 23 | [snell/play/](https://az9713.github.io/grok-4.7-builds-part-2/snell/play/) | Refraction bench. Bend one ray onto a bell |
+| 24 | [traverse/play/](https://az9713.github.io/grok-4.7-builds-part-2/traverse/play/) | Survey chain around a pond |
+| 25 | [heddle/play/](https://az9713.github.io/grok-4.7-builds-part-2/heddle/play/) | Four-shaft loom. Weave a 2/2 twill |
+| 26 | [hour-angle/play/](https://az9713.github.io/grok-4.7-builds-part-2/hour-angle/play/) | Courtyard dial from latitude, day, and hour |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 
