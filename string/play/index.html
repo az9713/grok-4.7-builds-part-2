@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>String</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">String · fixed at both ends</p>
+    <h1>Put a node on the chalk mark.</h1>
+    <p class="lead">The string is 1.20 m long. The wave speed is 240 m/s. You choose the harmonic. The chalk mark is 0.40 m from the left end.</p>
+  </header>
+  <div class="layout">
+    <canvas id="wire" width="720" height="360" aria-label="A standing wave on a string with a chalk mark."></canvas>
+    <section>
+      <label>Harmonic
+        <input id="n" type="range" min="1" max="5" step="1" value="1">
+      </label>
+      <dl>
+        <div><dt>Harmonic</dt><dd id="n-val">1</dd></div>
+        <div><dt>Frequency</dt><dd id="freq">100 Hz</dd></div>
+        <div><dt>Nearest node</dt><dd id="near">0.40 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Both ends are nodes. Harmonic n adds n − 1 nodes in between, spaced by 1.20 / n metres.</li>
+        <li>Frequency is n × 240 / 2.40, which is n × 100 Hz.</li>
+        <li>The chalk mark is at 0.40 m. A node on the mark means the nearest node is 0.02 m away or closer.</li>
+        <li>Harmonic 3 is the hit from 1 to 5. The frequency is 300 Hz. The line says <code>A node sits on the mark.</code></li>
+        <li>Any other harmonic in that range says <code>The mark is not a node.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

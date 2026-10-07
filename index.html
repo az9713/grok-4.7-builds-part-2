@@ -58,7 +58,7 @@
 </head>
 <body>
   <h1>Grok Build demos</h1>
-  <p class="meta">Thirty completed browser demos. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the twelve games.</p>
+  <p class="meta">Thirty-four completed browser demos. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the sixteen games.</p>
 
   <h2 class="round">Round 1</h2>
   <div class="grid">
@@ -298,6 +298,52 @@
         <line x1="120" y1="30" x2="120" y2="150" stroke="#8fb089" stroke-dasharray="4 4"/>
       </svg>
       <div class="copy"><span class="num">30</span><h2>Settle</h2><p>A 10 volt step charges one capacitor through one resistor. The mark is 6.32 volts at 1 second.</p><p><span class="do">Do this.</span> Choose 10 kΩ and 100 µF. That pair is the 1 second time constant. Any other pair in the bin misses the mark.</p></div>
+    </a>
+  </div>
+
+  <h2 class="round">Round 6</h2>
+  <div class="grid">
+    <a class="card" href="malus/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Two polarizer discs and a beam">
+        <rect width="320" height="180" fill="#121418"/>
+        <rect x="40" y="82" width="240" height="16" fill="#f2d48a" opacity="0.45"/>
+        <circle cx="110" cy="90" r="28" fill="none" stroke="#c8b48a" stroke-width="3"/>
+        <line x1="110" y1="66" x2="110" y2="114" stroke="#c8b48a" stroke-width="2"/>
+        <circle cx="210" cy="90" r="28" fill="none" stroke="#c8b48a" stroke-width="3"/>
+        <line x1="194" y1="74" x2="226" y2="106" stroke="#c8b48a" stroke-width="2"/>
+      </svg>
+      <div class="copy"><span class="num">31</span><h2>Malus</h2><p>Polarized light meets one analyzer. Intensity is the square of the cosine of the angle.</p><p><span class="do">Do this.</span> Set the analyzer to 60 degrees. Intensity reads 0.25. Any other whole angle from 0 to 90 misses that mark.</p></div>
+    </a>
+    <a class="card" href="doppler/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A source moving toward a listener">
+        <rect width="320" height="180" fill="#14181c"/>
+        <path d="M120 90 A 18 18 0 0 1 120 90" fill="none"/>
+        <path d="M150 40 A 40 50 0 0 1 150 140" fill="none" stroke="#7eb6c9" stroke-width="2"/>
+        <path d="M168 28 A 58 62 0 0 1 168 152" fill="none" stroke="#7eb6c9" stroke-width="2"/>
+        <circle cx="120" cy="90" r="8" fill="#e07a4a"/>
+        <rect x="230" y="70" width="6" height="36" fill="#e4e8ea"/>
+      </svg>
+      <div class="copy"><span class="num">32</span><h2>Doppler</h2><p>A 500 Hz source moves toward a still listener. Sound speed is 340 m/s.</p><p><span class="do">Do this.</span> Set the source speed to 20 m/s. The heard pitch is 531.25 Hz. Speeds from 0 to 80 have one hit.</p></div>
+    </a>
+    <a class="card" href="bridge/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A Wheatstone bridge and a meter needle">
+        <rect width="320" height="180" fill="#1c1814"/>
+        <polygon points="160,30 70,90 160,150 250,90" fill="none" stroke="#c4845c" stroke-width="3"/>
+        <line x1="70" y1="90" x2="250" y2="90" stroke="#efe6d0"/>
+        <path d="M160 150 A 40 40 0 0 1 200 170" fill="none" stroke="#efe6d0" stroke-width="2"/>
+      </svg>
+      <div class="copy"><span class="num">33</span><h2>Bridge</h2><p>A Wheatstone bridge has three fixed arms. You choose the fourth resistor. The needle is the galvanometer.</p><p><span class="do">Do this.</span> Choose 300 Ω. The galvanometer reads 0.000 V. The other four values in the bin leave the needle off null.</p></div>
+    </a>
+    <a class="card" href="string/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="A standing wave and a chalk mark">
+        <rect width="320" height="180" fill="#16140f"/>
+        <path d="M30 100 C 70 40, 110 160, 150 100 C 190 40, 230 160, 270 100" fill="none" stroke="#e2c27a" stroke-width="3"/>
+        <line x1="110" y1="36" x2="110" y2="150" stroke="#d4533a" stroke-width="2"/>
+        <circle cx="30" cy="100" r="4" fill="#e2c27a"/>
+        <circle cx="150" cy="100" r="4" fill="#e2c27a"/>
+        <circle cx="270" cy="100" r="4" fill="#e2c27a"/>
+      </svg>
+      <div class="copy"><span class="num">34</span><h2>String</h2><p>A string fixed at both ends holds a standing wave. The chalk mark is 0.40 m along a 1.20 m string.</p><p><span class="do">Do this.</span> Set harmonic 3. The frequency is 300 Hz and a node sits on the mark. Harmonics 1, 2, 4, and 5 miss it.</p></div>
     </a>
   </div>
 </body>

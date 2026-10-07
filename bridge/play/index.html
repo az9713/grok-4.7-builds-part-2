@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Bridge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Bridge · Wheatstone null</p>
+    <h1>Bring the needle to zero.</h1>
+    <p class="lead">Three arms are fixed. You choose the fourth from a bin. The galvanometer sits between the two midpoints. A null means the two dividers agree.</p>
+  </header>
+  <div class="layout">
+    <canvas id="meter" width="640" height="520" aria-label="Wheatstone bridge and a galvanometer needle."></canvas>
+    <section>
+      <p class="label">Unknown arm X</p>
+      <div class="picks" id="bin">
+        <button type="button" data-x="100" aria-pressed="true">100 Ω</button>
+        <button type="button" data-x="150" aria-pressed="false">150 Ω</button>
+        <button type="button" data-x="220" aria-pressed="false">220 Ω</button>
+        <button type="button" data-x="300" aria-pressed="false">300 Ω</button>
+        <button type="button" data-x="470" aria-pressed="false">470 Ω</button>
+      </div>
+      <dl>
+        <div><dt>X</dt><dd id="x-val">100 Ω</dd></div>
+        <div><dt>Galvanometer</dt><dd id="deflection">0.533 V</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The battery is 2 V. P is 100 Ω. Q is 200 Ω. R is 150 Ω.</li>
+        <li>P and R form the left divider. Q and X form the right divider. R and X are the bottom arms.</li>
+        <li>Galvanometer voltage is 2 × (R / (P + R) − X / (Q + X)).</li>
+        <li>Null is X = 300 Ω. A hit is within 0.001 V of 0.</li>
+        <li>300 Ω says <code>The galvanometer is at null.</code> Every other value in the bin says <code>The galvanometer is off null.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

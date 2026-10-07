@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Doppler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Doppler · source toward the listener</p>
+    <h1>Put the pitch on 531.25 Hz.</h1>
+    <p class="lead">The source emits 500 Hz and moves toward a listener who stands still. Sound travels at 340 m/s. Crests pack up in front of the source.</p>
+  </header>
+  <div class="layout">
+    <canvas id="street" width="680" height="420" aria-label="A moving source, a still listener, and wave crests."></canvas>
+    <section>
+      <label>Source speed, m/s toward the listener
+        <input id="speed" type="range" min="0" max="80" step="1" value="0">
+      </label>
+      <dl>
+        <div><dt>Speed</dt><dd id="speed-val">0 m/s</dd></div>
+        <div><dt>Heard pitch</dt><dd id="pitch">500.00 Hz</dd></div>
+        <div><dt>Gap ahead</dt><dd id="ahead">0.68 m</dd></div>
+        <div><dt>Gap behind</dt><dd id="behind">0.68 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The listener does not move. The source moves toward the listener.</li>
+        <li>Heard pitch is 500 × 340 / (340 − speed). Speed is a whole number from 0 to 80.</li>
+        <li>The crest gap ahead is (340 − speed) / 500 metres. The crest gap behind is (340 + speed) / 500 metres.</li>
+        <li>The mark is 531.25 Hz. A hit is within 0.5 Hz.</li>
+        <li>20 m/s is the hit. The line says <code>The pitch meets the mark.</code></li>
+        <li>Any other speed says <code>The pitch misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

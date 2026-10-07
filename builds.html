@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Thirty browser builds. Twelve of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Thirty-four browser builds. Sixteen of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -473,6 +473,67 @@
       <li>The mark is 6.32 V at 1 second. A hit is within 0.05 V.</li>
       <li>10 kΩ and 100 µF are the winning pair. The line says <code>The node is at the mark.</code></li>
       <li>Any other pair says <code>The node misses the mark.</code></li>
+    </ol>
+  </article>
+
+  <article id="malus">
+    <p class="kind">Game</p>
+    <h2>31 Malus</h2>
+    <p class="open"><a href="malus/play/">Open Malus</a></p>
+    <h3>What it is</h3>
+    <p>Polarized light passes one analyzer. You set the angle between the analyzer and the polarization axis. A meter shows the intensity.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Intensity is cos² of the angle. Angle 0 gives 1. Angle 90 gives 0.</li>
+      <li>The mark is 0.25. A hit is within 0.01.</li>
+      <li>60° is the only whole angle from 0 to 90 that hits. The line says <code>The analyzer hits the mark.</code></li>
+      <li>Any other angle says <code>The beam misses the mark.</code></li>
+    </ol>
+  </article>
+
+  <article id="doppler">
+    <p class="kind">Game</p>
+    <h2>32 Doppler</h2>
+    <p class="open"><a href="doppler/play/">Open Doppler</a></p>
+    <h3>What it is</h3>
+    <p>A sound source moves toward a listener who stands still. Crests in front of the source sit closer together than crests behind it.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The source emits 500 Hz. Sound speed is 340 m/s. The listener's speed is 0.</li>
+      <li>Heard pitch is 500 × 340 / (340 − speed). Speed runs from 0 to 80 m/s in whole steps.</li>
+      <li>At 20 m/s the crest gap is 0.64 m ahead of the source and 0.72 m behind it.</li>
+      <li>The mark is 531.25 Hz. A hit is within 0.5 Hz.</li>
+      <li>20 m/s is the only hit. The line says <code>The pitch meets the mark.</code></li>
+    </ol>
+  </article>
+
+  <article id="bridge">
+    <p class="kind">Game</p>
+    <h2>33 Bridge</h2>
+    <p class="open"><a href="bridge/play/">Open Bridge</a></p>
+    <h3>What it is</h3>
+    <p>A Wheatstone bridge. P, Q, and R are fixed. You choose X from five resistors. The needle is the voltage between the two midpoints.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The battery is 2 V. P is 100 Ω. Q is 200 Ω. R is 150 Ω. R and X are the bottom arms.</li>
+      <li>Galvanometer voltage is 2 × (R / (P + R) − X / (Q + X)).</li>
+      <li>Null is 300 Ω. A hit is within 0.001 V of zero.</li>
+      <li>300 Ω says <code>The galvanometer is at null.</code> The other four values say <code>The galvanometer is off null.</code></li>
+    </ol>
+  </article>
+
+  <article id="string">
+    <p class="kind">Game</p>
+    <h2>34 String</h2>
+    <p class="open"><a href="string/play/">Open String</a></p>
+    <h3>What it is</h3>
+    <p>A string fixed at both ends. You choose a harmonic. A chalk mark waits at 0.40 m.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Length is 1.20 m. Wave speed is 240 m/s. Frequency is n × 100 Hz.</li>
+      <li>Nodes are spaced by 1.20 / n metres. The two ends are nodes.</li>
+      <li>A node is on the mark when the nearest node is 0.02 m away or closer.</li>
+      <li>Harmonic 3 is the hit. The line says <code>A node sits on the mark.</code> Harmonics 1, 2, 4, and 5 miss.</li>
     </ol>
   </article>
 </body>

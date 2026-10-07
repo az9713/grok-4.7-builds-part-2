@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Malus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Malus · one analyzer</p>
+    <h1>Set the beam to one quarter.</h1>
+    <p class="lead">The light is already polarized. The analyzer turns from that axis. Intensity is the square of the cosine of the angle. The mark is 0.25.</p>
+  </header>
+  <div class="layout">
+    <canvas id="bench" width="640" height="420" aria-label="Two polarizers and a beam whose brightness follows the angle."></canvas>
+    <section>
+      <label>Analyzer angle, degrees
+        <input id="angle" type="range" min="0" max="90" step="1" value="0">
+      </label>
+      <dl>
+        <div><dt>Angle</dt><dd id="angle-val">0°</dd></div>
+        <div><dt>Intensity</dt><dd id="beam">1.00</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Angle 0 leaves the analyzer on the polarization axis. Intensity is 1.</li>
+        <li>Intensity is cos² of the angle. Angle 90 gives intensity 0.</li>
+        <li>The mark is 0.25. A hit is within 0.01.</li>
+        <li>60° is the hit. The line says <code>The analyzer hits the mark.</code></li>
+        <li>Any other whole angle says <code>The beam misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

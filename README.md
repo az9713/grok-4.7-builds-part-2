@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Thirty browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. The license is MIT.
+Thirty-four browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all thirty pages. The twelve games have their rules on that page.
+[What each build is](builds.html) explains all thirty-four pages. The sixteen games have their rules on that page.
 
 ## Open locally
 
@@ -58,6 +58,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 28 | [pendulum/play/](https://az9713.github.io/grok-4.7-builds-part-2/pendulum/play/) | Double pendulum. RK4 and a live energy number |
 | 29 | [chroma/play/](https://az9713.github.io/grok-4.7-builds-part-2/chroma/play/) | CIE 1931 wavelength as a clipped sRGB patch |
 | 30 | [settle/play/](https://az9713.github.io/grok-4.7-builds-part-2/settle/play/) | RC step. Hit 6.32 V at one second |
+| 31 | [malus/play/](https://az9713.github.io/grok-4.7-builds-part-2/malus/play/) | Analyzer angle. Intensity is cos squared |
+| 32 | [doppler/play/](https://az9713.github.io/grok-4.7-builds-part-2/doppler/play/) | Moving 500 Hz source. Hit 531.25 Hz |
+| 33 | [bridge/play/](https://az9713.github.io/grok-4.7-builds-part-2/bridge/play/) | Wheatstone bridge. Null the galvanometer |
+| 34 | [string/play/](https://az9713.github.io/grok-4.7-builds-part-2/string/play/) | Standing wave. Put a node on the chalk mark |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 
