@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Flow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Flow · one tube</p>
+    <h1>Set the flow to 81.</h1>
+    <p class="lead">Flow follows the fourth power of the radius. You choose the radius. The other factors stay fixed.</p>
+  </header>
+  <div class="layout">
+    <canvas id="tube" width="720" height="360" aria-label="A tube and a flow column."></canvas>
+    <section>
+      <p class="label">Radius</p>
+      <div class="picks" id="bin">
+        <button type="button" data-r="1" aria-pressed="true">1 mm</button>
+        <button type="button" data-r="2" aria-pressed="false">2 mm</button>
+        <button type="button" data-r="3" aria-pressed="false">3 mm</button>
+        <button type="button" data-r="4" aria-pressed="false">4 mm</button>
+        <button type="button" data-r="5" aria-pressed="false">5 mm</button>
+      </div>
+      <dl>
+        <div><dt>Radius</dt><dd id="r-val">1 mm</dd></div>
+        <div><dt>Flow</dt><dd id="q-val">1</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Relative flow is radius × radius × radius × radius. Radius is in millimetres.</li>
+        <li>The mark is 81. A hit is within 1.</li>
+        <li>3 mm is the hit. The line says <code>The flow meets the mark.</code></li>
+        <li>1 mm reads 1. 2 mm reads 16. 4 mm reads 256. 5 mm reads 625.</li>
+        <li>Those four miss. The line says <code>The flow misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Watt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Watt · one load</p>
+    <h1>Set the power to 90 W.</h1>
+    <p class="lead">The load is 10 ohm. You choose the current. Power is current squared times 10.</p>
+  </header>
+  <div class="layout">
+    <canvas id="load" width="680" height="420" aria-label="A lamp and a power column."></canvas>
+    <section>
+      <p class="label">Current</p>
+      <div class="picks" id="bin">
+        <button type="button" data-i="1" aria-pressed="true">1 A</button>
+        <button type="button" data-i="2" aria-pressed="false">2 A</button>
+        <button type="button" data-i="3" aria-pressed="false">3 A</button>
+        <button type="button" data-i="4" aria-pressed="false">4 A</button>
+        <button type="button" data-i="5" aria-pressed="false">5 A</button>
+      </div>
+      <dl>
+        <div><dt>Current</dt><dd id="i-val">1 A</dd></div>
+        <div><dt>Power</dt><dd id="p-val">10 W</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The load is 10 ohm.</li>
+        <li>Power is current × current × 10 watts.</li>
+        <li>The mark is 90 W. A hit is within 1 W.</li>
+        <li>3 A is the hit. The line says <code>The power meets the mark.</code></li>
+        <li>1 A reads 10 W. 2 A reads 40 W. 4 A reads 160 W. 5 A reads 250 W.</li>
+        <li>Those four miss. The line says <code>The power misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Sixty-two browser builds. Forty-four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Sixty-six browser builds. Forty-eight of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -962,6 +962,66 @@
       <li>The mark is 700 km/s. A hit is within 1 km/s.</li>
       <li>10 Mpc says <code>The speed meets the mark.</code> The readout is 700 km/s.</li>
       <li>5 Mpc reads 350 km/s. 8 Mpc reads 560 km/s. 14 Mpc reads 980 km/s. 20 Mpc reads 1400 km/s. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="bel">
+    <p class="kind">Game</p>
+    <h2>63 Bel</h2>
+    <p class="open"><a href="bel/play/">Open Bel</a></p>
+    <h3>What it is</h3>
+    <p>A power ratio on a decibel scale. You set the ratio. The page fills a level column.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The level is 10 × log10(ratio) decibels.</li>
+      <li>The mark is 30 dB. A hit is within 1 dB.</li>
+      <li>x1000 says <code>The level meets the mark.</code> The readout is 30 dB.</li>
+      <li>x10 reads 10 dB. x100 reads 20 dB. x10000 reads 40 dB. x100000 reads 50 dB. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="turns">
+    <p class="kind">Game</p>
+    <h2>64 Turns</h2>
+    <p class="open"><a href="turns/play/">Open Turns</a></p>
+    <h3>What it is</h3>
+    <p>A transformer. The primary is fixed. You set the secondary turns. The page draws the secondary voltage.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The primary has 100 turns and 12 V. Secondary voltage is 12 × turns / 100 volts.</li>
+      <li>The mark is 24.0 V. A hit is within 0.2 V.</li>
+      <li>200 says <code>The voltage meets the mark.</code> The readout is 24.0 V.</li>
+      <li>50 reads 6.0 V. 100 reads 12.0 V. 250 reads 30.0 V. 400 reads 48.0 V. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="flow">
+    <p class="kind">Game</p>
+    <h2>65 Flow</h2>
+    <p class="open"><a href="flow/play/">Open Flow</a></p>
+    <h3>What it is</h3>
+    <p>Flow through a tube. You set the radius. The relative flow is the fourth power of that radius.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Relative flow is radius × radius × radius × radius. Radius is in millimetres.</li>
+      <li>The mark is 81. A hit is within 1.</li>
+      <li>3 mm says <code>The flow meets the mark.</code> The readout is 81.</li>
+      <li>1 mm reads 1. 2 mm reads 16. 4 mm reads 256. 5 mm reads 625. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="watt">
+    <p class="kind">Game</p>
+    <h2>66 Watt</h2>
+    <p class="open"><a href="watt/play/">Open Watt</a></p>
+    <h3>What it is</h3>
+    <p>A 10 ohm load and a lamp. You set the current. The page shows the power.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Power is current × current × 10 watts.</li>
+      <li>The mark is 90 W. A hit is within 1 W.</li>
+      <li>3 A says <code>The power meets the mark.</code> The readout is 90 W.</li>
+      <li>1 A reads 10 W. 2 A reads 40 W. 4 A reads 160 W. 5 A reads 250 W. All four miss.</li>
     </ol>
   </article>
 </body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Bel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Bel · one level</p>
+    <h1>Set the level to 30 dB.</h1>
+    <p class="lead">The level is 10 times the log of the power ratio. You choose that ratio.</p>
+  </header>
+  <div class="layout">
+    <canvas id="meter" width="680" height="420" aria-label="A decibel column and a 30 dB mark."></canvas>
+    <section>
+      <p class="label">Power ratio</p>
+      <div class="picks" id="bin">
+        <button type="button" data-p="10" aria-pressed="true">x10</button>
+        <button type="button" data-p="100" aria-pressed="false">x100</button>
+        <button type="button" data-p="1000" aria-pressed="false">x1000</button>
+        <button type="button" data-p="10000" aria-pressed="false">x10000</button>
+        <button type="button" data-p="100000" aria-pressed="false">x100000</button>
+      </div>
+      <dl>
+        <div><dt>Ratio</dt><dd id="p-val">x10</dd></div>
+        <div><dt>Level</dt><dd id="b-val">10 dB</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The level is 10 × log10(ratio) decibels.</li>
+        <li>The mark is 30 dB. A hit is within 1 dB.</li>
+        <li>x1000 is the hit. The line says <code>The level meets the mark.</code></li>
+        <li>x10 reads 10 dB. x100 reads 20 dB. x10000 reads 40 dB. x100000 reads 50 dB.</li>
+        <li>Those four miss. The line says <code>The level misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

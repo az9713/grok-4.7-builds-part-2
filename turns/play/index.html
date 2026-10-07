@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Turns</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Turns · one transformer</p>
+    <h1>Set the voltage to 24.0 V.</h1>
+    <p class="lead">The primary is 100 turns at 12 V. You choose the secondary turns.</p>
+  </header>
+  <div class="layout">
+    <canvas id="coils" width="680" height="420" aria-label="Two coils and a voltage column."></canvas>
+    <section>
+      <p class="label">Secondary turns</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="50" aria-pressed="true">50</button>
+        <button type="button" data-n="100" aria-pressed="false">100</button>
+        <button type="button" data-n="200" aria-pressed="false">200</button>
+        <button type="button" data-n="250" aria-pressed="false">250</button>
+        <button type="button" data-n="400" aria-pressed="false">400</button>
+      </div>
+      <dl>
+        <div><dt>Turns</dt><dd id="n-val">50</dd></div>
+        <div><dt>Voltage</dt><dd id="v-val">6.0 V</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The primary has 100 turns and 12 V.</li>
+        <li>Secondary voltage is 12 × turns / 100 volts.</li>
+        <li>The mark is 24.0 V. A hit is within 0.2 V.</li>
+        <li>200 is the hit. The line says <code>The voltage meets the mark.</code></li>
+        <li>50 reads 6.0 V. 100 reads 12.0 V. 250 reads 30.0 V. 400 reads 48.0 V.</li>
+        <li>Those four miss. The line says <code>The voltage misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
