@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Fifty-eight browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. The license is MIT.
+Sixty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all fifty-eight pages. The forty games have their rules on that page.
+[What each build is](builds.html) explains all sixty-two pages. The forty-four games have their rules on that page.
 
 ## Open locally
 
@@ -86,6 +86,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 56 | [bernoulli/play/](https://az9713.github.io/grok-4.7-builds-part-2/bernoulli/play/) | Throat pressure. Hit 99.80 kPa |
 | 57 | [lorentz/play/](https://az9713.github.io/grok-4.7-builds-part-2/lorentz/play/) | Rod length. Hit 0.80 m |
 | 58 | [pipe/play/](https://az9713.github.io/grok-4.7-builds-part-2/pipe/play/) | Closed pipe. Hit 250 Hz |
+| 59 | [planck/play/](https://az9713.github.io/grok-4.7-builds-part-2/planck/play/) | Photon energy. Hit 2.00 eV |
+| 60 | [critical/play/](https://az9713.github.io/grok-4.7-builds-part-2/critical/play/) | Critical angle. Hit 41.8° |
+| 61 | [lux/play/](https://az9713.github.io/grok-4.7-builds-part-2/lux/play/) | Inverse square. Hit 25.00 lx |
+| 62 | [hubble/play/](https://az9713.github.io/grok-4.7-builds-part-2/hubble/play/) | Recession speed. Hit 700 km/s |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Planck</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Planck · one photon</p>
+    <h1>Set the energy to 2.00 eV.</h1>
+    <p class="lead">Energy is 1240 divided by the wavelength in nanometres. You choose that wavelength.</p>
+  </header>
+  <div class="layout">
+    <canvas id="axis" width="680" height="360" aria-label="An energy axis and one photon line."></canvas>
+    <section>
+      <p class="label">Wavelength</p>
+      <div class="picks" id="bin">
+        <button type="button" data-nm="400" aria-pressed="true">400 nm</button>
+        <button type="button" data-nm="500" aria-pressed="false">500 nm</button>
+        <button type="button" data-nm="620" aria-pressed="false">620 nm</button>
+        <button type="button" data-nm="700" aria-pressed="false">700 nm</button>
+        <button type="button" data-nm="800" aria-pressed="false">800 nm</button>
+      </div>
+      <dl>
+        <div><dt>Wavelength</dt><dd id="n-val">400 nm</dd></div>
+        <div><dt>Energy</dt><dd id="e-val">3.10 eV</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Energy is 1240 / wavelength electron-volts. Wavelength is in nanometres.</li>
+        <li>The mark is 2.00 eV. A hit is within 0.05 eV.</li>
+        <li>620 nm is the hit. The line says <code>The energy meets the mark.</code></li>
+        <li>400 nm reads 3.10 eV. 500 nm reads 2.48 eV. 700 nm reads 1.77 eV. 800 nm reads 1.55 eV.</li>
+        <li>Those four miss. The line says <code>The energy misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Critical</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Critical · one surface</p>
+    <h1>Set the angle to 41.8°.</h1>
+    <p class="lead">The ray is in the dense side. You choose the index. The page draws the critical ray from the normal.</p>
+  </header>
+  <div class="layout">
+    <canvas id="face" width="680" height="420" aria-label="A surface, a normal, and a critical ray."></canvas>
+    <section>
+      <p class="label">Index</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="1.33" aria-pressed="true">1.33</button>
+        <button type="button" data-n="1.4" aria-pressed="false">1.40</button>
+        <button type="button" data-n="1.5" aria-pressed="false">1.50</button>
+        <button type="button" data-n="1.6" aria-pressed="false">1.60</button>
+        <button type="button" data-n="1.8" aria-pressed="false">1.80</button>
+      </div>
+      <dl>
+        <div><dt>Index</dt><dd id="n-val">1.33</dd></div>
+        <div><dt>Angle</dt><dd id="a-val">48.8°</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The critical angle is asin(1 / n) × 180 / π degrees.</li>
+        <li>The mark is 41.8°. A hit is within 0.5°.</li>
+        <li>1.50 is the hit. The line says <code>The angle meets the mark.</code></li>
+        <li>1.33 reads 48.8°. 1.40 reads 45.6°. 1.60 reads 38.7°. 1.80 reads 33.7°.</li>
+        <li>Those four miss. The line says <code>The angle misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Fifty-eight browser builds. Forty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Sixty-two browser builds. Forty-four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -902,6 +902,66 @@
       <li>The mark is 250 Hz. A hit is within 1 Hz.</li>
       <li>0.34 m says <code>The pitch meets the mark.</code> The readout is 250 Hz.</li>
       <li>0.20 m reads 425 Hz. 0.25 m reads 340 Hz. 0.50 m reads 170 Hz. 0.85 m reads 100 Hz. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="planck">
+    <p class="kind">Game</p>
+    <h2>59 Planck</h2>
+    <p class="open"><a href="planck/play/">Open Planck</a></p>
+    <h3>What it is</h3>
+    <p>The energy of one photon. You set the wavelength. The page marks that energy.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Energy is 1240 / wavelength electron-volts. Wavelength is in nanometres.</li>
+      <li>The mark is 2.00 eV. A hit is within 0.05 eV.</li>
+      <li>620 nm says <code>The energy meets the mark.</code> The readout is 2.00 eV.</li>
+      <li>400 nm reads 3.10 eV. 500 nm reads 2.48 eV. 700 nm reads 1.77 eV. 800 nm reads 1.55 eV. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="critical">
+    <p class="kind">Game</p>
+    <h2>60 Critical</h2>
+    <p class="open"><a href="critical/play/">Open Critical</a></p>
+    <h3>What it is</h3>
+    <p>The critical angle for a ray in a denser side. You set the index. The page draws that ray from the normal.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The critical angle is asin(1 / n) × 180 / π degrees.</li>
+      <li>The mark is 41.8°. A hit is within 0.5°.</li>
+      <li>1.50 says <code>The angle meets the mark.</code> The readout is 41.8°.</li>
+      <li>1.33 reads 48.8°. 1.40 reads 45.6°. 1.60 reads 38.7°. 1.80 reads 33.7°. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="lux">
+    <p class="kind">Game</p>
+    <h2>61 Lux</h2>
+    <p class="open"><a href="lux/play/">Open Lux</a></p>
+    <h3>What it is</h3>
+    <p>A lamp and a card. You set the distance. The page shows the illuminance on the card.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Illuminance is 100 / distance² lux. Distance is in metres.</li>
+      <li>The mark is 25.00 lx. A hit is within 0.50 lx.</li>
+      <li>2.0 m says <code>The illuminance meets the mark.</code> The readout is 25.00 lx.</li>
+      <li>1.0 m reads 100.00 lx. 2.5 m reads 16.00 lx. 4.0 m reads 6.25 lx. 5.0 m reads 4.00 lx. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="hubble">
+    <p class="kind">Game</p>
+    <h2>62 Hubble</h2>
+    <p class="open"><a href="hubble/play/">Open Hubble</a></p>
+    <h3>What it is</h3>
+    <p>A home galaxy and one far galaxy. You set the distance. The page places the far galaxy.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Speed is 70 × distance kilometres per second. Distance is in megaparsecs.</li>
+      <li>The mark is 700 km/s. A hit is within 1 km/s.</li>
+      <li>10 Mpc says <code>The speed meets the mark.</code> The readout is 700 km/s.</li>
+      <li>5 Mpc reads 350 km/s. 8 Mpc reads 560 km/s. 14 Mpc reads 980 km/s. 20 Mpc reads 1400 km/s. All four miss.</li>
     </ol>
   </article>
 </body>
