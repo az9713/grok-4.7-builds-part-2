@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Decay</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Decay · one half-life</p>
+    <h1>Leave 100 counts at 12 hours.</h1>
+    <p class="lead">The sample starts at 800 counts. You choose the half-life. The clock waits 12 hours.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plot" width="640" height="420" aria-label="A decay curve, a 12 hour line, and a 100 count mark."></canvas>
+    <section>
+      <p class="label">Half-life</p>
+      <div class="picks" id="bin">
+        <button type="button" data-t="2" aria-pressed="true">2 h</button>
+        <button type="button" data-t="3" aria-pressed="false">3 h</button>
+        <button type="button" data-t="4" aria-pressed="false">4 h</button>
+        <button type="button" data-t="6" aria-pressed="false">6 h</button>
+        <button type="button" data-t="8" aria-pressed="false">8 h</button>
+      </div>
+      <dl>
+        <div><dt>Half-life</dt><dd id="t-val">2 h</dd></div>
+        <div><dt>Count at 12 h</dt><dd id="n-val">12.5</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The start count is 800. The wait is 12 hours.</li>
+        <li>Count is 800 × (1/2) raised to (12 / half-life).</li>
+        <li>The mark is 100 counts. A hit is within 2 counts.</li>
+        <li>4 h is the hit. The line says <code>The count meets the mark.</code></li>
+        <li>2, 3, 6, and 8 h miss. The line says <code>The count misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

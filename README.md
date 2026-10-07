@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Thirty-four browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. The license is MIT.
+Thirty-eight browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all thirty-four pages. The sixteen games have their rules on that page.
+[What each build is](builds.html) explains all thirty-eight pages. The twenty games have their rules on that page.
 
 ## Open locally
 
@@ -62,6 +62,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 32 | [doppler/play/](https://az9713.github.io/grok-4.7-builds-part-2/doppler/play/) | Moving 500 Hz source. Hit 531.25 Hz |
 | 33 | [bridge/play/](https://az9713.github.io/grok-4.7-builds-part-2/bridge/play/) | Wheatstone bridge. Null the galvanometer |
 | 34 | [string/play/](https://az9713.github.io/grok-4.7-builds-part-2/string/play/) | Standing wave. Put a node on the chalk mark |
+| 35 | [lens/play/](https://az9713.github.io/grok-4.7-builds-part-2/lens/play/) | Thin lens. Put the image on the 60 cm screen |
+| 36 | [decay/play/](https://az9713.github.io/grok-4.7-builds-part-2/decay/play/) | Half-life. Leave 100 counts at 12 hours |
+| 37 | [draft/play/](https://az9713.github.io/grok-4.7-builds-part-2/draft/play/) | Box hull. Set the waterline on the chalk |
+| 38 | [shot/play/](https://az9713.github.io/grok-4.7-builds-part-2/shot/play/) | Level-ground shot. Land on 34.64 m |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

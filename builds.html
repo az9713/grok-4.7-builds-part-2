@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Thirty-four browser builds. Sixteen of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Thirty-eight browser builds. Twenty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -534,6 +534,69 @@
       <li>Nodes are spaced by 1.20 / n metres. The two ends are nodes.</li>
       <li>A node is on the mark when the nearest node is 0.02 m away or closer.</li>
       <li>Harmonic 3 is the hit. The line says <code>A node sits on the mark.</code> Harmonics 1, 2, 4, and 5 miss.</li>
+    </ol>
+  </article>
+
+  <article id="lens">
+    <p class="kind">Game</p>
+    <h2>35 Lens</h2>
+    <p class="open"><a href="lens/play/">Open Lens</a></p>
+    <h3>What it is</h3>
+    <p>A converging lens. The object is 30 cm in front of the lens. You choose a focal length from five values. A screen stands at 60 cm.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Image distance follows 1/v = 1/f − 1/u. u is 30 cm.</li>
+      <li>The screen is at 60 cm. A hit is within 2 cm.</li>
+      <li>20 cm puts the image at 60.0 cm. The line says <code>The image meets the screen.</code></li>
+      <li>10 cm puts it at 15.0 cm. 15 cm puts it at 30.0 cm. 25 cm puts it at 150.0 cm. Each of those says <code>The image misses the screen.</code></li>
+      <li>40 cm forms no real image. The line says <code>The rays do not meet on the screen.</code></li>
+    </ol>
+  </article>
+
+  <article id="decay">
+    <p class="kind">Game</p>
+    <h2>36 Decay</h2>
+    <p class="open"><a href="decay/play/">Open Decay</a></p>
+    <h3>What it is</h3>
+    <p>One radioactive sample. You choose the half-life. The page reads the count after 12 hours.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The start count is 800. Count is 800 × (1/2) raised to (12 / half-life).</li>
+      <li>The mark is 100 counts. A hit is within 2 counts.</li>
+      <li>4 h leaves 100.0 counts. The line says <code>The count meets the mark.</code></li>
+      <li>2 h leaves 12.5. 3 h leaves 50.0. 6 h leaves 200.0. 8 h leaves 282.8. Each says <code>The count misses the mark.</code></li>
+    </ol>
+  </article>
+
+  <article id="draft">
+    <p class="kind">Game</p>
+    <h2>37 Draft</h2>
+    <p class="open"><a href="draft/play/">Open Draft</a></p>
+    <h3>What it is</h3>
+    <p>A box hull in fresh water. You choose the hull density. The chalk mark is a waterline on the hull.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Fresh water density is 1.00 g/cm³.</li>
+      <li>While hull density is below 1, the submerged fraction equals that density.</li>
+      <li>The chalk mark is 0.60 of the hull height. A hit is within 0.02.</li>
+      <li>Density 0.60 says <code>The waterline meets the mark.</code></li>
+      <li>0.40, 0.50, and 0.75 say <code>The waterline misses the mark.</code> Density 1.20 says <code>The hull sinks.</code></li>
+    </ol>
+  </article>
+
+  <article id="shot">
+    <p class="kind">Game</p>
+    <h2>38 Shot</h2>
+    <p class="open"><a href="shot/play/">Open Shot</a></p>
+    <h3>What it is</h3>
+    <p>One shot over level ground. You set the angle. The page draws the parabola and the landing point.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Speed is 20 m/s. Gravity is 10 m/s². Drag is zero.</li>
+      <li>Range is 40 × sin(2 × angle) metres. Angle runs from 10 to 45 in whole steps.</li>
+      <li>The mark is 34.64 m. A hit is within 0.30 m.</li>
+      <li>30° lands at 34.64 m. The line says <code>The shot meets the mark.</code></li>
+      <li>29° lands at 33.92 m. 31° lands at 35.32 m. Both miss, and so does every other angle on the slider.</li>
     </ol>
   </article>
 </body>

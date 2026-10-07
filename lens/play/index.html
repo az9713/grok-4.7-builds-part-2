@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Lens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Lens · one screen</p>
+    <h1>Put the image on the screen.</h1>
+    <p class="lead">The object stands 30 cm in front of a converging lens. You choose the focal length. The screen stands at 60 cm.</p>
+  </header>
+  <div class="layout">
+    <canvas id="bench" width="680" height="420" aria-label="An object, a converging lens, rays, and a screen."></canvas>
+    <section>
+      <p class="label">Focal length</p>
+      <div class="picks" id="bin">
+        <button type="button" data-f="10" aria-pressed="true">10 cm</button>
+        <button type="button" data-f="15" aria-pressed="false">15 cm</button>
+        <button type="button" data-f="20" aria-pressed="false">20 cm</button>
+        <button type="button" data-f="25" aria-pressed="false">25 cm</button>
+        <button type="button" data-f="40" aria-pressed="false">40 cm</button>
+      </div>
+      <dl>
+        <div><dt>Focal length</dt><dd id="f-val">10 cm</dd></div>
+        <div><dt>Image distance</dt><dd id="v-val">15.0 cm</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The object distance u is 30 cm. The lens is converging.</li>
+        <li>Image distance follows 1/v = 1/f − 1/u.</li>
+        <li>The screen stands at 60 cm. A hit is within 2 cm.</li>
+        <li>20 cm is the hit. The line says <code>The image meets the screen.</code></li>
+        <li>10, 15, and 25 cm miss the screen. 40 cm forms no real image. Those lines say <code>The image misses the screen.</code> or <code>The rays do not meet on the screen.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

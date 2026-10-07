@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Draft</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Draft · one waterline</p>
+    <h1>Set the waterline on the chalk.</h1>
+    <p class="lead">A box hull floats in fresh water. Water density is 1.00 g/cm³. You choose the hull density. The chalk mark is 0.60 of the hull height.</p>
+  </header>
+  <div class="layout">
+    <canvas id="tank" width="680" height="420" aria-label="A box hull in a tank, with a chalk mark."></canvas>
+    <section>
+      <p class="label">Hull density</p>
+      <div class="picks" id="bin">
+        <button type="button" data-rho="0.40" aria-pressed="true">0.40</button>
+        <button type="button" data-rho="0.50" aria-pressed="false">0.50</button>
+        <button type="button" data-rho="0.60" aria-pressed="false">0.60</button>
+        <button type="button" data-rho="0.75" aria-pressed="false">0.75</button>
+        <button type="button" data-rho="1.20" aria-pressed="false">1.20</button>
+      </div>
+      <dl>
+        <div><dt>Density</dt><dd id="rho-val">0.40 g/cm³</dd></div>
+        <div><dt>Submerged</dt><dd id="frac-val">0.40</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Fresh water density is 1.00 g/cm³.</li>
+        <li>While hull density is below 1, the submerged fraction equals that density.</li>
+        <li>Density 1.20 sinks the hull. The line says <code>The hull sinks.</code></li>
+        <li>The chalk mark is 0.60 of the hull height. A hit is within 0.02.</li>
+        <li>0.60 is the hit. The line says <code>The waterline meets the mark.</code></li>
+        <li>0.40, 0.50, and 0.75 miss. The line says <code>The waterline misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
