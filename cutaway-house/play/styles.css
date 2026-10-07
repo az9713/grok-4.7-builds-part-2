@@ -1,0 +1,14 @@
+:root { --brick:#6a2430; --ink:#1a1214; --cream:#efe4d4; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--ink); color: var(--cream); font-family: "Iowan Old Style", Georgia, serif; }
+header { padding: 16px 18px; max-width: 1040px; margin: 0 auto; }
+.kicker { font: 11px/1 ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: #c47a86; }
+.stage { max-width: 1040px; margin: 0 auto; padding: 0 18px 40px; display: grid; grid-template-columns: 280px 1fr; gap: 16px; }
+.plan { width: 100%; background: #24181a; }
+.room { fill: transparent; cursor: pointer; }
+.room:hover, .room.on { fill: rgba(196, 122, 134, 0.25); }
+figure { margin: 0; position: relative; background: #000; }
+img, video { width: 100%; display: block; }
+video { position: absolute; inset: 0; display: none; object-fit: cover; }
+figcaption { font: 12px/1.4 ui-monospace, monospace; padding: 8px 0; color: #cbb; }
+@media (max-width: 800px) { .stage { grid-template-columns: 1fr; } }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gimbal Goods — Axis-3 Articulated Lamp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="spine" aria-hidden="true">Gimbal Goods · Object 01 · Axis-3 · Catalog 2026</div>
+
+  <header class="top">
+    <p class="mark">GG / 01</p>
+    <h1>Gimbal Goods</h1>
+    <p class="tag">One object. Six plates. Two finishes.</p>
+    <button type="button" class="cart-btn" id="open-cart" aria-controls="cart">
+      Hold <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <figure class="hero-fig">
+      <img id="hero-img" src="../art/lamp-desk.jpg" alt="Axis-3 lamp on a walnut desk at night">
+      <figcaption>
+        <span class="plate-no">Plate 05</span>
+        <span>Desk, 21:40, tungsten</span>
+      </figcaption>
+    </figure>
+    <aside class="hero-copy">
+      <p class="kicker">Object 01</p>
+      <h2>Axis-3</h2>
+      <p class="lede">Three-knuckle arm, spun shade, weighted base. Photographed from one lock — graphite and brass — never a new lamp.</p>
+      <dl class="spec">
+        <div><dt>Reach</dt><dd>520 mm</dd></div>
+        <div><dt>Shade</dt><dd>Ø 160 mm</dd></div>
+        <div><dt>Base</dt><dd>Ø 180 mm · 2.4 kg</dd></div>
+        <div><dt>Source</dt><dd>E26 · 40 W eq.</dd></div>
+      </dl>
+      <div class="sku-row" id="sku-row"></div>
+    </aside>
+  </section>
+
+  <nav class="filters" aria-label="Lookbook filters">
+    <button type="button" data-filter="all" class="on">All plates</button>
+    <button type="button" data-filter="studio">Studio</button>
+    <button type="button" data-filter="desk">In situ</button>
+    <button type="button" data-filter="finish">Finish</button>
+  </nav>
+
+  <section class="lookbook" id="lookbook" aria-label="Lookbook"></section>
+
+  <aside class="cart" id="cart" hidden>
+    <header>
+      <h2>Hold ticket</h2>
+      <button type="button" id="close-cart">Close</button>
+    </header>
+    <ol class="lines" id="lines"></ol>
+    <p class="total">Total <strong id="total">$0</strong></p>
+    <div class="cart-actions">
+      <button type="button" id="clear-cart">Clear hold</button>
+      <button type="button" class="primary" id="stamp">Stamp ticket</button>
+    </div>
+    <p class="ticket" id="ticket" hidden></p>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
