@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Brewster</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Brewster · one plate</p>
+    <h1>Set the ray to the Brewster angle.</h1>
+    <p class="lead">The glass index is 1.50. You set the incidence. At the Brewster angle the reflected ray and the refracted ray meet at a right angle.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plate" width="680" height="420" aria-label="A glass surface, a reflected ray, and a refracted ray."></canvas>
+    <section>
+      <label>Incidence, degrees
+        <input id="angle" type="range" min="40" max="70" step="1" value="40">
+      </label>
+      <dl>
+        <div><dt>Incidence</dt><dd id="i-val">40°</dd></div>
+        <div><dt>Brewster</dt><dd id="b-val">56.3°</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The glass index is 1.50.</li>
+        <li>The Brewster angle is atan(1.50). The page shows 56.3 degrees.</li>
+        <li>The refracted angle is asin(sin(incidence) / 1.50).</li>
+        <li>Incidence is a whole number from 40 to 70.</li>
+        <li>A hit is within 0.5 degrees of 56.3.</li>
+        <li>56° is the only hit. The line says <code>The rays meet at a right angle.</code></li>
+        <li>55° and 57° miss. Every other angle says <code>The rays are not at a right angle.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

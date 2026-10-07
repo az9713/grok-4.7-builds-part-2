@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Echo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Echo · one cliff</p>
+    <h1>Put the echo on the cliff.</h1>
+    <p class="lead">Sound moves at 340 m/s. You choose the round-trip time. The page places the cliff that matches that time.</p>
+  </header>
+  <div class="layout">
+    <canvas id="range" width="720" height="360" aria-label="A sound source, an echo cliff, and a 34 m mark."></canvas>
+    <section>
+      <p class="label">Round trip</p>
+      <div class="picks" id="bin">
+        <button type="button" data-t="0.10" aria-pressed="true">0.10 s</button>
+        <button type="button" data-t="0.16" aria-pressed="false">0.16 s</button>
+        <button type="button" data-t="0.20" aria-pressed="false">0.20 s</button>
+        <button type="button" data-t="0.24" aria-pressed="false">0.24 s</button>
+        <button type="button" data-t="0.30" aria-pressed="false">0.30 s</button>
+      </div>
+      <dl>
+        <div><dt>Time</dt><dd id="t-val">0.10 s</dd></div>
+        <div><dt>Distance</dt><dd id="d-val">17.00 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Sound moves at 340 m/s.</li>
+        <li>Distance is 340 × time / 2 metres.</li>
+        <li>The mark is 34.00 m. A hit is within 0.50 m.</li>
+        <li>0.20 s is the hit. The line says <code>The echo meets the cliff.</code></li>
+        <li>0.10 s reads 17.00 m. 0.16 s reads 27.20 m. 0.24 s reads 40.80 m. 0.30 s reads 51.00 m.</li>
+        <li>Those four miss. The line says <code>The echo misses the cliff.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

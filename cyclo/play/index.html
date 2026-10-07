@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cyclo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Cyclo · one field</p>
+    <h1>Set the radius to 0.50 m.</h1>
+    <p class="lead">A charge moves at 4 m/s. Mass and charge are both 1. You choose the magnetic field. The circle is the path.</p>
+  </header>
+  <div class="layout">
+    <canvas id="field" width="680" height="420" aria-label="A circular path and a 0.50 m mark."></canvas>
+    <section>
+      <p class="label">Field</p>
+      <div class="picks" id="bin">
+        <button type="button" data-b="2" aria-pressed="true">2 T</button>
+        <button type="button" data-b="4" aria-pressed="false">4 T</button>
+        <button type="button" data-b="8" aria-pressed="false">8 T</button>
+        <button type="button" data-b="10" aria-pressed="false">10 T</button>
+        <button type="button" data-b="16" aria-pressed="false">16 T</button>
+      </div>
+      <dl>
+        <div><dt>Field</dt><dd id="b-val">2 T</dd></div>
+        <div><dt>Radius</dt><dd id="r-val">2.00 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Speed is 4 m/s. Mass is 1. Charge is 1.</li>
+        <li>Radius is 4 / field metres. Field is in tesla.</li>
+        <li>The mark is 0.50 m. A hit is within 0.02 m.</li>
+        <li>8 T is the hit. The line says <code>The radius meets the mark.</code></li>
+        <li>2 T reads 2.00 m. 4 T reads 1.00 m. 10 T reads 0.40 m. 16 T reads 0.25 m.</li>
+        <li>Those four miss. The line says <code>The radius misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

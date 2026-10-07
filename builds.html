@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Forty-six browser builds. Twenty-eight of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Fifty browser builds. Thirty-two of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -721,6 +721,67 @@
       <li>The mark is 2.00 mm. A hit is within 0.05 mm.</li>
       <li>0.50 mm says <code>The minimum meets the mark.</code> The readout is 2.00 mm.</li>
       <li>0.25 mm reads 4.00 mm. 0.40 mm reads 2.50 mm. 0.80 mm reads 1.25 mm. 1.00 mm reads 1.00 mm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="charles">
+    <p class="kind">Game</p>
+    <h2>47 Charles</h2>
+    <p class="open"><a href="charles/play/">Open Charles</a></p>
+    <h3>What it is</h3>
+    <p>A cylinder of gas at fixed pressure. You set the temperature. The page moves the piston.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The pressure stays fixed. Volume is 2.00 × temperature / 300 litres.</li>
+      <li>The mark is 2.40 L. A hit is within 0.02 L.</li>
+      <li>360 K says <code>The volume meets the mark.</code> The readout is 2.40 L.</li>
+      <li>273 K reads 1.82 L. 300 K reads 2.00 L. 330 K reads 2.20 L. 400 K reads 2.67 L. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="cyclo">
+    <p class="kind">Game</p>
+    <h2>48 Cyclo</h2>
+    <p class="open"><a href="cyclo/play/">Open Cyclo</a></p>
+    <h3>What it is</h3>
+    <p>A charge in a magnetic field. You set the field. The page draws the circular path.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Speed is 4 m/s. Mass is 1. Charge is 1. Radius is 4 / field metres.</li>
+      <li>The mark is 0.50 m. A hit is within 0.02 m.</li>
+      <li>8 T says <code>The radius meets the mark.</code> The readout is 0.50 m.</li>
+      <li>2 T reads 2.00 m. 4 T reads 1.00 m. 10 T reads 0.40 m. 16 T reads 0.25 m. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="brewster">
+    <p class="kind">Game</p>
+    <h2>49 Brewster</h2>
+    <p class="open"><a href="brewster/play/">Open Brewster</a></p>
+    <h3>What it is</h3>
+    <p>A ray meets glass of index 1.50. You set the incidence. The page draws the reflected ray and the refracted ray.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The Brewster angle is atan(1.50). The page shows 56.3 degrees.</li>
+      <li>The refracted angle is asin(sin(incidence) / 1.50).</li>
+      <li>Incidence is a whole number from 40 to 70. A hit is within 0.5 degrees of 56.3.</li>
+      <li>56° says <code>The rays meet at a right angle.</code></li>
+      <li>55° and 57° miss. Every other angle says <code>The rays are not at a right angle.</code></li>
+    </ol>
+  </article>
+
+  <article id="echo">
+    <p class="kind">Game</p>
+    <h2>50 Echo</h2>
+    <p class="open"><a href="echo/play/">Open Echo</a></p>
+    <h3>What it is</h3>
+    <p>A sound and a cliff. You set the round-trip time. The page places the cliff at half the sound path.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Sound moves at 340 m/s. Distance is 340 × time / 2 metres.</li>
+      <li>The mark is 34.00 m. A hit is within 0.50 m.</li>
+      <li>0.20 s says <code>The echo meets the cliff.</code> The readout is 34.00 m.</li>
+      <li>0.10 s reads 17.00 m. 0.16 s reads 27.20 m. 0.24 s reads 40.80 m. 0.30 s reads 51.00 m. All four miss.</li>
     </ol>
   </article>
 </body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Charles</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Charles · fixed pressure</p>
+    <h1>Set the volume to 2.40 L.</h1>
+    <p class="lead">The pressure stays fixed. The gas holds 2.00 L at 300 K. You choose the temperature. The piston shows the volume.</p>
+  </header>
+  <div class="layout">
+    <canvas id="cylinder" width="680" height="420" aria-label="A gas cylinder, a piston, and a 2.40 L mark."></canvas>
+    <section>
+      <p class="label">Temperature</p>
+      <div class="picks" id="bin">
+        <button type="button" data-t="273" aria-pressed="true">273 K</button>
+        <button type="button" data-t="300" aria-pressed="false">300 K</button>
+        <button type="button" data-t="330" aria-pressed="false">330 K</button>
+        <button type="button" data-t="360" aria-pressed="false">360 K</button>
+        <button type="button" data-t="400" aria-pressed="false">400 K</button>
+      </div>
+      <dl>
+        <div><dt>Temperature</dt><dd id="t-val">273 K</dd></div>
+        <div><dt>Volume</dt><dd id="v-val">1.82 L</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The pressure stays fixed.</li>
+        <li>Volume is 2.00 × temperature / 300 litres. Temperature is in kelvin.</li>
+        <li>The mark is 2.40 L. A hit is within 0.02 L.</li>
+        <li>360 K is the hit. The line says <code>The volume meets the mark.</code></li>
+        <li>273 K reads 1.82 L. 300 K reads 2.00 L. 330 K reads 2.20 L. 400 K reads 2.67 L.</li>
+        <li>Those four miss. The line says <code>The volume misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
