@@ -1,0 +1,23 @@
+{
+  "ppu": 48,
+  "filter": "Point",
+  "hero": {
+    "canonical": "art-record/hero-canonical.jpg",
+    "idleSheet": "play/art/hero-idle.png",
+    "walkSheet": "play/art/hero-walk.png",
+    "cells": 8,
+    "lock": "edit-chain from a single Imagine still; walk harvested from image_to_video"
+  },
+  "guard": {
+    "canonical": "art-record/guard-canonical.jpg",
+    "sprite": "play/art/guard-full.png"
+  },
+  "tiles": {
+    "floor": "play/art/floor.jpg",
+    "wall": "play/art/wall.jpg"
+  },
+  "props": {
+    "elevator": "play/art/elevator-clean.png",
+    "shelf": "play/art/shelf.png"
+  }
+}

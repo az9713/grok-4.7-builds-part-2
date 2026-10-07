@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phylum Tray — Tray 04 · Coleoptera striolata</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cabinet">
+    <header class="mast">
+      <div class="mast-left">
+        <p class="inst">Institutional Collection · Invertebrate Morphology</p>
+        <h1>Phylum Tray</h1>
+        <p class="sub">Tray 04 · <em>Coleoptera striolata</em> · holotype and seven edit-chained morphs</p>
+      </div>
+      <div class="mast-right">
+        <dl>
+          <div><dt>Accession</dt><dd>PT-04</dd></div>
+          <div><dt>Lock</dt><dd>ancestor</dd></div>
+          <div><dt>Morphs</dt><dd>8</dd></div>
+          <div><dt>Habitat</dt><dd>live</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="work">
+      <section class="tray-col" aria-label="Specimen tray">
+        <div class="brass-plate">
+          <span>SPECIMEN TRAY</span>
+          <span>PINNED · KEYED MAGENTA</span>
+        </div>
+        <p class="instruction">Click a morph. It drops into the terrarium.</p>
+        <ul class="tray" id="tray"></ul>
+        <aside class="legend">
+          <p>All eight animals are one lock. Variants were chained from the ancestor still — not regenerated. Palette, silhouette, and stridulatory banding hold.</p>
+        </aside>
+      </section>
+
+      <section class="habitat-col" aria-label="Terrarium">
+        <div class="brass-plate">
+          <span>LIVE HABITAT</span>
+          <span id="census">0 in tray</span>
+        </div>
+        <div class="glass">
+          <canvas id="terrarium" width="960" height="560" aria-label="Terrarium canvas"></canvas>
+          <div class="glass-glare" aria-hidden="true"></div>
+        </div>
+        <div class="controls">
+          <button type="button" id="evacuate">Evacuate habitat</button>
+          <p class="hint">Click the glass to drop the last-selected morph at that point.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

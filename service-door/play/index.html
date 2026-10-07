@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service Door</title>
+  <style>
+    :root {
+      --ink: #1a1c1e;
+      --oxide: #d65a31;
+      --paper: #c8c2b4;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--ink); color: var(--paper); font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 10px 16px; border-bottom: 1px solid #3a322c;
+    }
+    header strong { color: var(--oxide); letter-spacing: 0.14em; font-size: 12px; }
+    header span { font-size: 12px; opacity: 0.7; }
+    #wrap { display: flex; justify-content: center; padding: 16px; }
+    canvas { image-rendering: pixelated; background: #2b2e31; max-width: 100%; box-shadow: 0 0 0 1px #3a322c; }
+    #hud {
+      max-width: 960px; margin: 0 auto; padding: 0 16px 24px;
+      font-size: 13px; line-height: 1.45; color: #9a9388;
+    }
+    a { color: var(--oxide); }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>SERVICE DOOR</strong>
+    <span id="status">night shift · floor B3</span>
+  </header>
+  <div id="wrap"><canvas id="c" width="960" height="540"></canvas></div>
+  <p id="hud">WASD / arrows move · Space takedown plays the strike sheet · the lift opens after the guard is down. Art is identity-locked Imagine output; this web slice is the visitor play path. Unity C# lives in <code>../Assets</code>.</p>
+  <script src="game.js"></script>
+</body>
+</html>

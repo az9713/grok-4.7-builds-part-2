@@ -1,0 +1,237 @@
+{
+  "name": "art-bible",
+  "description": "Generate and verify Service Door art bible",
+  "status": "passed",
+  "fail_closed": true,
+  "workflow": "workflows/art-bible.rhai",
+  "columns": [
+    { "id": "spec", "title": "Spec" },
+    { "id": "generate", "title": "Generate" },
+    { "id": "skeptic", "title": "Skeptic" },
+    { "id": "manifest", "title": "Manifest" }
+  ],
+  "spec": {
+    "title": "Service Door art bible",
+    "interior": "brutalist archive, practical sodium/fluorescent",
+    "palette": ["concrete", "oxide orange", "moth-grey operative"],
+    "rules": [
+      "Hero is one canonical lock. Later hero images are image_edit from it or a child. Never a fresh gen.",
+      "Guard is a separate lock, not a recolor of the hero.",
+      "Tileset floor/wall must pass a 2x2 seam check.",
+      "No generated text on sprites.",
+      "Readable silhouette at 32–48 px."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "spec",
+      "column": "spec",
+      "kind": "spec",
+      "label": "Frozen spec",
+      "detail": "Brutalist archive. Oxide. Moth-grey contractor. No neon soup.",
+      "status": "ok",
+      "t_ms": 0,
+      "parents": []
+    },
+    {
+      "id": "gen-hero",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Hero lock",
+      "detail": "image_gen master — moth-grey jacket, oxide lanyard",
+      "artifact": "../artifacts/hero.jpg",
+      "status": "ok",
+      "t_ms": 420,
+      "parents": ["spec"]
+    },
+    {
+      "id": "gen-guard",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Guard lock",
+      "detail": "Separate person. Knit, flashlight, keys.",
+      "artifact": "../artifacts/guard.jpg",
+      "status": "ok",
+      "t_ms": 480,
+      "parents": ["spec"]
+    },
+    {
+      "id": "gen-floor",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Floor tile",
+      "detail": "Non-directional concrete",
+      "artifact": "../artifacts/floor.jpg",
+      "status": "ok",
+      "t_ms": 540,
+      "parents": ["spec"]
+    },
+    {
+      "id": "gen-wall",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Wall tile",
+      "detail": "Form-tie holes, poured concrete",
+      "artifact": "../artifacts/wall.jpg",
+      "status": "ok",
+      "t_ms": 600,
+      "parents": ["spec"]
+    },
+    {
+      "id": "gen-elevator",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Freight elevator",
+      "detail": "Oxide stripe, no letters in the sprite",
+      "artifact": "../artifacts/elevator-clean.jpg",
+      "status": "ok",
+      "t_ms": 660,
+      "parents": ["spec"]
+    },
+    {
+      "id": "gen-shelf",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Archive shelf",
+      "detail": "One prop. Same interior light.",
+      "artifact": "../artifacts/shelf.jpg",
+      "status": "ok",
+      "t_ms": 720,
+      "parents": ["spec"]
+    },
+    {
+      "id": "sk-hero",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Hero identity",
+      "detail": "Blind describe vs frozen lock",
+      "status": "fail",
+      "reason": "Fail-closed: brow ridge and badge lanyard drifted from the canonical lock. Fresh-gen suspected. Reject.",
+      "t_ms": 1680,
+      "parents": ["gen-hero"]
+    },
+    {
+      "id": "sk-guard",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Guard identity",
+      "detail": "Not a recolor of the hero",
+      "artifact": "../artifacts/guard-full.jpg",
+      "status": "ok",
+      "reason": "Different skull, knit, belt kit. Separate lock.",
+      "t_ms": 1740,
+      "parents": ["gen-guard"]
+    },
+    {
+      "id": "sk-floor",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Floor seam",
+      "detail": "2x2 composite",
+      "artifact": "../artifacts/floor-2x2.jpg",
+      "status": "ok",
+      "reason": "2x2 shows no seam under non-directional light.",
+      "t_ms": 1800,
+      "parents": ["gen-floor"]
+    },
+    {
+      "id": "sk-wall",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Wall seam",
+      "detail": "2x2 composite",
+      "artifact": "../artifacts/wall-2x2.jpg",
+      "status": "ok",
+      "reason": "Form-tie pattern tiles. No grid line.",
+      "t_ms": 1860,
+      "parents": ["gen-wall"]
+    },
+    {
+      "id": "sk-elevator",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Elevator lock",
+      "detail": "Geometry, oxide stripe, no type",
+      "artifact": "../artifacts/elevator-clean.jpg",
+      "status": "ok",
+      "reason": "Letters stripped. Stripe and rivets match the room.",
+      "t_ms": 1920,
+      "parents": ["gen-elevator"]
+    },
+    {
+      "id": "sk-shelf",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Shelf prop",
+      "detail": "Same lighting as tileset",
+      "artifact": "../artifacts/shelf.jpg",
+      "status": "ok",
+      "reason": "Palette and metal match wall/floor. Prop accepted.",
+      "t_ms": 1980,
+      "parents": ["gen-shelf"]
+    },
+    {
+      "id": "gen-hero-edit",
+      "column": "generate",
+      "kind": "generate",
+      "label": "Hero re-edit",
+      "detail": "image_edit from canonical — never a fresh gen",
+      "artifact": "../artifacts/hero.jpg",
+      "status": "ok",
+      "t_ms": 2600,
+      "parents": ["sk-hero"]
+    },
+    {
+      "id": "sk-hero-2",
+      "column": "skeptic",
+      "kind": "skeptic",
+      "label": "Hero identity (retry)",
+      "detail": "Fail-closed re-verify",
+      "artifact": "../artifacts/hero-side.jpg",
+      "status": "ok",
+      "reason": "Front and side match wardrobe, silhouette, oxide lanyard. Accepted.",
+      "t_ms": 3320,
+      "parents": ["gen-hero-edit"]
+    },
+    {
+      "id": "manifest",
+      "column": "manifest",
+      "kind": "manifest",
+      "label": "manifest.json",
+      "detail": "Unity-readable sheets. Rejected first hero omitted.",
+      "status": "ok",
+      "t_ms": 4000,
+      "parents": ["sk-hero-2", "sk-guard", "sk-floor", "sk-wall", "sk-elevator", "sk-shelf"],
+      "payload": {
+        "title": "Service Door art bible",
+        "ppu": 48,
+        "filter": "Point",
+        "sheets": [
+          { "id": "hero", "path": "artifacts/hero.jpg", "kind": "character" },
+          { "id": "hero-side", "path": "artifacts/hero-side.jpg", "kind": "character" },
+          { "id": "hero-archive", "path": "artifacts/hero-archive.jpg", "kind": "key" },
+          { "id": "hero-elevator", "path": "artifacts/hero-elevator.jpg", "kind": "key" },
+          { "id": "guard", "path": "artifacts/guard.jpg", "kind": "character" },
+          { "id": "guard-full", "path": "artifacts/guard-full.jpg", "kind": "character" },
+          { "id": "elevator", "path": "artifacts/elevator-clean.jpg", "kind": "prop" },
+          { "id": "floor", "path": "artifacts/floor.jpg", "kind": "tile" },
+          { "id": "wall", "path": "artifacts/wall.jpg", "kind": "tile" },
+          { "id": "shelf", "path": "artifacts/shelf.jpg", "kind": "prop" }
+        ]
+      }
+    }
+  ],
+  "log": [
+    { "t_ms": 0, "text": "spec frozen — generate may not invent palette or faces" },
+    { "t_ms": 420, "text": "parallel generate: hero, guard, floor, wall, elevator, shelf" },
+    { "t_ms": 1680, "text": "SKEPTIC REJECT hero identity — drifted face, fail-closed" },
+    { "t_ms": 1740, "text": "guard identity pass — separate lock" },
+    { "t_ms": 1800, "text": "floor 2x2 seam pass" },
+    { "t_ms": 1860, "text": "wall 2x2 seam pass" },
+    { "t_ms": 1920, "text": "elevator lock pass" },
+    { "t_ms": 1980, "text": "shelf prop pass" },
+    { "t_ms": 2600, "text": "edit-chain hero from canonical lock (no fresh gen)" },
+    { "t_ms": 3320, "text": "hero identity retry pass" },
+    { "t_ms": 4000, "text": "manifest.json written — 10 sheets, drifted face omitted" }
+  ]
+}
