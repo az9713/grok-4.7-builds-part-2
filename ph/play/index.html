@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>pH</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">pH · one solution</p>
+    <h1>Set the pH to 5.</h1>
+    <p class="lead">pH is the negative log of the H⁺ concentration. You choose that concentration.</p>
+  </header>
+  <div class="layout">
+    <canvas id="scale" width="680" height="360" aria-label="A pH scale and one marker."></canvas>
+    <section>
+      <p class="label">Concentration</p>
+      <div class="picks" id="bin">
+        <button type="button" data-e="-3" aria-pressed="true">1e-3</button>
+        <button type="button" data-e="-4" aria-pressed="false">1e-4</button>
+        <button type="button" data-e="-5" aria-pressed="false">1e-5</button>
+        <button type="button" data-e="-6" aria-pressed="false">1e-6</button>
+        <button type="button" data-e="-7" aria-pressed="false">1e-7</button>
+      </div>
+      <dl>
+        <div><dt>Concentration</dt><dd id="c-val">1e-3</dd></div>
+        <div><dt>pH</dt><dd id="h-val">3</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Concentration is 10 to the chosen power, in mol/L.</li>
+        <li>pH is −log10 of that concentration.</li>
+        <li>The mark is 5. A hit is within 0.5.</li>
+        <li>1e-5 is the hit. The line says <code>The pH meets the mark.</code></li>
+        <li>1e-3 reads 3. 1e-4 reads 4. 1e-6 reads 6. 1e-7 reads 7.</li>
+        <li>Those four miss. The line says <code>The pH misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

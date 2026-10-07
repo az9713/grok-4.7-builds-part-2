@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Sixty-six browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. The license is MIT.
+Seventy browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all sixty-six pages. The forty-eight games have their rules on that page.
+[What each build is](builds.html) explains all seventy pages. The fifty-two games have their rules on that page.
 
 ## Open locally
 
@@ -94,6 +94,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 64 | [turns/play/](https://az9713.github.io/grok-4.7-builds-part-2/turns/play/) | Transformer. Hit 24.0 V |
 | 65 | [flow/play/](https://az9713.github.io/grok-4.7-builds-part-2/flow/play/) | Tube flow. Hit 81 |
 | 66 | [watt/play/](https://az9713.github.io/grok-4.7-builds-part-2/watt/play/) | Load power. Hit 90 W |
+| 67 | [pascal/play/](https://az9713.github.io/grok-4.7-builds-part-2/pascal/play/) | Water depth. Hit 49.0 kPa |
+| 68 | [radial/play/](https://az9713.github.io/grok-4.7-builds-part-2/radial/play/) | Centripetal. Hit 18 m/s² |
+| 69 | [faraday/play/](https://az9713.github.io/grok-4.7-builds-part-2/faraday/play/) | Induced voltage. Hit 8.0 V |
+| 70 | [ph/play/](https://az9713.github.io/grok-4.7-builds-part-2/ph/play/) | One solution. Hit pH 5 |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

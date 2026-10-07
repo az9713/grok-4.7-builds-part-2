@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Faraday</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Faraday · one coil</p>
+    <h1>Set the voltage to 8.0 V.</h1>
+    <p class="lead">The flux changes at 0.2 Wb/s. You choose the turns. The coil voltage follows the turns.</p>
+  </header>
+  <div class="layout">
+    <canvas id="coil" width="680" height="420" aria-label="A magnet, a coil, and a voltage column."></canvas>
+    <section>
+      <p class="label">Turns</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="10" aria-pressed="true">10 turns</button>
+        <button type="button" data-n="25" aria-pressed="false">25 turns</button>
+        <button type="button" data-n="40" aria-pressed="false">40 turns</button>
+        <button type="button" data-n="50" aria-pressed="false">50 turns</button>
+        <button type="button" data-n="80" aria-pressed="false">80 turns</button>
+      </div>
+      <dl>
+        <div><dt>Turns</dt><dd id="n-val">10 turns</dd></div>
+        <div><dt>Voltage</dt><dd id="v-val">2.0 V</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The flux changes at 0.2 Wb/s.</li>
+        <li>Voltage is (turns × 2) / 10 volts.</li>
+        <li>The mark is 8.0 V. A hit is within 0.2 V.</li>
+        <li>40 turns is the hit. The line says <code>The voltage meets the mark.</code></li>
+        <li>10 turns reads 2.0 V. 25 turns reads 5.0 V. 50 turns reads 10.0 V. 80 turns reads 16.0 V.</li>
+        <li>Those four miss. The line says <code>The voltage misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

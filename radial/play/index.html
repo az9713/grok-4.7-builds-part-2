@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Radial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Radial · one circle</p>
+    <h1>Set the acceleration to 18 m/s².</h1>
+    <p class="lead">The radius is 2 m. You choose the speed. Acceleration is speed squared divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="ring" width="680" height="420" aria-label="A circle and an acceleration column."></canvas>
+    <section>
+      <p class="label">Speed</p>
+      <div class="picks" id="bin">
+        <button type="button" data-v="2" aria-pressed="true">2 m/s</button>
+        <button type="button" data-v="4" aria-pressed="false">4 m/s</button>
+        <button type="button" data-v="6" aria-pressed="false">6 m/s</button>
+        <button type="button" data-v="8" aria-pressed="false">8 m/s</button>
+        <button type="button" data-v="10" aria-pressed="false">10 m/s</button>
+      </div>
+      <dl>
+        <div><dt>Speed</dt><dd id="v-val">2 m/s</dd></div>
+        <div><dt>Acceleration</dt><dd id="a-val">2 m/s²</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The radius is 2 m.</li>
+        <li>Acceleration is speed × speed / 2. The unit is m/s².</li>
+        <li>The mark is 18 m/s². A hit is within 1 m/s².</li>
+        <li>6 m/s is the hit. The line says <code>The acceleration meets the mark.</code></li>
+        <li>2 m/s reads 2 m/s². 4 m/s reads 8 m/s². 8 m/s reads 32 m/s². 10 m/s reads 50 m/s².</li>
+        <li>Those four miss. The line says <code>The acceleration misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

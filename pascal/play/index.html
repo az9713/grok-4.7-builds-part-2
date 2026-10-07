@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pascal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Pascal · one tank</p>
+    <h1>Set the pressure to 49.0 kPa.</h1>
+    <p class="lead">The tank holds water. You choose the depth. Pressure rises by 9.8 kPa for each metre.</p>
+  </header>
+  <div class="layout">
+    <canvas id="tank" width="680" height="420" aria-label="A water tank and a depth mark."></canvas>
+    <section>
+      <p class="label">Depth</p>
+      <div class="picks" id="bin">
+        <button type="button" data-d="1" aria-pressed="true">1 m</button>
+        <button type="button" data-d="2" aria-pressed="false">2 m</button>
+        <button type="button" data-d="5" aria-pressed="false">5 m</button>
+        <button type="button" data-d="10" aria-pressed="false">10 m</button>
+        <button type="button" data-d="20" aria-pressed="false">20 m</button>
+      </div>
+      <dl>
+        <div><dt>Depth</dt><dd id="d-val">1 m</dd></div>
+        <div><dt>Pressure</dt><dd id="p-val">9.8 kPa</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Gauge pressure is (98 × depth) / 10 kilopascals. Depth is in metres.</li>
+        <li>The mark is 49.0 kPa. A hit is within 0.2 kPa.</li>
+        <li>5 m is the hit. The line says <code>The pressure meets the mark.</code></li>
+        <li>1 m reads 9.8 kPa. 2 m reads 19.6 kPa. 10 m reads 98.0 kPa. 20 m reads 196.0 kPa.</li>
+        <li>Those four miss. The line says <code>The pressure misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

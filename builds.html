@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Sixty-six browser builds. Forty-eight of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Seventy browser builds. Fifty-two of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1022,6 +1022,66 @@
       <li>The mark is 90 W. A hit is within 1 W.</li>
       <li>3 A says <code>The power meets the mark.</code> The readout is 90 W.</li>
       <li>1 A reads 10 W. 2 A reads 40 W. 4 A reads 160 W. 5 A reads 250 W. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="pascal">
+    <p class="kind">Game</p>
+    <h2>67 Pascal</h2>
+    <p class="open"><a href="pascal/play/">Open Pascal</a></p>
+    <h3>What it is</h3>
+    <p>Water in a tank. You set the depth. The page shows the gauge pressure.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Gauge pressure is (98 × depth) / 10 kilopascals. Depth is in metres.</li>
+      <li>The mark is 49.0 kPa. A hit is within 0.2 kPa.</li>
+      <li>5 m says <code>The pressure meets the mark.</code> The readout is 49.0 kPa.</li>
+      <li>1 m reads 9.8 kPa. 2 m reads 19.6 kPa. 10 m reads 98.0 kPa. 20 m reads 196.0 kPa. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="radial">
+    <p class="kind">Game</p>
+    <h2>68 Radial</h2>
+    <p class="open"><a href="radial/play/">Open Radial</a></p>
+    <h3>What it is</h3>
+    <p>Motion on a circle of radius 2 m. You set the speed. The page shows the inward acceleration.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The radius is 2 m. Acceleration is speed × speed / 2. The unit is m/s².</li>
+      <li>The mark is 18 m/s². A hit is within 1 m/s².</li>
+      <li>6 m/s says <code>The acceleration meets the mark.</code> The readout is 18 m/s².</li>
+      <li>2 m/s reads 2 m/s². 4 m/s reads 8 m/s². 8 m/s reads 32 m/s². 10 m/s reads 50 m/s². All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="faraday">
+    <p class="kind">Game</p>
+    <h2>69 Faraday</h2>
+    <p class="open"><a href="faraday/play/">Open Faraday</a></p>
+    <h3>What it is</h3>
+    <p>A magnet and a coil. The flux changes at 0.2 Wb/s. You set the turns. The page shows the induced voltage.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Voltage is (turns × 2) / 10 volts.</li>
+      <li>The mark is 8.0 V. A hit is within 0.2 V.</li>
+      <li>40 turns says <code>The voltage meets the mark.</code> The readout is 8.0 V.</li>
+      <li>10 turns reads 2.0 V. 25 turns reads 5.0 V. 50 turns reads 10.0 V. 80 turns reads 16.0 V. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="ph">
+    <p class="kind">Game</p>
+    <h2>70 pH</h2>
+    <p class="open"><a href="ph/play/">Open pH</a></p>
+    <h3>What it is</h3>
+    <p>One solution. You set the H⁺ concentration. The page shows the pH.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Concentration is 10 to the chosen power, in mol/L. pH is −log10 of that concentration.</li>
+      <li>The mark is 5. A hit is within 0.5.</li>
+      <li>1e-5 says <code>The pH meets the mark.</code> The readout is 5.</li>
+      <li>1e-3 reads 3. 1e-4 reads 4. 1e-6 reads 6. 1e-7 reads 7. All four miss.</li>
     </ol>
   </article>
 </body>
