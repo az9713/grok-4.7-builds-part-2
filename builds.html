@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Grok Build — what each build is</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --body: #cbd5e1;
+      --muted: #94a3b8;
+      --line: #334155;
+      --accent: #fb923c;
+      --ok: #2dd4bf;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); }
+    body {
+      font: 17px/1.5 "Segoe UI", sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+    a { color: var(--accent); }
+    h1 { font-size: 34px; line-height: 1.15; margin: 0 0 8px; }
+    h2 { font-size: 24px; margin: 0; }
+    h3 { font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ok); margin: 18px 0 8px; }
+    .meta { color: var(--muted); margin: 0 0 28px; }
+    article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px 18px 8px;
+      margin: 0 0 16px;
+    }
+    .kind { color: var(--accent); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin: 6px 0 0; }
+    p, li { color: var(--body); }
+    ol, ul { margin: 0 0 12px; padding-left: 1.2em; }
+    li { margin: 0 0 6px; }
+    .open { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <p class="meta"><a href="index.html">Back to the demos</a></p>
+  <h1>What each build is</h1>
+  <p class="meta">Eighteen browser builds. Four of them are games. Each game section lists the rules the page uses. The other fourteen pages are films, shops, labs, checks, or reports.</p>
+
+  <article id="service-door">
+    <p class="kind">Game</p>
+    <h2>01 Service Door</h2>
+    <p class="open"><a href="service-door/play/">Open Service Door</a></p>
+    <h3>What it is</h3>
+    <p>You walk one night-shift worker through one archive room. A guard walks left and right. A freight lift is on the right. You win when the guard is down and you stand in the lift.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Press W, A, S, or D to walk. The arrow keys also walk.</li>
+      <li>The guard keeps walking until you stop the guard.</li>
+      <li>Stand near the guard. Press Space. The guard falls. Space works when the distance is under 1.15 floor tiles.</li>
+      <li>Walk into the lift after the guard falls. The line says <code>shift over · R to restart</code>.</li>
+      <li>Walk into the lift before the guard falls. The lift stays shut. The line says <code>lift locked · put the guard down</code>.</li>
+      <li>Press R after the win. The room starts again. R does nothing before the win.</li>
+    </ol>
+  </article>
+
+  <article id="service-door-reel">
+    <p class="kind">Film</p>
+    <h2>02 Service Door Reel</h2>
+    <p class="open"><a href="service-door-reel/play/">Open Service Door Reel</a></p>
+    <h3>What it is</h3>
+    <p>This is a film player for the same worker. You do not walk anyone. The film starts paused.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Press Play. Press Prev or Next to change the shot.</li>
+      <li>Press Split, Storyboard, or Footage to change the view. Keys 1, 2, and 3 do the same three views.</li>
+      <li>Press Space to start the film or to pause the film. The left and right arrow keys change the shot.</li>
+    </ol>
+  </article>
+
+  <article id="locksmith">
+    <p class="kind">Saved report</p>
+    <h2>03 Locksmith</h2>
+    <p class="open"><a href="locksmith/ui/">Open Locksmith</a></p>
+    <h3>What it is</h3>
+    <p>This page replays a saved art-production run. It does not run the script live. Each box is one step. A failed step is marked fail. A later step can still pass. Press Replay DAG to play the saved steps again.</p>
+  </article>
+
+  <article id="phylum-tray">
+    <p class="kind">Lab</p>
+    <h2>04 Phylum Tray</h2>
+    <p class="open"><a href="phylum-tray/play/">Open Phylum Tray</a></p>
+    <h3>What it is</h3>
+    <p>You place copies of one beetle into a glass box. The tray holds eight forms of the same animal. This page has no score and no winner.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Click a picture in the tray. That form falls into the box and walks.</li>
+      <li>Click the glass. Another copy of the last form drops at that point.</li>
+      <li>Press Evacuate habitat. The box becomes empty.</li>
+    </ol>
+  </article>
+
+  <article id="sodium-night">
+    <p class="kind">Film</p>
+    <h2>05 Sodium Night</h2>
+    <p class="open"><a href="sodium-night/play/">Open Sodium Night</a></p>
+    <h3>What it is</h3>
+    <p>This is a six-shot film. The shots are Empty deck, Window, The bell, Off the bus, Over the shoulder, and Into the sodium. You do not control a character. The film starts paused.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Press Play. Press Prev or Next to change the shot.</li>
+      <li>Press Split, Storyboard, or Footage to change the view. Keys 1, 2, and 3 do the same three views.</li>
+      <li>Press Space to start the film or to pause the film.</li>
+    </ol>
+  </article>
+
+  <article id="closed-stack">
+    <p class="kind">Press page</p>
+    <h2>06 Closed Stack</h2>
+    <p class="open"><a href="closed-stack/">Open Closed Stack</a></p>
+    <h3>What it is</h3>
+    <p>This is a press page for the Service Door story. Read the fact sheet and the synopsis. Press Play the slice. That button opens the playable room.</p>
+  </article>
+
+  <article id="continuity-bench">
+    <p class="kind">Check</p>
+    <h2>07 Continuity Bench</h2>
+    <p class="open"><a href="continuity-bench/ui/">Open Continuity Bench</a></p>
+    <h3>What it is</h3>
+    <p>This page scores saved pictures against one reference picture. You do not draw the pictures. You read the marks. Click a picture to read the reasons.</p>
+    <h3>How a picture passes</h3>
+    <ol>
+      <li>Each picture gets three marks: identity, wardrobe, and lighting.</li>
+      <li>A mark passes at 0.80 or above, unless the saved run already marks that axis pass or fail.</li>
+      <li>One failed mark fails that picture. A green mark means that check passed. A red mark means it failed.</li>
+      <li>When fail-closed is on, one failed picture fails the whole run. The page then shows FAIL.</li>
+    </ol>
+  </article>
+
+  <article id="gimbal-goods">
+    <p class="kind">Shop</p>
+    <h2>08 Gimbal Goods</h2>
+    <p class="open"><a href="gimbal-goods/play/">Open Gimbal Goods</a></p>
+    <h3>What it is</h3>
+    <p>This is a shop page for one lamp. The page shows six pictures of that lamp. You do not play a match.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Click a picture. That picture moves to the large frame at the top.</li>
+      <li>Press All plates, Studio, In situ, or Finish. The grid shows only that group.</li>
+      <li>Press Add to hold. Press Hold to open the list. Press Stamp ticket to write a ticket number.</li>
+      <li>The hold remains after you reload the page.</li>
+    </ol>
+  </article>
+
+  <article id="twin-orbit">
+    <p class="kind">Game</p>
+    <h2>09 Twin Orbit</h2>
+    <p class="open"><a href="twin-orbit/play/">Open Twin Orbit</a></p>
+    <h3>What it is</h3>
+    <p>Two people share one keyboard. They must put one battery into the socket on the right ledge. A gap separates the left ledge from the right ledge. The pilot starts on the left. The mechanic starts on the right. The battery starts on the left ledge.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The pilot uses A and D to walk. W jumps. E picks the battery up. F throws it to the right.</li>
+      <li>The mechanic uses the arrow keys to walk and jump. The period key picks the battery up. The slash key throws it to the left.</li>
+      <li>Stand near the battery. Press the pick key. That person carries the battery. Only one person can hold it.</li>
+      <li>Press the throw key. The battery leaves the hands and arcs through the air. It can land on a ledge.</li>
+      <li>A person who falls off the bottom returns to that person's start point.</li>
+      <li>You win when the battery touches the socket and nobody is holding it. The line says <code>Orbit locked. The cell is seated. Reload to hand it again.</code></li>
+      <li>Reload the page to play again. The page has no restart key.</li>
+    </ol>
+  </article>
+
+  <article id="yard-ledger">
+    <p class="kind">Game</p>
+    <h2>10 Yard Ledger</h2>
+    <p class="open"><a href="yard-ledger/play/">Open Yard Ledger</a></p>
+    <h3>What it is</h3>
+    <p>Two trains move on a yard. Brick 12 starts on the main line and moves forward. Ash 4 starts farther along and moves back. You do not drive the trains. You set two switches so the trains do not claim the same track cell.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Click a numbered switch to throw it. Click the same switch again to set it back.</li>
+      <li>Both switches normal: both trains use the main line.</li>
+      <li>SW0 thrown: Ash 4 leaves the main line and uses the side track.</li>
+      <li>SW1 thrown: Brick 12 leaves the main line before column 3, uses the side track, and then uses the east spur.</li>
+      <li>A green line says Clear. The trains do not share a cell.</li>
+      <li>A red line starts with <code>Occupancy clash</code>. Both trains claim that cell. The yard stops.</li>
+      <li>Press Space to pause. Press Space again to move.</li>
+      <li>Press Reset yard. The trains return to their start positions. The switches stay where you set them.</li>
+    </ol>
+  </article>
+
+  <article id="ash-court">
+    <p class="kind">Game</p>
+    <h2>11 Ash Court</h2>
+    <p class="open"><a href="ash-court/play/">Open Ash Court</a></p>
+    <h3>What it is</h3>
+    <p>This is a card game for one player against the bench. The deck has 18 cards. You and the bench each receive 9 cards. Your cards are face up. The bench cards stay face down until the bench plays one.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The suits are Moth, Staff, and Cloak. Each suit has ranks 1 through 6. Rank 6 is the high rank.</li>
+      <li>You lead the first trick. A trick is two cards. One card comes from you. One card comes from the bench.</li>
+      <li>Click one of your cards to play it. You play one card in a trick.</li>
+      <li>When the bench led a suit and you hold that suit, play that suit. When you do not hold that suit, play any card.</li>
+      <li>The bench plays the led suit when it holds that suit. Otherwise the bench plays the first card in its hand.</li>
+      <li>The highest rank of the led suit wins the trick. A card from another suit does not win.</li>
+      <li>The winner of the trick leads the next trick.</li>
+      <li>The first side to win 5 tricks wins the sitting.</li>
+      <li>If both hands run out first, the higher trick count wins. An equal count goes to the bench.</li>
+      <li>The win line is <code>Sitting to you.</code> or <code>Sitting to the bench.</code></li>
+      <li>Press Print rulebook to print the short rules on the game page.</li>
+    </ol>
+  </article>
+
+  <article id="glass-index">
+    <p class="kind">Museum page</p>
+    <h2>12 Glass Index</h2>
+    <p class="open"><a href="glass-index/">Open Glass Index</a></p>
+    <h3>What it is</h3>
+    <p>You look at one repaired glass vessel. A gold line marks the same object in every picture. Press All plates, North window, Raking, or Night. The page shows that view. This page has no score.</p>
+  </article>
+
+  <article id="dieline-press">
+    <p class="kind">Package page</p>
+    <h2>13 Dieline Press</h2>
+    <p class="open"><a href="dieline-press/play/">Open Dieline Press</a></p>
+    <h3>What it is</h3>
+    <p>One bottle holds three liquids. The bottle shape does not change. Press Bergamot, Smoke, or Hibiscus. The label and the caption change. Press Print net. The page opens the flat cut-out pattern of the package.</p>
+  </article>
+
+  <article id="night-shift-os">
+    <p class="kind">Desk</p>
+    <h2>14 Night Shift OS</h2>
+    <p class="open"><a href="night-shift-os/play/">Open Night Shift OS</a></p>
+    <h3>What it is</h3>
+    <p>This is a small fake computer. It is not a scored game. The left column holds three icons: Mail, Map, and Kettle. One extra mail icon does nothing.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Click an icon. A window opens.</li>
+      <li>Drag the window by its title bar. Press × to close the window.</li>
+      <li>Open Mail. The top bar changes from <code>Shift open</code> to <code>Shift note read. Socket on Orbit-2 stays dark.</code></li>
+    </ol>
+  </article>
+
+  <article id="kiln-reel">
+    <p class="kind">Film</p>
+    <h2>15 Kiln Reel</h2>
+    <p class="open"><a href="kiln-reel/play/">Open Kiln Reel</a></p>
+    <h3>What it is</h3>
+    <p>This is a short film of one bowl on a pottery wheel. You do not shape the clay. Press 01 Throw, 02 Trim, or 03 Finish. Each button plays that stage of the same bowl.</p>
+  </article>
+
+  <article id="cutaway-house">
+    <p class="kind">House view</p>
+    <h2>16 Cutaway House</h2>
+    <p class="open"><a href="cutaway-house/play/">Open Cutaway House</a></p>
+    <h3>What it is</h3>
+    <p>You see one house and a simple floor plan. Click Kitchen. The picture and the film change to the kitchen. Click Front or Stair. The picture and the film return to the outside. This page has no score.</p>
+  </article>
+
+  <article id="broadcast-kit">
+    <p class="kind">Sports graphic</p>
+    <h2>17 Broadcast Kit</h2>
+    <p class="open"><a href="broadcast-kit/play/">Open Broadcast Kit</a></p>
+    <h3>What it is</h3>
+    <p>This is a sports graphic for a fictional match, Kite FC. You change the score. You do not play the match. The clock starts at 12:04 and counts up.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>Press Home +1. The home score rises by one.</li>
+      <li>Press Away +1. The away score rises by one.</li>
+      <li>Press Replay wipe. The graphic plays a short transition.</li>
+      <li>Press End card. The end card appears. Press End card again. The end card hides.</li>
+    </ol>
+  </article>
+
+  <article id="swarm-brief">
+    <p class="kind">Saved report</p>
+    <h2>18 Swarm Brief</h2>
+    <p class="open"><a href="swarm-brief/ui/">Open Swarm Brief</a></p>
+    <p class="open"><a href="swarm-brief/explainer/index.html">Open the written explainer</a></p>
+    <h3>What it is</h3>
+    <p>This page shows the saved steps behind a short report on ship rust. It does not run the script live. Read the boxes. A green border means that step passed. The second link opens the written page, "Why ships rust at the waterline".</p>
+  </article>
+</body>
+</html>

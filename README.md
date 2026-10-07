@@ -12,6 +12,8 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
+[What each build is](builds.html) explains all eighteen pages. The four games have their rules on that page.
+
 ## Open locally
 
 ```
