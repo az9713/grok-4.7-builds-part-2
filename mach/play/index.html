@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Mach</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Mach · one craft</p>
+    <h1>Set the Mach number to 2.00.</h1>
+    <p class="lead">Sound speed is 340 m/s. You choose the craft speed. The Mach number is that speed divided by 340.</p>
+  </header>
+  <div class="layout">
+    <canvas id="sky" width="680" height="420" aria-label="A craft, a shock cone, and a Mach column."></canvas>
+    <section>
+      <p class="label">Speed</p>
+      <div class="picks" id="bin">
+        <button type="button" data-s="170" aria-pressed="true">170 m/s</button>
+        <button type="button" data-s="340" aria-pressed="false">340 m/s</button>
+        <button type="button" data-s="510" aria-pressed="false">510 m/s</button>
+        <button type="button" data-s="680" aria-pressed="false">680 m/s</button>
+        <button type="button" data-s="850" aria-pressed="false">850 m/s</button>
+      </div>
+      <dl>
+        <div><dt>Speed</dt><dd id="s-val">170 m/s</dd></div>
+        <div><dt>Mach</dt><dd id="m-val">0.50</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Sound speed is 340 m/s.</li>
+        <li>Mach number is speed / 340.</li>
+        <li>The mark is 2.00. A hit is within 0.02.</li>
+        <li>680 m/s is the hit. The line says <code>The Mach number meets the mark.</code></li>
+        <li>170 m/s reads 0.50. 340 m/s reads 1.00. 510 m/s reads 1.50. 850 m/s reads 2.50.</li>
+        <li>Those four miss. The line says <code>The Mach number misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

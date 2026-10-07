@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Photo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Photo · one plate</p>
+    <h1>Set the electron energy to 2.00 eV.</h1>
+    <p class="lead">The work function is 2.00 eV. You choose the wavelength. Electron energy is 1240 divided by that wavelength, minus 2.00.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plate" width="680" height="420" aria-label="A metal plate, a ray, and an energy column."></canvas>
+    <section>
+      <p class="label">Wavelength</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="620" aria-pressed="true">620 nm</button>
+        <button type="button" data-n="310" aria-pressed="false">310 nm</button>
+        <button type="button" data-n="248" aria-pressed="false">248 nm</button>
+        <button type="button" data-n="155" aria-pressed="false">155 nm</button>
+        <button type="button" data-n="124" aria-pressed="false">124 nm</button>
+      </div>
+      <dl>
+        <div><dt>Wavelength</dt><dd id="w-val">620 nm</dd></div>
+        <div><dt>Energy</dt><dd id="e-val">0.00 eV</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The work function is 2.00 eV.</li>
+        <li>Electron energy is 1240 / wavelength − 2.00 electronvolts. Wavelength is in nanometres.</li>
+        <li>The mark is 2.00 eV. A hit is within 0.05 eV.</li>
+        <li>310 nm is the hit. The line says <code>The electron energy meets the mark.</code></li>
+        <li>620 nm reads 0.00 eV. 248 nm reads 3.00 eV. 155 nm reads 6.00 eV. 124 nm reads 8.00 eV.</li>
+        <li>Those four miss. The line says <code>The electron energy misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
