@@ -45,7 +45,7 @@
     a.card:hover, a.card:focus-visible, .card:hover, .card:focus-within { border-color: var(--accent); }
     a.card:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--accent); }
     .card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .thumb { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; background: #0b1220; display: block; }
+    .thumb, .mark { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; background: #0b1220; display: block; }
     .tri { aspect-ratio: 16 / 9; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: #07110d; }
     .tri img { width: 100%; height: 100%; object-fit: cover; }
     .copy { display: block; padding: 12px 12px 14px; }
@@ -58,7 +58,7 @@
 </head>
 <body>
   <h1>Grok Build demos</h1>
-  <p class="meta">Eighteen completed browser demos. Eight are round 1. Ten are round 2. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the four games.</p>
+  <p class="meta">Twenty-two completed browser demos. Eight are round 1. Ten are round 2. Four are round 3. Each card says what the page is. The orange line says what to do. Open a card to run that demo. <a href="builds.html">Read what each build is</a>, including the rules of the seven games.</p>
 
   <h2 class="round">Round 1</h2>
   <div class="grid">
@@ -145,6 +145,61 @@
       </a>
       <p class="more"><a href="swarm-brief/explainer/index.html">Open the explainer</a></p>
     </article>
+  </div>
+
+  <h2 class="round">Round 3</h2>
+  <div class="grid">
+    <a class="card" href="apsis/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Orbit plot with a green outer ring">
+        <rect width="320" height="180" fill="#12100e"/>
+        <circle cx="160" cy="90" r="62" fill="none" stroke="#3f8f6b" stroke-width="2"/>
+        <circle cx="160" cy="90" r="34" fill="none" stroke="#8d8272"/>
+        <circle cx="160" cy="90" r="14" fill="#2a211c" stroke="#6b5344"/>
+        <circle cx="194" cy="90" r="3" fill="#efe6d6"/>
+      </svg>
+      <div class="copy"><span class="num">19</span><h2>Apsis</h2><p>One craft flies a circle around a planet. You do not steer left or right. You burn along its path.</p><p><span class="do">Do this.</span> Hold Prograde until the far point meets the green line. Wait until the craft reaches that far point. Hold Prograde again until the path is round. Press Reset plot to start again.</p></div>
+    </a>
+    <a class="card" href="spillway/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Roof tiles with water on the west side">
+        <rect width="320" height="180" fill="#14181b"/>
+        <g fill="#31443a">
+          <rect x="36" y="28" width="22" height="22"/>
+          <rect x="62" y="28" width="22" height="22"/>
+          <rect x="88" y="28" width="22" height="22"/>
+          <rect x="114" y="28" width="22" height="22"/>
+          <rect x="140" y="28" width="22" height="22"/>
+          <rect x="166" y="54" width="22" height="22"/>
+          <rect x="192" y="80" width="22" height="22"/>
+          <rect x="218" y="106" width="22" height="22"/>
+          <rect x="244" y="132" width="22" height="22"/>
+        </g>
+        <g fill="#3d8eaa">
+          <rect x="36" y="54" width="22" height="22"/>
+          <rect x="36" y="80" width="22" height="22"/>
+          <rect x="36" y="106" width="22" height="22"/>
+        </g>
+      </svg>
+      <div class="copy"><span class="num">20</span><h2>Spillway</h2><p>Rain falls on a roof. Water walks downhill. The west floor drains into the archive. The east floor drains into the cistern.</p><p><span class="do">Do this.</span> Press Raise. On the row under the rain, raise each west tile twice. Press Open the sky. The cistern must hold the water. The archive must stay dry.</p></div>
+    </a>
+    <a class="card" href="sort-case/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Metal type above a printed proof">
+        <rect width="320" height="180" fill="#241e18"/>
+        <rect x="28" y="36" width="44" height="44" fill="#6e6a64"/>
+        <rect x="78" y="36" width="44" height="44" fill="#6e6a64"/>
+        <rect x="128" y="36" width="44" height="44" fill="#6e6a64"/>
+        <rect x="28" y="100" width="264" height="52" fill="#efe6d2"/>
+        <text x="44" y="134" fill="#1c140e" font-family="Georgia, serif" font-size="22">SOCKET DARK</text>
+      </svg>
+      <div class="copy"><span class="num">21</span><h2>Sort Case</h2><p>You set one line of metal type. The stick shows the line backwards. The proof prints it the right way.</p><p><span class="do">Do this.</span> Click sorts until the line is SOCKET DARK. Press Lock the chase. Press Pull a proof. The proof must match the ticket.</p></div>
+    </a>
+    <a class="card" href="partial/play/">
+      <svg class="mark" viewBox="0 0 320 180" role="img" aria-label="Amber sum of four sine waves">
+        <rect width="320" height="180" fill="#1a120c"/>
+        <path d="M16 90 C 40 40, 64 140, 88 90 S 136 40, 160 90 208 140, 232 90 280 40, 304 90" fill="none" stroke="#ffb25a" stroke-width="2"/>
+        <path d="M16 90 C 40 70, 64 110, 88 90 S 136 70, 160 90 208 110, 232 90 280 70, 304 90" fill="none" stroke="#8a7560" stroke-width="1"/>
+      </svg>
+      <div class="copy"><span class="num">22</span><h2>Four Partials</h2><p>Four sine waves add into one tone. The amber line is their sum. The bench has no score.</p><p><span class="do">Do this.</span> Press Sound the partials. Move a ratio or a height. Drag the string to write a loudness curve. Press Silence to stop the sound.</p></div>
+    </a>
   </div>
 </body>
 </html>

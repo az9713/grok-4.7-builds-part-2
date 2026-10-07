@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Four Partials</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Four Partials · string bench</p>
+    <h1>Add four sines.</h1>
+    <p class="lead">A tone is a stack of sine waves. Partial 1 is the note you name. The other three are whole-number copies of that note. Their heights add. The amber line is that sum. This bench has no score.</p>
+  </header>
+  <canvas id="scope" width="800" height="220" aria-label="Sum of the four partials"></canvas>
+  <div id="rows" class="rows"></div>
+  <label class="fund">Fundamental
+    <input id="fund" type="range" min="110" max="440" value="220" step="1">
+    <span id="fund-val">220 Hz</span>
+  </label>
+  <p class="label">Bow. Drag on the string. Height is loudness across a two-second loop.</p>
+  <canvas id="string" width="800" height="90" aria-label="Loudness gesture"></canvas>
+  <div class="actions">
+    <button id="sound" type="button">Sound the partials</button>
+    <button id="silence" type="button">Silence</button>
+    <button id="flat" type="button">Flat bow</button>
+  </div>
+  <p id="status" role="status">Press Sound the partials. Then drag the string.</p>
+  <h2>What the controls do</h2>
+  <ol>
+    <li>Partial 1 starts at ratio 1. Partial 2 starts at 2. Partial 3 starts at 3. Partial 4 starts at 5.</li>
+    <li>The minus and plus buttons change a ratio from 1 to 9. Ratio 2 is twice the fundamental. Ratio 3 is three times the fundamental.</li>
+    <li>Each slider sets that partial’s height, from silent at 0 to full at 1.</li>
+    <li>The fundamental slider sets the first partial from 110 Hz to 440 Hz. It starts at 220 Hz.</li>
+    <li>The amber line shows one cycle of the fundamental. Each partial adds its sine at its own ratio.</li>
+    <li>Drag on the string to write a loudness curve. The curve loops every 2 seconds while the bench sounds. Flat bow clears the curve to 0.70.</li>
+    <li>Silence sets the loudness to 0. Sound the partials opens the audio device. A browser can refuse that device. The line then says “This browser did not open the audio device.” The drawing still works.</li>
+  </ol>
+  <script src="app.js"></script>
+</body>
+</html>

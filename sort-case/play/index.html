@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Sort Case</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Sort Case · job ticket</p>
+    <h1>Set the line in metal.</h1>
+    <p class="lead">The ticket asks for SOCKET DARK. Type in the stick is backwards, and each letter is mirrored. The proof prints the line the right way. The measure holds 24 units.</p>
+  </header>
+  <section class="ticket">
+    <p class="label">Ticket</p>
+    <p class="job">SOCKET DARK</p>
+  </section>
+  <div id="case" class="case" role="group" aria-label="Type case"></div>
+  <div class="stick-wrap">
+    <p class="label">Stick · mirrored metal</p>
+    <div id="stick" class="stick" aria-hidden="true"></div>
+    <p id="measure">0 / 24</p>
+  </div>
+  <div class="actions">
+    <button id="back" type="button">Remove last sort</button>
+    <button id="lock" type="button">Lock the chase</button>
+    <button id="proof" type="button" disabled>Pull a proof</button>
+  </div>
+  <section class="proof">
+    <p class="label">Proof</p>
+    <p id="sheet">Pull a proof after the chase is locked.</p>
+  </section>
+  <p id="status" role="status">Click sorts to fill the stick. The line must read SOCKET DARK on the proof.</p>
+  <h2>Rules</h2>
+  <ol>
+    <li>The case holds A to Z and a space. This reduced case has no lowercase.</li>
+    <li>A sort is 2 units wide. I, J, and L are 1 unit. M and W are 3 units. A space is 1 unit.</li>
+    <li>The stick accepts a sort only when the line still fits in 24 units. SOCKET DARK is 21 units.</li>
+    <li>The stick shows the metal: the order is reversed, and each letter is mirrored. The proof shows the readable line.</li>
+    <li>Remove last sort takes the latest sort back off.</li>
+    <li>Lock the chase before a proof. A locked chase takes no new sorts. Open the chase to edit again.</li>
+    <li>Pull a proof. An empty chase says “The chase is empty.” A wrong line says “The proof does not match the ticket.”</li>
+    <li>The win line is “The proof matches the ticket.”</li>
+  </ol>
+  <script src="app.js"></script>
+</body>
+</html>

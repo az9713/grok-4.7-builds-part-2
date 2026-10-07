@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Apsis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Apsis · orbit plot</p>
+    <h1>Raise the orbit. Then round it.</h1>
+    <p class="lead">One craft flies a low circle around a planet. The green line is the outer orbit. You do not steer left or right. A burn only pushes along the craft’s path.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plot" width="720" height="720" aria-label="Orbit plot. The green ring is the outer orbit."></canvas>
+    <section class="panel">
+      <dl>
+        <div><dt>Distance</dt><dd id="dist">1.00</dd></div>
+        <div><dt>Fuel</dt><dd id="fuel">0.48</dd></div>
+        <div><dt>Near point</dt><dd id="near">1.00</dd></div>
+        <div><dt>Far point</dt><dd id="far">1.00</dd></div>
+        <div><dt>Size</dt><dd id="size">1.00</dd></div>
+        <div><dt>Eccentricity</dt><dd id="ecc">0.00</dd></div>
+      </dl>
+      <div class="controls">
+        <button id="pro" type="button">Hold prograde</button>
+        <button id="ret" type="button">Hold retrograde</button>
+        <button id="reset" type="button">Reset plot</button>
+      </div>
+      <p id="status" role="status">Coast. The far point must meet the green line. Then round the path.</p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The craft starts on the inner circle. Fuel is 0.48.</li>
+        <li>Hold Prograde. The burn pushes the craft forward. The far point rises. W and the up arrow do this too.</li>
+        <li>Release the burn when the far point meets the green line. The green line sits at size 1.85.</li>
+        <li>Wait. The craft coasts out to that far point.</li>
+        <li>Hold Prograde again. Release when the path is nearly round. Eccentricity must fall under 0.08. Size must sit between 1.77 and 1.93.</li>
+        <li>Hold that coast for 1.2 seconds. The line then says “Apsis closed. The orbit is round on the outer line.”</li>
+        <li>Retrograde pushes backward. S and the down arrow do this. A long retrograde burn drops the craft onto the planet.</li>
+        <li>A burn that uses all the fuel from the inner circle can leave the planet’s well.</li>
+        <li>Press Reset plot, or press R, to start again.</li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

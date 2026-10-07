@@ -1,0 +1,72 @@
+:root {
+  --bg: #14181b;
+  --ink: #d5ddd4;
+  --dim: #8b978c;
+  --archive: #8f3d32;
+  --cistern: #c4a15a;
+  --water: #3d8eaa;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font: 17px/1.45 Georgia, "Palatino Linotype", serif;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 16px 64px;
+}
+.kicker {
+  margin: 0;
+  color: var(--dim);
+  font: 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1 { font-weight: 500; font-size: 40px; line-height: 1.05; margin: 8px 0; }
+h2 {
+  font: 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cistern);
+}
+.lead { max-width: 40em; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+button {
+  font: 15px/1 Georgia, serif;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--dim);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+button.on, button[aria-pressed="true"] { border-color: var(--cistern); color: var(--cistern); }
+button:focus-visible { outline: 2px solid var(--cistern); outline-offset: 2px; }
+button:disabled { opacity: 0.45; cursor: default; }
+#moves { margin: 0 0 0 8px; font: 14px/1 Consolas, monospace; color: var(--dim); }
+.yard {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: 3px;
+}
+.cell {
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  font: 10px/1 Consolas, monospace;
+  color: #121614;
+  cursor: pointer;
+}
+.cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.cell.stone { cursor: default; color: #d5ddd4; }
+.cell.archive { box-shadow: inset 0 0 0 2px var(--archive); }
+.cell.cistern { box-shadow: inset 0 0 0 2px var(--cistern); }
+.cell.inlet { box-shadow: inset 0 0 0 2px var(--water); }
+#status { min-height: 3em; }
+.meters { display: flex; gap: 18px; font: 15px/1 Consolas, monospace; }
+#archive { color: #e7b2ab; }
+#cistern { color: var(--cistern); }
+ol { padding-left: 1.2em; }
+li { margin: 0 0 8px; }
+@media (max-width: 640px) {
+  h1 { font-size: 32px; }
+  .cell { font-size: 8px; }
+}

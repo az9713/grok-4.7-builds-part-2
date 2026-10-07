@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Spillway</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Spillway · roof ledger</p>
+    <h1>Keep the archive dry.</h1>
+    <p class="lead">Rain falls on one west tile. Water walks downhill. The west floor drains into the archive. The east floor drains into the cistern. A stone ridge splits the roof. The top of the ridge is open.</p>
+  </header>
+  <div class="toolbar">
+    <button id="raise" type="button" class="on" aria-pressed="true">Raise</button>
+    <button id="lower" type="button" aria-pressed="false">Lower</button>
+    <button id="sky" type="button">Open the sky</button>
+    <button id="dry" type="button">Dry the roof</button>
+    <button id="restore" type="button">Restore the yard</button>
+    <p id="moves">Moves left: 18</p>
+  </div>
+  <div id="yard" class="yard" role="group" aria-label="Roof tiles"></div>
+  <p id="status" role="status">Raise a dam on the row under the rain. Two raises on each west tile of that row send the water east.</p>
+  <p class="meters"><span id="cistern">Cistern 0.0</span><span id="archive">Archive 0.0</span></p>
+  <h2>Rules</h2>
+  <ol>
+    <li>Each tile has a height. Water moves to a strictly lower neighbor. South wins a tie, then east, then west, then north.</li>
+    <li>On a flat roof, water creeps east first.</li>
+    <li>You have 18 moves. Raise spends a move. Lower spends a move. Height stays between 0 and 12.</li>
+    <li>The ridge tiles do not move.</li>
+    <li>Press Open the sky. Rain puts 0.3 on the marked west tile for 24 steps, then the roof settles for 70 steps.</li>
+    <li>You win when the cistern holds at least 6.0 and the archive holds under 0.5. The line says “The cistern holds the spill.”</li>
+    <li>The archive fails the run when it holds 0.5 or more. The line says “Water is in the archive.”</li>
+    <li>A known dam: on the row under the rain, raise each of the seven west tiles twice. That is 14 moves. The open ridge at the top lets the water onto the east floor.</li>
+    <li>Dry the roof clears the water and keeps your tiles. Restore the yard returns the original heights and the 18 moves.</li>
+  </ol>
+  <script src="app.js"></script>
+</body>
+</html>

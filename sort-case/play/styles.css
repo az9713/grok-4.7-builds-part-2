@@ -1,0 +1,98 @@
+:root {
+  --bg: #241e18;
+  --ink: #efe6d6;
+  --dim: #a89880;
+  --metal: #6e6a64;
+  --brass: #8a6a3b;
+  --paper: #efe6d2;
+  --black: #1c140e;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font: 17px/1.45 Georgia, "Palatino Linotype", serif;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 28px 16px 64px;
+}
+.kicker, .label, h2 {
+  font: 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+h1 { font-weight: 500; font-size: 40px; line-height: 1.05; margin: 8px 0; }
+h2 { color: var(--brass); }
+.lead { max-width: 40em; }
+.ticket, .proof, .stick-wrap {
+  border: 1px solid #4a3d2e;
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+.job { font-size: 28px; letter-spacing: 0.12em; margin: 6px 0 0; }
+.case { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.sort, button {
+  font: 16px/1 "Times New Roman", Times, serif;
+  color: #f3efe6;
+  background: var(--metal);
+  border: 0;
+  border-bottom: 3px solid #2a2724;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 8px;
+  cursor: pointer;
+}
+.sort .nick {
+  display: block;
+  width: 14px;
+  height: 3px;
+  margin: 4px auto 0;
+  background: #1a1612;
+}
+button.action, .actions button {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--dim);
+  font-family: Georgia, serif;
+}
+button:focus-visible, .sort:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+button:disabled { opacity: 0.4; cursor: default; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.stick {
+  transform: scaleX(-1);
+  display: flex;
+  gap: 4px;
+  min-height: 52px;
+  align-items: center;
+  background: #1a140e;
+  padding: 8px;
+  border-left: 8px solid var(--brass);
+}
+.metal {
+  display: inline-block;
+  background: #8d8882;
+  color: #16130f;
+  min-width: 28px;
+  text-align: center;
+  padding: 8px 4px 10px;
+  border-bottom: 4px solid #3c3834;
+  font: 22px/1 "Times New Roman", Times, serif;
+}
+.metal i {
+  display: block;
+  width: 12px;
+  height: 3px;
+  margin: 5px auto 0;
+  background: #1a1612;
+}
+#measure { margin: 8px 0 0; font: 14px/1 Consolas, monospace; color: var(--dim); }
+.proof { background: var(--paper); color: var(--black); }
+.proof .label { color: #6d6456; }
+#sheet { font-size: 36px; letter-spacing: 0.08em; margin: 8px 0 0; min-height: 1.2em; }
+#status { min-height: 3em; }
+ol { padding-left: 1.2em; }
+li { margin: 0 0 8px; }
+@media (max-width: 640px) {
+  h1 { font-size: 32px; }
+  #sheet, .job { font-size: 24px; }
+}

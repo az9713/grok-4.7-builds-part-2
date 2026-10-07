@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Eighteen browser builds. Four of them are games. Each game section lists the rules the page uses. The other fourteen pages are films, shops, labs, checks, or reports.</p>
+  <p class="meta">Twenty-two browser builds. Seven of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or an instrument.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -280,6 +280,77 @@
     <p class="open"><a href="swarm-brief/explainer/index.html">Open the written explainer</a></p>
     <h3>What it is</h3>
     <p>This page shows the saved steps behind a short report on ship rust. It does not run the script live. Read the boxes. A green border means that step passed. The second link opens the written page, "Why ships rust at the waterline".</p>
+  </article>
+
+  <article id="apsis">
+    <p class="kind">Game</p>
+    <h2>19 Apsis</h2>
+    <p class="open"><a href="apsis/play/">Open Apsis</a></p>
+    <h3>What it is</h3>
+    <p>You fly one craft around a planet. The craft starts on a low circle. The green line is a higher circle. You do not steer left or right. A burn pushes only along the path.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Hold Prograde, or hold W, or hold the up arrow. The far point rises. Fuel starts at 0.48. Thrust is 0.12.</li>
+      <li>Release when the far point meets the green line. The green line is size 1.85.</li>
+      <li>Coast until Distance meets the far point.</li>
+      <li>Hold Prograde again. Release when eccentricity is under 0.08 and size is between 1.77 and 1.93.</li>
+      <li>Hold that coast for 1.2 seconds. The line says <code>Apsis closed. The orbit is round on the outer line.</code></li>
+      <li>Retrograde, S, or the down arrow pushes backward. A long retrograde burn drops the craft onto the planet. The line says <code>The craft meets the planet.</code></li>
+      <li>A full prograde burn from the inner circle can leave the well. The line says <code>The craft leaves the well.</code></li>
+      <li>Press Reset plot, or press R, to start again.</li>
+    </ol>
+  </article>
+
+  <article id="spillway">
+    <p class="kind">Game</p>
+    <h2>20 Spillway</h2>
+    <p class="open"><a href="spillway/play/">Open Spillway</a></p>
+    <h3>What it is</h3>
+    <p>Rain falls on one west tile of a roof. Water walks downhill. The west floor drains into the archive. The east floor drains into the cistern. A stone ridge splits the roof. The top tile of the ridge is open.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Water moves to a strictly lower neighbor. South wins a tie, then east, then west, then north.</li>
+      <li>On a flat roof, water creeps east first.</li>
+      <li>You have 18 moves. Raise spends a move. Lower spends a move. The ridge tiles do not move.</li>
+      <li>Open the sky. Rain adds 0.3 to the marked tile for 24 steps. The roof then settles for 70 steps.</li>
+      <li>You win when the cistern holds at least 6.0 and the archive holds under 0.5. The line says <code>The cistern holds the spill.</code></li>
+      <li>The archive fails the run at 0.5 or more. The line says <code>Water is in the archive.</code></li>
+      <li>A dam that wins: on the row under the rain, raise each of the seven west tiles twice.</li>
+      <li>Dry the roof keeps your tiles. Restore the yard returns the original heights and the 18 moves.</li>
+    </ol>
+  </article>
+
+  <article id="sort-case">
+    <p class="kind">Game</p>
+    <h2>21 Sort Case</h2>
+    <p class="open"><a href="sort-case/play/">Open Sort Case</a></p>
+    <h3>What it is</h3>
+    <p>You set metal type for one ticket. The ticket is SOCKET DARK. The stick shows the metal backwards, and each letter is mirrored. The proof prints the readable line.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The case holds A to Z and a space.</li>
+      <li>A sort is 2 units wide. I, J, and L are 1. M and W are 3. A space is 1. The measure is 24. The ticket is 21.</li>
+      <li>A sort that does not fit is refused. The line says <code>The sort does not fit the measure.</code></li>
+      <li>Remove last sort takes the latest sort off.</li>
+      <li>Lock the chase before a proof. A locked chase takes no edits. Open the chase to edit again.</li>
+      <li>An empty proof says <code>The chase is empty.</code> A wrong line says <code>The proof does not match the ticket.</code></li>
+      <li>The win line is <code>The proof matches the ticket.</code></li>
+    </ol>
+  </article>
+
+  <article id="partial">
+    <p class="kind">Instrument</p>
+    <h2>22 Four Partials</h2>
+    <p class="open"><a href="partial/play/">Open Four Partials</a></p>
+    <h3>What it is</h3>
+    <p>Four sine waves add into one tone. Partial 1 is the note you name. The other three are whole-number copies of that note. The amber line is one cycle of their sum. This bench has no score and no winner.</p>
+    <h3>What you do</h3>
+    <ol>
+      <li>The ratios start at 1, 2, 3, and 5. The minus and plus buttons move a ratio from 1 to 9.</li>
+      <li>Each slider sets that partial’s height, from 0 to 1. The fundamental starts at 220 Hz and runs from 110 Hz to 440 Hz.</li>
+      <li>Press Sound the partials. Drag the string to write a loudness curve. The curve loops every 2 seconds.</li>
+      <li>Press Flat bow. The curve returns to 0.70. Press Silence. The loudness falls to 0. The drawing remains.</li>
+    </ol>
   </article>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Eighteen browser slices in this repository. Eight are round 1. Ten are round 2. The license is MIT.
+Twenty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all eighteen pages. The four games have their rules on that page.
+[What each build is](builds.html) explains all twenty-two pages. The seven games have their rules on that page.
 
 ## Open locally
 
@@ -46,6 +46,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 16 | [cutaway-house/play/](https://az9713.github.io/grok-4.7-builds-part-2/cutaway-house/play/) | House lock, click-to-enter rooms |
 | 17 | [broadcast-kit/play/](https://az9713.github.io/grok-4.7-builds-part-2/broadcast-kit/play/) | Kite FC overlay package |
 | 18 | [swarm-brief/ui/](https://az9713.github.io/grok-4.7-builds-part-2/swarm-brief/ui/) | Rhai swarm + waterline explainer |
+| 19 | [apsis/play/](https://az9713.github.io/grok-4.7-builds-part-2/apsis/play/) | Orbit plot. Two prograde burns round a higher circle |
+| 20 | [spillway/play/](https://az9713.github.io/grok-4.7-builds-part-2/spillway/play/) | Roof-flow puzzle. Keep the archive dry |
+| 21 | [sort-case/play/](https://az9713.github.io/grok-4.7-builds-part-2/sort-case/play/) | Letterpress ticket. Mirrored metal, right-reading proof |
+| 22 | [partial/play/](https://az9713.github.io/grok-4.7-builds-part-2/partial/play/) | Four-sine instrument and a bowed loudness curve |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 
