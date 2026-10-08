@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Atten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Atten · one slab</p>
+    <h1>Set the transmission to 36.8 %.</h1>
+    <p class="lead">You choose the thickness. Transmission percent is 100 times the exponential of minus centimetres / 5.</p>
+  </header>
+  <div class="layout">
+    <canvas id="slab" width="680" height="420" aria-label="Slabs, a beam, and a transmission column."></canvas>
+    <section>
+      <p class="label">Thickness</p>
+      <div class="picks" id="bin">
+        <button type="button" data-c="0" aria-pressed="true">0 cm</button>
+        <button type="button" data-c="5" aria-pressed="false">5 cm</button>
+        <button type="button" data-c="10" aria-pressed="false">10 cm</button>
+        <button type="button" data-c="15" aria-pressed="false">15 cm</button>
+        <button type="button" data-c="20" aria-pressed="false">20 cm</button>
+      </div>
+      <dl>
+        <div><dt>Thickness</dt><dd id="c-val">0 cm</dd></div>
+        <div><dt>Transmission</dt><dd id="p-val">100.0 %</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Transmission percent is 100 × exp(-cm / 5).</li>
+        <li>The mark is 36.8 %. A hit is within 0.05 %.</li>
+        <li>5 cm is the hit. The line says <code>The transmission meets the mark.</code></li>
+        <li>0 cm reads 100.0 %. 10 cm reads 13.5 %. 15 cm reads 5.0 %. 20 cm reads 1.8 %.</li>
+        <li>Those four miss. The line says <code>The transmission misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

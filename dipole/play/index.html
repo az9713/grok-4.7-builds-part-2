@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dipole</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Dipole · one magnet</p>
+    <h1>Set the torque to 2.00 N m.</h1>
+    <p class="lead">You choose the angle. Torque in N m is 4 times the sine of that angle. The angle is in degrees.</p>
+  </header>
+  <div class="layout">
+    <canvas id="magnet" width="680" height="420" aria-label="A magnet in a field and a torque column."></canvas>
+    <section>
+      <p class="label">Angle</p>
+      <div class="picks" id="bin">
+        <button type="button" data-d="0" aria-pressed="true">0°</button>
+        <button type="button" data-d="30" aria-pressed="false">30°</button>
+        <button type="button" data-d="45" aria-pressed="false">45°</button>
+        <button type="button" data-d="60" aria-pressed="false">60°</button>
+        <button type="button" data-d="90" aria-pressed="false">90°</button>
+      </div>
+      <dl>
+        <div><dt>Angle</dt><dd id="d-val">0°</dd></div>
+        <div><dt>Torque</dt><dd id="q-val">0.00 N m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Torque in N m is 4 × sin(angle). The angle is in degrees.</li>
+        <li>The mark is 2.00 N m. A hit is within 0.005 N m.</li>
+        <li>30° is the hit. The line says <code>The torque meets the mark.</code></li>
+        <li>0° reads 0.00 N m. 45° reads 2.83 N m. 60° reads 3.46 N m. 90° reads 4.00 N m.</li>
+        <li>Those four miss. The line says <code>The torque misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

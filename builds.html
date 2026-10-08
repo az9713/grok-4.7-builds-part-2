@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Ninety-eight browser builds. Eighty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">One hundred two browser builds. Eighty-four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1504,6 +1504,66 @@
       <li>The mark is 6.00 Ω. A hit is within 0.005 Ω.</li>
       <li>12 Ω says <code>The resistance meets the mark.</code> The readout is 6.00 Ω.</li>
       <li>4 Ω reads 3.00 Ω. 6 Ω reads 4.00 Ω. 24 Ω reads 8.00 Ω. 60 Ω reads 10.00 Ω. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="bob">
+    <p class="kind">Game</p>
+    <h2>99 Bob</h2>
+    <p class="open"><a href="bob/play/">Open Bob</a></p>
+    <h3>What it is</h3>
+    <p>The stiffness is fixed. You set the mass. The page shows the period.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The period in seconds is the square root of the mass in kilograms.</li>
+      <li>The mark is 3.00 s. A hit is within 0.005 s.</li>
+      <li>9 kg says <code>The period meets the mark.</code> The readout is 3.00 s.</li>
+      <li>1 kg reads 1.00 s. 4 kg reads 2.00 s. 16 kg reads 4.00 s. 25 kg reads 5.00 s. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="dipole">
+    <p class="kind">Game</p>
+    <h2>100 Dipole</h2>
+    <p class="open"><a href="dipole/play/">Open Dipole</a></p>
+    <h3>What it is</h3>
+    <p>A magnet sits in a field. You set the angle. The page shows the torque.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Torque in N m is 4 × sin(angle). The angle is in degrees.</li>
+      <li>The mark is 2.00 N m. A hit is within 0.005 N m.</li>
+      <li>30° says <code>The torque meets the mark.</code> The readout is 2.00 N m.</li>
+      <li>0° reads 0.00 N m. 45° reads 2.83 N m. 60° reads 3.46 N m. 90° reads 4.00 N m. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="atten">
+    <p class="kind">Game</p>
+    <h2>101 Atten</h2>
+    <p class="open"><a href="atten/play/">Open Atten</a></p>
+    <h3>What it is</h3>
+    <p>A beam crosses a slab. You set the thickness. The page shows the transmission.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Transmission percent is 100 × exp(−cm / 5).</li>
+      <li>The mark is 36.8 %. A hit is within 0.05 %.</li>
+      <li>5 cm says <code>The transmission meets the mark.</code> The readout is 36.8 %.</li>
+      <li>0 cm reads 100.0 %. 10 cm reads 13.5 %. 15 cm reads 5.0 %. 20 cm reads 1.8 %. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="cube">
+    <p class="kind">Game</p>
+    <h2>102 Cube</h2>
+    <p class="open"><a href="cube/play/">Open Cube</a></p>
+    <h3>What it is</h3>
+    <p>One block. You set the side. The page shows the volume.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Volume in mL is side × side × side. Side is in centimetres.</li>
+      <li>The mark is 27 mL. A hit is within 0.5 mL.</li>
+      <li>3 cm says <code>The volume meets the mark.</code> The readout is 27 mL.</li>
+      <li>1 cm reads 1 mL. 2 cm reads 8 mL. 4 cm reads 64 mL. 5 cm reads 125 mL. All four miss.</li>
     </ol>
   </article>
 </body>

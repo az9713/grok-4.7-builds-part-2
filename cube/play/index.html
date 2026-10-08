@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cube</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Cube · one block</p>
+    <h1>Set the volume to 27 mL.</h1>
+    <p class="lead">You choose the side. Volume in mL is side times side times side. Side is in centimetres.</p>
+  </header>
+  <div class="layout">
+    <canvas id="block" width="680" height="420" aria-label="A cube outline and a volume column."></canvas>
+    <section>
+      <p class="label">Side</p>
+      <div class="picks" id="bin">
+        <button type="button" data-s="1" aria-pressed="true">1 cm</button>
+        <button type="button" data-s="2" aria-pressed="false">2 cm</button>
+        <button type="button" data-s="3" aria-pressed="false">3 cm</button>
+        <button type="button" data-s="4" aria-pressed="false">4 cm</button>
+        <button type="button" data-s="5" aria-pressed="false">5 cm</button>
+      </div>
+      <dl>
+        <div><dt>Side</dt><dd id="s-val">1 cm</dd></div>
+        <div><dt>Volume</dt><dd id="v-val">1 mL</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Volume in mL is side × side × side. Side is in centimetres.</li>
+        <li>The mark is 27 mL. A hit is within 0.5 mL.</li>
+        <li>3 cm is the hit. The line says <code>The volume meets the mark.</code></li>
+        <li>1 cm reads 1 mL. 2 cm reads 8 mL. 4 cm reads 64 mL. 5 cm reads 125 mL.</li>
+        <li>Those four miss. The line says <code>The volume misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

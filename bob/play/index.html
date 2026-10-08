@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Bob</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Bob · one mass</p>
+    <h1>Set the period to 3.00 s.</h1>
+    <p class="lead">The stiffness is fixed. You choose the mass. The period in seconds is the square root of that mass in kilograms.</p>
+  </header>
+  <div class="layout">
+    <canvas id="wave" width="680" height="420" aria-label="A period wave, a bob, and a time column."></canvas>
+    <section>
+      <p class="label">Mass</p>
+      <div class="picks" id="bin">
+        <button type="button" data-m="1" aria-pressed="true">1 kg</button>
+        <button type="button" data-m="4" aria-pressed="false">4 kg</button>
+        <button type="button" data-m="9" aria-pressed="false">9 kg</button>
+        <button type="button" data-m="16" aria-pressed="false">16 kg</button>
+        <button type="button" data-m="25" aria-pressed="false">25 kg</button>
+      </div>
+      <dl>
+        <div><dt>Mass</dt><dd id="m-val">1 kg</dd></div>
+        <div><dt>Period</dt><dd id="t-val">1.00 s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The stiffness is fixed.</li>
+        <li>The period in seconds is the square root of the mass in kilograms.</li>
+        <li>The mark is 3.00 s. A hit is within 0.005 s.</li>
+        <li>9 kg is the hit. The line says <code>The period meets the mark.</code></li>
+        <li>1 kg reads 1.00 s. 4 kg reads 2.00 s. 16 kg reads 4.00 s. 25 kg reads 5.00 s.</li>
+        <li>Those four miss. The line says <code>The period misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
