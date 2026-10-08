@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-One hundred fifty browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. Four are round 21. Four are round 22. Four are round 23. Four are round 24. Four are round 25. Four are round 26. Four are round 27. Four are round 28. Four are round 29. Four are round 30. Four are round 31. Four are round 32. Four are round 33. Four are round 34. Four are round 35. The license is MIT.
+One hundred fifty-four browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. Four are round 21. Four are round 22. Four are round 23. Four are round 24. Four are round 25. Four are round 26. Four are round 27. Four are round 28. Four are round 29. Four are round 30. Four are round 31. Four are round 32. Four are round 33. Four are round 34. Four are round 35. Four are round 36. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all one hundred fifty pages. The one hundred thirty-two games have their rules on that page.
+[What each build is](builds.html) explains all one hundred fifty-four pages. The one hundred thirty-six games have their rules on that page.
 
 ## Open locally
 
@@ -178,6 +178,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 148 | [helm/play/](https://az9713.github.io/grok-4.7-builds-part-2/helm/play/) | Centered heptagon. Hit 71 |
 | 149 | [nara/play/](https://az9713.github.io/grok-4.7-builds-part-2/nara/play/) | Narayana term. Hit 88 |
 | 150 | [enne/play/](https://az9713.github.io/grok-4.7-builds-part-2/enne/play/) | Choose nine. Hit 715 |
+| 151 | [dode/play/](https://az9713.github.io/grok-4.7-builds-part-2/dode/play/) | Dodecagonal number. Hit 105 |
+| 152 | [hub/play/](https://az9713.github.io/grok-4.7-builds-part-2/hub/play/) | Centered octagon. Hit 121 |
+| 153 | [pena/play/](https://az9713.github.io/grok-4.7-builds-part-2/pena/play/) | Five-term sum. Hit 253 |
+| 154 | [deka/play/](https://az9713.github.io/grok-4.7-builds-part-2/deka/play/) | Choose ten. Hit 1001 |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 
