@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Farad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Farad · one capacitor</p>
+    <h1>Set the charge to 10.0 µC.</h1>
+    <p class="lead">The capacitance is 2.50 µF. You choose the voltage. Charge is 5 times that voltage, divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="plates" width="680" height="420" aria-label="Two plates and a charge column."></canvas>
+    <section>
+      <p class="label">Voltage</p>
+      <div class="picks" id="bin">
+        <button type="button" data-v="2" aria-pressed="true">2 V</button>
+        <button type="button" data-v="4" aria-pressed="false">4 V</button>
+        <button type="button" data-v="6" aria-pressed="false">6 V</button>
+        <button type="button" data-v="8" aria-pressed="false">8 V</button>
+        <button type="button" data-v="10" aria-pressed="false">10 V</button>
+      </div>
+      <dl>
+        <div><dt>Voltage</dt><dd id="v-val">2 V</dd></div>
+        <div><dt>Charge</dt><dd id="q-val">5.0 µC</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The capacitance is 2.50 µF.</li>
+        <li>Charge is (5 × voltage) / 2 microcoulombs.</li>
+        <li>The mark is 10.0 µC. A hit is within 0.2 µC.</li>
+        <li>4 V is the hit. The line says <code>The charge meets the mark.</code></li>
+        <li>2 V reads 5.0 µC. 6 V reads 15.0 µC. 8 V reads 20.0 µC. 10 V reads 25.0 µC.</li>
+        <li>Those four miss. The line says <code>The charge misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

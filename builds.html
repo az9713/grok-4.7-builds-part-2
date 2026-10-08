@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Seventy-four browser builds. Fifty-six of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Seventy-eight browser builds. Sixty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1142,6 +1142,66 @@
       <li>The mark is 120.0 kPa. A hit is within 0.2 kPa.</li>
       <li>360 K says <code>The pressure meets the mark.</code> The readout is 120.0 kPa.</li>
       <li>300 K reads 100.0 kPa. 330 K reads 110.0 kPa. 390 K reads 130.0 kPa. 450 K reads 150.0 kPa. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="stefan">
+    <p class="kind">Game</p>
+    <h2>75 Stefan</h2>
+    <p class="open"><a href="stefan/play/">Open Stefan</a></p>
+    <h3>What it is</h3>
+    <p>A hot surface. You set the temperature. Relative power is that temperature over 300, raised to the fourth power.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Relative power is (temperature / 300) to the fourth power.</li>
+      <li>The mark is 16.00. A hit is within 0.05.</li>
+      <li>600 K says <code>The power meets the mark.</code> The readout is 16.00.</li>
+      <li>300 K reads 1.00. 400 K reads 3.16. 450 K reads 5.06. 500 K reads 7.72. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="farad">
+    <p class="kind">Game</p>
+    <h2>76 Farad</h2>
+    <p class="open"><a href="farad/play/">Open Farad</a></p>
+    <h3>What it is</h3>
+    <p>A 2.50 µF capacitor. You set the voltage. The page shows the charge.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Charge is (5 × voltage) / 2 microcoulombs.</li>
+      <li>The mark is 10.0 µC. A hit is within 0.2 µC.</li>
+      <li>4 V says <code>The charge meets the mark.</code> The readout is 10.0 µC.</li>
+      <li>2 V reads 5.0 µC. 6 V reads 15.0 µC. 8 V reads 20.0 µC. 10 V reads 25.0 µC. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="wave">
+    <p class="kind">Game</p>
+    <h2>77 Wave</h2>
+    <p class="open"><a href="wave/play/">Open Wave</a></p>
+    <h3>What it is</h3>
+    <p>One wave at 200 Hz. You set the wavelength. The page shows the wave speed.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Speed is 2 × wavelength. Wavelength is in centimetres. Speed is in m/s.</li>
+      <li>The mark is 340 m/s. A hit is within 1 m/s.</li>
+      <li>170 cm says <code>The speed meets the mark.</code> The readout is 340 m/s.</li>
+      <li>50 cm reads 100 m/s. 100 cm reads 200 m/s. 200 cm reads 400 m/s. 250 cm reads 500 m/s. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="cutoff">
+    <p class="kind">Game</p>
+    <h2>78 Cutoff</h2>
+    <p class="open"><a href="cutoff/play/">Open Cutoff</a></p>
+    <h3>What it is</h3>
+    <p>A resistor and a capacitor. You set the resistance. The page shows the cutoff frequency.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Frequency is 1000 / resistance hertz. Resistance is in kilohms.</li>
+      <li>The mark is 200 Hz. A hit is within 1 Hz.</li>
+      <li>5 kΩ says <code>The frequency meets the mark.</code> The readout is 200 Hz.</li>
+      <li>2 kΩ reads 500 Hz. 4 kΩ reads 250 Hz. 8 kΩ reads 125 Hz. 10 kΩ reads 100 Hz. All four miss.</li>
     </ol>
   </article>
 </body>
