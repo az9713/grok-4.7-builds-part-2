@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Queue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Queue · ordered pairs</p>
+    <h1>Set the product to 30 pairs.</h1>
+    <p class="lead">You choose the number of items. The pair count is items times (items minus 1). Order matters. A pair does not use the same item twice.</p>
+  </header>
+  <div class="layout">
+    <canvas id="pairs" width="680" height="420" aria-label="A row of items, one arrow, and a pair column."></canvas>
+    <section>
+      <p class="label">Items</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="4" aria-pressed="true">4 items</button>
+        <button type="button" data-n="5" aria-pressed="false">5 items</button>
+        <button type="button" data-n="6" aria-pressed="false">6 items</button>
+        <button type="button" data-n="7" aria-pressed="false">7 items</button>
+        <button type="button" data-n="8" aria-pressed="false">8 items</button>
+      </div>
+      <dl>
+        <div><dt>Items</dt><dd id="n-val">4 items</dd></div>
+        <div><dt>Pairs</dt><dd id="p-val">12 pairs</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The number of ordered pairs is items × (items − 1).</li>
+        <li>The mark is 30 pairs. A hit is within 0.5 pairs.</li>
+        <li>6 items is the hit. The line says <code>The product meets the mark.</code></li>
+        <li>4 items reads 12 pairs. 5 items reads 20 pairs. 7 items reads 42 pairs. 8 items reads 56 pairs.</li>
+        <li>Those four miss. The line says <code>The product misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

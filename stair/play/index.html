@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Stair</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Stair · step sum</p>
+    <h1>Set the sum to 36.</h1>
+    <p class="lead">You choose the number of steps. The sum is steps times (steps plus 1), divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="steps" width="680" height="420" aria-label="A stair of steps and a sum column."></canvas>
+    <section>
+      <p class="label">Steps</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="5" aria-pressed="true">5 steps</button>
+        <button type="button" data-n="6" aria-pressed="false">6 steps</button>
+        <button type="button" data-n="7" aria-pressed="false">7 steps</button>
+        <button type="button" data-n="8" aria-pressed="false">8 steps</button>
+        <button type="button" data-n="9" aria-pressed="false">9 steps</button>
+      </div>
+      <dl>
+        <div><dt>Steps</dt><dd id="n-val">5 steps</dd></div>
+        <div><dt>Sum</dt><dd id="s-val">15</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The sum is steps × (steps + 1) / 2.</li>
+        <li>The mark is 36. A hit is within 0.5.</li>
+        <li>8 steps is the hit. The line says <code>The sum meets the mark.</code></li>
+        <li>5 steps reads 15. 6 steps reads 21. 7 steps reads 28. 9 steps reads 45.</li>
+        <li>Those four miss. The line says <code>The sum misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
