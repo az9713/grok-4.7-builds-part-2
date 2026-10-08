@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Sabine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Sabine · one room</p>
+    <h1>Set the time to 1.60 s.</h1>
+    <p class="lead">The room volume is fixed. You choose the absorption area. The reverberation time is 48 divided by that area.</p>
+  </header>
+  <div class="layout">
+    <canvas id="room" width="680" height="420" aria-label="A room and a time column."></canvas>
+    <section>
+      <p class="label">Area</p>
+      <div class="picks" id="bin">
+        <button type="button" data-a="16" aria-pressed="true">16 m²</button>
+        <button type="button" data-a="24" aria-pressed="false">24 m²</button>
+        <button type="button" data-a="30" aria-pressed="false">30 m²</button>
+        <button type="button" data-a="40" aria-pressed="false">40 m²</button>
+        <button type="button" data-a="48" aria-pressed="false">48 m²</button>
+      </div>
+      <dl>
+        <div><dt>Area</dt><dd id="a-val">16 m²</dd></div>
+        <div><dt>Time</dt><dd id="t-val">3.00 s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The room volume is fixed.</li>
+        <li>Reverberation time is 48 / area seconds. Area is in square metres.</li>
+        <li>The mark is 1.60 s. A hit is within 0.02 s.</li>
+        <li>30 m² is the hit. The line says <code>The time meets the mark.</code></li>
+        <li>16 m² reads 3.00 s. 24 m² reads 2.00 s. 40 m² reads 1.20 s. 48 m² reads 1.00 s.</li>
+        <li>Those four miss. The line says <code>The time misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

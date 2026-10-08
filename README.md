@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Seventy-eight browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. The license is MIT.
+Eighty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all seventy-eight pages. The sixty games have their rules on that page.
+[What each build is](builds.html) explains all eighty-two pages. The sixty-four games have their rules on that page.
 
 ## Open locally
 
@@ -106,6 +106,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 76 | [farad/play/](https://az9713.github.io/grok-4.7-builds-part-2/farad/play/) | Capacitor charge. Hit 10.0 µC |
 | 77 | [wave/play/](https://az9713.github.io/grok-4.7-builds-part-2/wave/play/) | Wave speed. Hit 340 m/s |
 | 78 | [cutoff/play/](https://az9713.github.io/grok-4.7-builds-part-2/cutoff/play/) | Filter cutoff. Hit 200 Hz |
+| 79 | [buoy/play/](https://az9713.github.io/grok-4.7-builds-part-2/buoy/play/) | Buoyant force. Hit 20 N |
+| 80 | [broglie/play/](https://az9713.github.io/grok-4.7-builds-part-2/broglie/play/) | Wavelength. Hit 40 pm |
+| 81 | [sabine/play/](https://az9713.github.io/grok-4.7-builds-part-2/sabine/play/) | Reverberation. Hit 1.60 s |
+| 82 | [wire/play/](https://az9713.github.io/grok-4.7-builds-part-2/wire/play/) | Wire field. Hit 8.0 µT |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 
