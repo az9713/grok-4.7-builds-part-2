@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Stokes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Stokes · one sphere</p>
+    <h1>Set the force to 18 N.</h1>
+    <p class="lead">A sphere moves through a viscous liquid. You choose the radius. The drag on this page is 3 times that radius.</p>
+  </header>
+  <div class="layout">
+    <canvas id="sphere" width="680" height="420" aria-label="A sphere in flow and a force column."></canvas>
+    <section>
+      <p class="label">Radius</p>
+      <div class="picks" id="bin">
+        <button type="button" data-r="2" aria-pressed="true">2 mm</button>
+        <button type="button" data-r="4" aria-pressed="false">4 mm</button>
+        <button type="button" data-r="6" aria-pressed="false">6 mm</button>
+        <button type="button" data-r="8" aria-pressed="false">8 mm</button>
+        <button type="button" data-r="10" aria-pressed="false">10 mm</button>
+      </div>
+      <dl>
+        <div><dt>Radius</dt><dd id="r-val">2 mm</dd></div>
+        <div><dt>Force</dt><dd id="f-val">6 N</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Drag is 3 × radius newtons. Radius is in millimetres.</li>
+        <li>The mark is 18 N. A hit is within 1 N.</li>
+        <li>6 mm is the hit. The line says <code>The force meets the mark.</code></li>
+        <li>2 mm reads 6 N. 4 mm reads 12 N. 8 mm reads 24 N. 10 mm reads 30 N.</li>
+        <li>Those four miss. The line says <code>The force misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

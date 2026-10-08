@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Tau</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Tau · one capacitor</p>
+    <h1>Set the time to 3.00 s.</h1>
+    <p class="lead">The capacitance is fixed. You choose the resistance. The charge time is that resistance divided by 5.</p>
+  </header>
+  <div class="layout">
+    <canvas id="curve" width="680" height="420" aria-label="A charge curve and a time column."></canvas>
+    <section>
+      <p class="label">Resistance</p>
+      <div class="picks" id="bin">
+        <button type="button" data-k="5" aria-pressed="true">5 kΩ</button>
+        <button type="button" data-k="10" aria-pressed="false">10 kΩ</button>
+        <button type="button" data-k="15" aria-pressed="false">15 kΩ</button>
+        <button type="button" data-k="20" aria-pressed="false">20 kΩ</button>
+        <button type="button" data-k="25" aria-pressed="false">25 kΩ</button>
+      </div>
+      <dl>
+        <div><dt>Resistance</dt><dd id="k-val">5 kΩ</dd></div>
+        <div><dt>Time</dt><dd id="t-val">1.00 s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The capacitance is fixed.</li>
+        <li>Time is resistance / 5 seconds. Resistance is in kilohms.</li>
+        <li>The mark is 3.00 s. A hit is within 0.02 s.</li>
+        <li>15 kΩ is the hit. The line says <code>The time meets the mark.</code></li>
+        <li>5 kΩ reads 1.00 s. 10 kΩ reads 2.00 s. 20 kΩ reads 4.00 s. 25 kΩ reads 5.00 s.</li>
+        <li>Those four miss. The line says <code>The time misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

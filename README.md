@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Ninety browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. The license is MIT.
+Ninety-four browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. Four are round 21. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all ninety pages. The seventy-two games have their rules on that page.
+[What each build is](builds.html) explains all ninety-four pages. The seventy-six games have their rules on that page.
 
 ## Open locally
 
@@ -118,6 +118,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 88 | [rise/play/](https://az9713.github.io/grok-4.7-builds-part-2/rise/play/) | Capillary height. Hit 6.0 mm |
 | 89 | [reynolds/play/](https://az9713.github.io/grok-4.7-builds-part-2/reynolds/play/) | Reynolds number. Hit 400 |
 | 90 | [young/play/](https://az9713.github.io/grok-4.7-builds-part-2/young/play/) | Relative strain. Hit 3.00 |
+| 91 | [stokes/play/](https://az9713.github.io/grok-4.7-builds-part-2/stokes/play/) | Viscous drag. Hit 18 N |
+| 92 | [escape/play/](https://az9713.github.io/grok-4.7-builds-part-2/escape/play/) | Escape speed. Hit 12.00 m/s |
+| 93 | [tau/play/](https://az9713.github.io/grok-4.7-builds-part-2/tau/play/) | Charge time. Hit 3.00 s |
+| 94 | [henry/play/](https://az9713.github.io/grok-4.7-builds-part-2/henry/play/) | Inductor energy. Hit 18.0 J |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

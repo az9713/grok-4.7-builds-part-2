@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Escape</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Escape · one height</p>
+    <h1>Set the speed to 12.00 m/s.</h1>
+    <p class="lead">A body leaves a planet. You choose the height. Speed on this page is the square root of 8 times that height.</p>
+  </header>
+  <div class="layout">
+    <canvas id="well" width="680" height="420" aria-label="A planet, an upward arrow, and a speed column."></canvas>
+    <section>
+      <p class="label">Height</p>
+      <div class="picks" id="bin">
+        <button type="button" data-h="2" aria-pressed="true">2 m</button>
+        <button type="button" data-h="8" aria-pressed="false">8 m</button>
+        <button type="button" data-h="18" aria-pressed="false">18 m</button>
+        <button type="button" data-h="32" aria-pressed="false">32 m</button>
+        <button type="button" data-h="50" aria-pressed="false">50 m</button>
+      </div>
+      <dl>
+        <div><dt>Height</dt><dd id="h-val">2 m</dd></div>
+        <div><dt>Speed</dt><dd id="v-val">4.00 m/s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Speed is the square root of 8 × height. Height is in metres. Speed is in m/s.</li>
+        <li>The mark is 12.00 m/s. A hit is within 0.05 m/s.</li>
+        <li>18 m is the hit. The line says <code>The speed meets the mark.</code></li>
+        <li>2 m reads 4.00 m/s. 8 m reads 8.00 m/s. 32 m reads 16.00 m/s. 50 m reads 20.00 m/s.</li>
+        <li>Those four miss. The line says <code>The speed misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

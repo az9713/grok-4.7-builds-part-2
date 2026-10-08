@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Henry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Henry · one inductor</p>
+    <h1>Set the energy to 18.0 J.</h1>
+    <p class="lead">The inductance is 1 H. You choose the current. Stored energy is that current times itself, divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="coil" width="680" height="420" aria-label="A wire, coil rings, and an energy column."></canvas>
+    <section>
+      <p class="label">Current</p>
+      <div class="picks" id="bin">
+        <button type="button" data-i="2" aria-pressed="true">2 A</button>
+        <button type="button" data-i="4" aria-pressed="false">4 A</button>
+        <button type="button" data-i="6" aria-pressed="false">6 A</button>
+        <button type="button" data-i="8" aria-pressed="false">8 A</button>
+        <button type="button" data-i="10" aria-pressed="false">10 A</button>
+      </div>
+      <dl>
+        <div><dt>Current</dt><dd id="i-val">2 A</dd></div>
+        <div><dt>Energy</dt><dd id="e-val">2.0 J</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The inductance is 1 H.</li>
+        <li>Energy is (current × current) / 2 joules. Current is in amperes.</li>
+        <li>The mark is 18.0 J. A hit is within 0.2 J.</li>
+        <li>6 A is the hit. The line says <code>The energy meets the mark.</code></li>
+        <li>2 A reads 2.0 J. 4 A reads 8.0 J. 8 A reads 32.0 J. 10 A reads 50.0 J.</li>
+        <li>Those four miss. The line says <code>The energy misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
