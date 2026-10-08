@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Lineup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Lineup · order of three</p>
+    <h1>Set the order to 60.</h1>
+    <p class="lead">You choose the number of names. The order count is names times (names minus 1) times (names minus 2). Each lineup uses three different names.</p>
+  </header>
+  <div class="layout">
+    <canvas id="row" width="680" height="420" aria-label="A row of names, three places, and an order column."></canvas>
+    <section>
+      <p class="label">Names</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="3" aria-pressed="true">3 names</button>
+        <button type="button" data-n="4" aria-pressed="false">4 names</button>
+        <button type="button" data-n="5" aria-pressed="false">5 names</button>
+        <button type="button" data-n="6" aria-pressed="false">6 names</button>
+        <button type="button" data-n="7" aria-pressed="false">7 names</button>
+      </div>
+      <dl>
+        <div><dt>Names</dt><dd id="n-val">3 names</dd></div>
+        <div><dt>Order</dt><dd id="o-val">6</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The order count is names × (names − 1) × (names − 2).</li>
+        <li>The mark is 60. A hit is within 0.5.</li>
+        <li>5 names is the hit. The line says <code>The order meets the mark.</code></li>
+        <li>3 names reads 6. 4 names reads 24. 6 names reads 120. 7 names reads 210.</li>
+        <li>Those four miss. The line says <code>The order misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

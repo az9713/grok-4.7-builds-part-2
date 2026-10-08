@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-One hundred eighteen browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. Four are round 21. Four are round 22. Four are round 23. Four are round 24. Four are round 25. Four are round 26. Four are round 27. The license is MIT.
+One hundred twenty-two browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. Four are round 21. Four are round 22. Four are round 23. Four are round 24. Four are round 25. Four are round 26. Four are round 27. Four are round 28. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all one hundred eighteen pages. The one hundred games have their rules on that page.
+[What each build is](builds.html) explains all one hundred twenty-two pages. The one hundred four games have their rules on that page.
 
 ## Open locally
 
@@ -146,6 +146,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 116 | [stair/play/](https://az9713.github.io/grok-4.7-builds-part-2/stair/play/) | Step sum. Hit 36 |
 | 117 | [queue/play/](https://az9713.github.io/grok-4.7-builds-part-2/queue/play/) | Ordered pairs. Hit 30 pairs |
 | 118 | [quad/play/](https://az9713.github.io/grok-4.7-builds-part-2/quad/play/) | Choose four. Hit 35 |
+| 119 | [diag/play/](https://az9713.github.io/grok-4.7-builds-part-2/diag/play/) | Polygon diagonals. Hit 20 |
+| 120 | [pent/play/](https://az9713.github.io/grok-4.7-builds-part-2/pent/play/) | Pentagonal number. Hit 35 |
+| 121 | [lineup/play/](https://az9713.github.io/grok-4.7-builds-part-2/lineup/play/) | Order of three. Hit 60 |
+| 122 | [fact/play/](https://az9713.github.io/grok-4.7-builds-part-2/fact/play/) | Factorial. Hit 120 |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

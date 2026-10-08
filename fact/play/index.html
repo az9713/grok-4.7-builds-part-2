@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Fact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Fact · factorial</p>
+    <h1>Set the factorial to 120.</h1>
+    <p class="lead">You choose the number of factors. The factorial is the product of every whole number from 1 through that number.</p>
+  </header>
+  <div class="layout">
+    <canvas id="chain" width="680" height="420" aria-label="Factor blocks and a product column."></canvas>
+    <section>
+      <p class="label">Factors</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="2" aria-pressed="true">2 factors</button>
+        <button type="button" data-n="3" aria-pressed="false">3 factors</button>
+        <button type="button" data-n="4" aria-pressed="false">4 factors</button>
+        <button type="button" data-n="5" aria-pressed="false">5 factors</button>
+        <button type="button" data-n="6" aria-pressed="false">6 factors</button>
+      </div>
+      <dl>
+        <div><dt>Factors</dt><dd id="n-val">2 factors</dd></div>
+        <div><dt>Factorial</dt><dd id="p-val">2</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The factorial of n is the product of the whole numbers from 1 through n.</li>
+        <li>The mark is 120. A hit is within 0.5.</li>
+        <li>5 factors is the hit. The line says <code>The factorial meets the mark.</code></li>
+        <li>2 factors reads 2. 3 factors reads 6. 4 factors reads 24. 6 factors reads 720.</li>
+        <li>Those four miss. The line says <code>The factorial misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

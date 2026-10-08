@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">One hundred eighteen browser builds. One hundred of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">One hundred twenty-two browser builds. One hundred four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1804,6 +1804,66 @@
       <li>The mark is 35. A hit is within 0.5.</li>
       <li>7 picks says <code>The tally meets the mark.</code> The readout is 35.</li>
       <li>5 picks reads 5. 6 picks reads 15. 8 picks reads 70. 9 picks reads 126. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="diag">
+    <p class="kind">Game</p>
+    <h2>119 Diag</h2>
+    <p class="open"><a href="diag/play/">Open Diag</a></p>
+    <h3>What it is</h3>
+    <p>A polygon. You set the number of sides. The page shows the diagonal count.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The diagonal count is sides × (sides − 3) / 2.</li>
+      <li>The mark is 20. A hit is within 0.5.</li>
+      <li>8 sides says <code>The diagonal meets the mark.</code> The readout is 20.</li>
+      <li>6 sides reads 9. 7 sides reads 14. 9 sides reads 27. 10 sides reads 35. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="pent">
+    <p class="kind">Game</p>
+    <h2>120 Pent</h2>
+    <p class="open"><a href="pent/play/">Open Pent</a></p>
+    <h3>What it is</h3>
+    <p>A pentagonal number. You set the rank. The page shows the figure.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The figure is rank × (3 × rank − 1) / 2.</li>
+      <li>The mark is 35. A hit is within 0.5.</li>
+      <li>Rank 5 says <code>The figure meets the mark.</code> The readout is 35.</li>
+      <li>Rank 3 reads 12. Rank 4 reads 22. Rank 6 reads 51. Rank 7 reads 70. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="lineup">
+    <p class="kind">Game</p>
+    <h2>121 Lineup</h2>
+    <p class="open"><a href="lineup/play/">Open Lineup</a></p>
+    <h3>What it is</h3>
+    <p>A row of names. You set how many names there are. The page shows how many orders of three different names that row can make.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The order count is names × (names − 1) × (names − 2).</li>
+      <li>The mark is 60. A hit is within 0.5.</li>
+      <li>5 names says <code>The order meets the mark.</code> The readout is 60.</li>
+      <li>3 names reads 6. 4 names reads 24. 6 names reads 120. 7 names reads 210. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="fact">
+    <p class="kind">Game</p>
+    <h2>122 Fact</h2>
+    <p class="open"><a href="fact/play/">Open Fact</a></p>
+    <h3>What it is</h3>
+    <p>A factorial. You set the factor count. The page shows the product of the whole numbers from 1 through that count.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The factorial of n is the product of the whole numbers from 1 through n.</li>
+      <li>The mark is 120. A hit is within 0.5.</li>
+      <li>5 factors says <code>The factorial meets the mark.</code> The readout is 120.</li>
+      <li>2 factors reads 2. 3 factors reads 6. 4 factors reads 24. 6 factors reads 720. All four miss.</li>
     </ol>
   </article>
 </body>
