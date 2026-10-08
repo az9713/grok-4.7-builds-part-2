@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Jac</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Jac · Jacobsthal term</p>
+    <h1>Set the jacob to 85.</h1>
+    <p class="lead">You choose the term. Term 1 is 1. Term 2 is 1. Each later term is the previous term plus twice the term before that.</p>
+  </header>
+  <div class="layout">
+    <canvas id="pair" width="680" height="420" aria-label="Term marks, growth lines, and a count column."></canvas>
+    <section>
+      <p class="label">Term</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="6" aria-pressed="true">Term 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Term 7</button>
+        <button type="button" data-n="8" aria-pressed="false">Term 8</button>
+        <button type="button" data-n="9" aria-pressed="false">Term 9</button>
+        <button type="button" data-n="10" aria-pressed="false">Term 10</button>
+      </div>
+      <dl>
+        <div><dt>Term</dt><dd id="n-val">Term 6</dd></div>
+        <div><dt>Jacob</dt><dd id="j-val">21</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Term 1 is 1. Term 2 is 1. Each later term is the previous term plus twice the term before that.</li>
+        <li>The mark is 85. A hit is within 0.5.</li>
+        <li>Term 8 is the hit. The line says <code>The jacob meets the mark.</code></li>
+        <li>Term 6 reads 21. Term 7 reads 43. Term 9 reads 171. Term 10 reads 341.</li>
+        <li>Those four miss. The line says <code>The jacob misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
