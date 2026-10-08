@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Rota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Rota · order of four</p>
+    <h1>Set the rota to 360.</h1>
+    <p class="lead">You choose the seat count. The rota is the seats times (seats minus 1) times (seats minus 2) times (seats minus 3).</p>
+  </header>
+  <div class="layout">
+    <canvas id="seats" width="680" height="420" aria-label="Seat dots, four boxes, and a count column."></canvas>
+    <section>
+      <p class="label">Seats</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="4" aria-pressed="true">Seat 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Seat 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Seat 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Seat 7</button>
+        <button type="button" data-n="8" aria-pressed="false">Seat 8</button>
+      </div>
+      <dl>
+        <div><dt>Seats</dt><dd id="n-val">Seat 4</dd></div>
+        <div><dt>Rota</dt><dd id="r-val">24</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The rota is seats × (seats − 1) × (seats − 2) × (seats − 3).</li>
+        <li>The mark is 360. A hit is within 0.5.</li>
+        <li>Seat 6 is the hit. The line says <code>The rota meets the mark.</code></li>
+        <li>Seat 4 reads 24. Seat 5 reads 120. Seat 7 reads 840. Seat 8 reads 1680.</li>
+        <li>Those four miss. The line says <code>The rota misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

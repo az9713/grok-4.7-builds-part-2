@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Hept</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Hept · heptagonal number</p>
+    <h1>Set the heptagon to 81.</h1>
+    <p class="lead">You choose the index. The heptagon is the index times (5 times the index minus 3), divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="seven" width="680" height="420" aria-label="A heptagon, index marks, and a count column."></canvas>
+    <section>
+      <p class="label">Index</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="4" aria-pressed="true">Index 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Index 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Index 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Index 7</button>
+        <button type="button" data-n="8" aria-pressed="false">Index 8</button>
+      </div>
+      <dl>
+        <div><dt>Index</dt><dd id="n-val">Index 4</dd></div>
+        <div><dt>Heptagon</dt><dd id="h-val">34</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The heptagon is index × (5 × index − 3) / 2.</li>
+        <li>The mark is 81. A hit is within 0.5.</li>
+        <li>Index 6 is the hit. The line says <code>The heptagon meets the mark.</code></li>
+        <li>Index 4 reads 34. Index 5 reads 55. Index 7 reads 112. Index 8 reads 148.</li>
+        <li>Those four miss. The line says <code>The heptagon misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
