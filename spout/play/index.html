@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Spout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Spout · one tank</p>
+    <h1>Set the speed to 6.00 m/s.</h1>
+    <p class="lead">Water leaves a hole in the tank. You choose the depth. Speed is 2 times the square root of that depth.</p>
+  </header>
+  <div class="layout">
+    <canvas id="cistern" width="680" height="420" aria-label="A tank, a jet, and a speed column."></canvas>
+    <section>
+      <p class="label">Depth</p>
+      <div class="picks" id="bin">
+        <button type="button" data-h="1" aria-pressed="true">1 m</button>
+        <button type="button" data-h="4" aria-pressed="false">4 m</button>
+        <button type="button" data-h="9" aria-pressed="false">9 m</button>
+        <button type="button" data-h="16" aria-pressed="false">16 m</button>
+        <button type="button" data-h="25" aria-pressed="false">25 m</button>
+      </div>
+      <dl>
+        <div><dt>Depth</dt><dd id="h-val">1 m</dd></div>
+        <div><dt>Speed</dt><dd id="v-val">2.00 m/s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Speed is 2 × the square root of the depth. Depth is in metres. Speed is in m/s.</li>
+        <li>The mark is 6.00 m/s. A hit is within 0.05 m/s.</li>
+        <li>9 m is the hit. The line says <code>The speed meets the mark.</code></li>
+        <li>1 m reads 2.00 m/s. 4 m reads 4.00 m/s. 16 m reads 8.00 m/s. 25 m reads 10.00 m/s.</li>
+        <li>Those four miss. The line says <code>The speed misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

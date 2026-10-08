@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Buckle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Buckle · one strut</p>
+    <h1>Set the load to 40.0 N.</h1>
+    <p class="lead">A strut carries a vertical load. You choose the length. The critical load is 1000 divided by that length times itself.</p>
+  </header>
+  <div class="layout">
+    <canvas id="strut" width="680" height="420" aria-label="A strut and a load column."></canvas>
+    <section>
+      <p class="label">Length</p>
+      <div class="picks" id="bin">
+        <button type="button" data-l="2" aria-pressed="true">2 cm</button>
+        <button type="button" data-l="4" aria-pressed="false">4 cm</button>
+        <button type="button" data-l="5" aria-pressed="false">5 cm</button>
+        <button type="button" data-l="8" aria-pressed="false">8 cm</button>
+        <button type="button" data-l="10" aria-pressed="false">10 cm</button>
+      </div>
+      <dl>
+        <div><dt>Length</dt><dd id="l-val">2 cm</dd></div>
+        <div><dt>Load</dt><dd id="p-val">250.0 N</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Critical load is 1000 / (length × length) newtons. Length is in centimetres.</li>
+        <li>The mark is 40.0 N. A hit is within 0.2 N.</li>
+        <li>5 cm is the hit. The line says <code>The load meets the mark.</code></li>
+        <li>2 cm reads 250.0 N. 4 cm reads 62.5 N. 8 cm reads 15.6 N. 10 cm reads 10.0 N.</li>
+        <li>Those four miss. The line says <code>The load misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
