@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Trio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Trio · choose three</p>
+    <h1>Set the total to 20 ways.</h1>
+    <p class="lead">You choose how many items sit in the row. The total is the number of ways to choose three of them.</p>
+  </header>
+  <div class="layout">
+    <canvas id="items" width="680" height="420" aria-label="A row of items, one triangle, and a count column."></canvas>
+    <section>
+      <p class="label">Items</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="4" aria-pressed="true">4 items</button>
+        <button type="button" data-n="5" aria-pressed="false">5 items</button>
+        <button type="button" data-n="6" aria-pressed="false">6 items</button>
+        <button type="button" data-n="7" aria-pressed="false">7 items</button>
+        <button type="button" data-n="8" aria-pressed="false">8 items</button>
+      </div>
+      <dl>
+        <div><dt>Items</dt><dd id="n-val">4 items</dd></div>
+        <div><dt>Ways</dt><dd id="w-val">4 ways</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The number of ways is items × (items - 1) × (items - 2) / 6.</li>
+        <li>The mark is 20 ways. A hit is within 0.5 ways.</li>
+        <li>6 items is the hit. The line says <code>The total meets the mark.</code></li>
+        <li>4 items reads 4 ways. 5 items reads 10 ways. 7 items reads 35 ways. 8 items reads 56 ways.</li>
+        <li>Those four miss. The line says <code>The total misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

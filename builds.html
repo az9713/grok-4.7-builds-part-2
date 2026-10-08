@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">One hundred ten browser builds. Ninety-two of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">One hundred fourteen browser builds. Ninety-six of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1684,6 +1684,66 @@
       <li>The mark is 55 balls. A hit is within 0.5 balls.</li>
       <li>5 layers says <code>The stack meets the mark.</code> The readout is 55 balls.</li>
       <li>2 layers reads 5 balls. 3 layers reads 14 balls. 4 layers reads 30 balls. 6 layers reads 91 balls. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="chord">
+    <p class="kind">Game</p>
+    <h2>111 Chord</h2>
+    <p class="open"><a href="chord/play/">Open Chord</a></p>
+    <h3>What it is</h3>
+    <p>A circle. You set the angle at the centre. The page shows the chord.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The radius is 10 cm. The chord in cm is 20 × sin(angle / 2). The angle is in degrees.</li>
+      <li>The mark is 10.00 cm. A hit is within 0.005 cm.</li>
+      <li>60° says <code>The chord meets the mark.</code> The readout is 10.00 cm.</li>
+      <li>0° reads 0.00 cm. 90° reads 14.14 cm. 120° reads 17.32 cm. 180° reads 20.00 cm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="chill">
+    <p class="kind">Game</p>
+    <h2>112 Chill</h2>
+    <p class="open"><a href="chill/play/">Open Chill</a></p>
+    <h3>What it is</h3>
+    <p>A cold cabinet. You set the hot side. The cold side stays at 270 K. The page shows the ratio.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The ratio is 270 / (kelvin - 270).</li>
+      <li>The mark is 9.00. A hit is within 0.005.</li>
+      <li>300 K says <code>The ratio meets the mark.</code> The readout is 9.00.</li>
+      <li>540 K reads 1.00. 405 K reads 2.00. 360 K reads 3.00. 330 K reads 4.50. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="fib">
+    <p class="kind">Game</p>
+    <h2>113 Fib</h2>
+    <p class="open"><a href="fib/play/">Open Fib</a></p>
+    <h3>What it is</h3>
+    <p>A running sum. You set the term number. The page shows that term.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Term 1 is 1. Term 2 is 1. Each later term is the sum of the two terms before it.</li>
+      <li>The mark is 21. A hit is within 0.5.</li>
+      <li>Term 8 says <code>The term meets the mark.</code> The readout is 21.</li>
+      <li>Term 5 reads 5. Term 6 reads 8. Term 7 reads 13. Term 9 reads 34. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="trio">
+    <p class="kind">Game</p>
+    <h2>114 Trio</h2>
+    <p class="open"><a href="trio/play/">Open Trio</a></p>
+    <h3>What it is</h3>
+    <p>A row of items. You set how many items there are. The page shows how many ways there are to choose three.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The number of ways is items × (items - 1) × (items - 2) / 6.</li>
+      <li>The mark is 20 ways. A hit is within 0.5 ways.</li>
+      <li>6 items says <code>The total meets the mark.</code> The readout is 20 ways.</li>
+      <li>4 items reads 4 ways. 5 items reads 10 ways. 7 items reads 35 ways. 8 items reads 56 ways. All four miss.</li>
     </ol>
   </article>
 </body>
