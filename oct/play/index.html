@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Oct</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Oct · octagonal number</p>
+    <h1>Set the octagon to 65.</h1>
+    <p class="lead">You choose the index. The octagon is the index times (3 times the index minus 2).</p>
+  </header>
+  <div class="layout">
+    <canvas id="octa" width="680" height="420" aria-label="An octagon, index marks, and a count column."></canvas>
+    <section>
+      <p class="label">Index</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="3" aria-pressed="true">Index 3</button>
+        <button type="button" data-n="4" aria-pressed="false">Index 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Index 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Index 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Index 7</button>
+      </div>
+      <dl>
+        <div><dt>Index</dt><dd id="n-val">Index 3</dd></div>
+        <div><dt>Octagon</dt><dd id="o-val">21</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The octagon is index × (3 × index − 2).</li>
+        <li>The mark is 65. A hit is within 0.5.</li>
+        <li>Index 5 is the hit. The line says <code>The octagon meets the mark.</code></li>
+        <li>Index 3 reads 21. Index 4 reads 40. Index 6 reads 96. Index 7 reads 133.</li>
+        <li>Those four miss. The line says <code>The octagon misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

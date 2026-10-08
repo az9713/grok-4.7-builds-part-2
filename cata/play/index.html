@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cata</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Cata · Catalan number</p>
+    <h1>Set the catalan to 42.</h1>
+    <p class="lead">You choose the step. The catalan is the factorial of twice the step, divided by the factorial of the step and the factorial of one more than the step.</p>
+  </header>
+  <div class="layout">
+    <canvas id="path" width="680" height="420" aria-label="A mountain path, step marks, and a count column."></canvas>
+    <section>
+      <p class="label">Step</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="3" aria-pressed="true">Step 3</button>
+        <button type="button" data-n="4" aria-pressed="false">Step 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Step 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Step 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Step 7</button>
+      </div>
+      <dl>
+        <div><dt>Step</dt><dd id="n-val">Step 3</dd></div>
+        <div><dt>Catalan</dt><dd id="c-val">5</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The catalan is (2 × step)! / (step! × (step + 1)!).</li>
+        <li>The mark is 42. A hit is within 0.5.</li>
+        <li>Step 5 is the hit. The line says <code>The catalan meets the mark.</code></li>
+        <li>Step 3 reads 5. Step 4 reads 14. Step 6 reads 132. Step 7 reads 429.</li>
+        <li>Those four miss. The line says <code>The catalan misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
