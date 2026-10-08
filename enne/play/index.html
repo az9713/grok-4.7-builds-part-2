@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Enne</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Enne · choose nine</p>
+    <h1>Set the ennead to 715.</h1>
+    <p class="lead">You choose the group size. The ennead is the group times (the group minus 1) times (the group minus 2) times (the group minus 3) times (the group minus 4) times (the group minus 5) times (the group minus 6) times (the group minus 7) times (the group minus 8), divided by 362880.</p>
+  </header>
+  <div class="layout">
+    <canvas id="nines" width="680" height="420" aria-label="Group dots, a nonagon, and a count column."></canvas>
+    <section>
+      <p class="label">Group</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="11" aria-pressed="true">Group 11</button>
+        <button type="button" data-n="12" aria-pressed="false">Group 12</button>
+        <button type="button" data-n="13" aria-pressed="false">Group 13</button>
+        <button type="button" data-n="14" aria-pressed="false">Group 14</button>
+        <button type="button" data-n="15" aria-pressed="false">Group 15</button>
+      </div>
+      <dl>
+        <div><dt>Group</dt><dd id="n-val">Group 11</dd></div>
+        <div><dt>Ennead</dt><dd id="o-val">55</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The ennead is group × (group − 1) × (group − 2) × (group − 3) × (group − 4) × (group − 5) × (group − 6) × (group − 7) × (group − 8) / 362880.</li>
+        <li>The mark is 715. A hit is within 0.5.</li>
+        <li>Group 13 is the hit. The line says <code>The ennead meets the mark.</code></li>
+        <li>Group 11 reads 55. Group 12 reads 220. Group 14 reads 2002. Group 15 reads 5005.</li>
+        <li>Those four miss. The line says <code>The ennead misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

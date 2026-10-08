@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Nara</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Nara · Narayana term</p>
+    <h1>Set the narayana to 88.</h1>
+    <p class="lead">You choose the term. Term 1 is 1. Term 2 is 1. Term 3 is 1. Each later term adds the previous term to the term three back.</p>
+  </header>
+  <div class="layout">
+    <canvas id="skip3" width="680" height="420" aria-label="Term marks, two skip lines, and a count column."></canvas>
+    <section>
+      <p class="label">Term</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="12" aria-pressed="true">Term 12</button>
+        <button type="button" data-n="13" aria-pressed="false">Term 13</button>
+        <button type="button" data-n="14" aria-pressed="false">Term 14</button>
+        <button type="button" data-n="15" aria-pressed="false">Term 15</button>
+        <button type="button" data-n="16" aria-pressed="false">Term 16</button>
+      </div>
+      <dl>
+        <div><dt>Term</dt><dd id="n-val">Term 12</dd></div>
+        <div><dt>Narayana</dt><dd id="t-val">41</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Term 1 is 1. Term 2 is 1. Term 3 is 1. Each later term adds the previous term to the term three back.</li>
+        <li>The mark is 88. A hit is within 0.5.</li>
+        <li>Term 14 is the hit. The line says <code>The narayana meets the mark.</code></li>
+        <li>Term 12 reads 41. Term 13 reads 60. Term 15 reads 129. Term 16 reads 189.</li>
+        <li>Those four miss. The line says <code>The narayana misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
