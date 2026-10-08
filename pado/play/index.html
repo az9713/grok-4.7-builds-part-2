@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Pado · Padovan term</p>
+    <h1>Set the padovan to 49.</h1>
+    <p class="lead">You choose the term. Term 1 is 1. Term 2 is 1. Term 3 is 1. Each later term adds the term two back to the term three back.</p>
+  </header>
+  <div class="layout">
+    <canvas id="skip" width="680" height="420" aria-label="Term marks, two skip lines, and a count column."></canvas>
+    <section>
+      <p class="label">Term</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="14" aria-pressed="true">Term 14</button>
+        <button type="button" data-n="15" aria-pressed="false">Term 15</button>
+        <button type="button" data-n="16" aria-pressed="false">Term 16</button>
+        <button type="button" data-n="17" aria-pressed="false">Term 17</button>
+        <button type="button" data-n="18" aria-pressed="false">Term 18</button>
+      </div>
+      <dl>
+        <div><dt>Term</dt><dd id="n-val">Term 14</dd></div>
+        <div><dt>Padovan</dt><dd id="p-val">28</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Term 1 is 1. Term 2 is 1. Term 3 is 1. Each later term adds the term two back to the term three back.</li>
+        <li>The mark is 49. A hit is within 0.5.</li>
+        <li>Term 16 is the hit. The line says <code>The padovan meets the mark.</code></li>
+        <li>Term 14 reads 28. Term 15 reads 37. Term 17 reads 65. Term 18 reads 86.</li>
+        <li>Those four miss. The line says <code>The padovan misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
