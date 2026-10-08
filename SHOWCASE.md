@@ -4,7 +4,7 @@ Public MIT portfolio. Eight greenfield projects, two per domain. This repo will 
 
 Built to show what Grok Build can do that Codex and Claude Code cannot do in one harness: native Imagine (`image_gen` / `image_edit`), video (`image_to_video` / `reference_to_video`), identity-locked game assets, and Rhai workflow fan-out. Every project still has a real coding half a rival agent could attempt — they lose on the Grok-only surface.
 
-The round-1 hold is closed. The tree now has eighty-six slices. `README.md` is the current index. The eight rows below are the round-1 spec.
+The round-1 hold is closed. The tree now has ninety slices. `README.md` is the current index. The eight rows below are the round-1 spec.
 
 | # | Folder | Domain | One-line |
 |---|--------|--------|----------|

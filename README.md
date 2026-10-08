@@ -1,6 +1,6 @@
 # Grok 4.7 builds, part 2
 
-Eighty-six browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. The license is MIT.
+Ninety browser slices in this repository. Eight are round 1. Ten are round 2. Four are round 3. Four are round 4. Four are round 5. Four are round 6. Four are round 7. Four are round 8. Four are round 9. Four are round 10. Four are round 11. Four are round 12. Four are round 13. Four are round 14. Four are round 15. Four are round 16. Four are round 17. Four are round 18. Four are round 19. Four are round 20. The license is MIT.
 
 This repository is separate from [az9713/grok-4.7-builds](https://github.com/az9713/grok-4.7-builds). That repository holds forty-five variations of the Top 15 video. This repository holds the showcase slices: playable rooms, film players, catalogs, and two saved workflow replays.
 
@@ -12,7 +12,7 @@ The GitHub Pages site is [https://az9713.github.io/grok-4.7-builds-part-2/](http
 
 `index.html` is the live page. Each card says what the slice is. The orange line names the controls.
 
-[What each build is](builds.html) explains all eighty-six pages. The sixty-eight games have their rules on that page.
+[What each build is](builds.html) explains all ninety pages. The seventy-two games have their rules on that page.
 
 ## Open locally
 
@@ -114,6 +114,10 @@ Open http://127.0.0.1:8766/. A direct file open can break a page that loads JSON
 | 84 | [spout/play/](https://az9713.github.io/grok-4.7-builds-part-2/spout/play/) | Efflux speed. Hit 6.00 m/s |
 | 85 | [beer/play/](https://az9713.github.io/grok-4.7-builds-part-2/beer/play/) | Absorbance. Hit 1.00 |
 | 86 | [buckle/play/](https://az9713.github.io/grok-4.7-builds-part-2/buckle/play/) | Euler load. Hit 40.0 N |
+| 87 | [orbit/play/](https://az9713.github.io/grok-4.7-builds-part-2/orbit/play/) | Circular speed. Hit 4.00 m/s |
+| 88 | [rise/play/](https://az9713.github.io/grok-4.7-builds-part-2/rise/play/) | Capillary height. Hit 6.0 mm |
+| 89 | [reynolds/play/](https://az9713.github.io/grok-4.7-builds-part-2/reynolds/play/) | Reynolds number. Hit 400 |
+| 90 | [young/play/](https://az9713.github.io/grok-4.7-builds-part-2/young/play/) | Relative strain. Hit 3.00 |
 
 Round-1 stills: `_shared/locks/`. Round-2 stills: `_shared/locks-r2/`. Specs: `SHOWCASE.md`, `round-2-proposal.html`.
 

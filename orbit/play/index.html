@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Orbit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Orbit · one radius</p>
+    <h1>Set the speed to 4.00 m/s.</h1>
+    <p class="lead">A body circles a fixed centre. You choose the radius. Speed on this page is 20 divided by the square root of that radius.</p>
+  </header>
+  <div class="layout">
+    <canvas id="path" width="680" height="420" aria-label="A centre, a circular path, and a speed column."></canvas>
+    <section>
+      <p class="label">Radius</p>
+      <div class="picks" id="bin">
+        <button type="button" data-r="4" aria-pressed="true">4 m</button>
+        <button type="button" data-r="16" aria-pressed="false">16 m</button>
+        <button type="button" data-r="25" aria-pressed="false">25 m</button>
+        <button type="button" data-r="64" aria-pressed="false">64 m</button>
+        <button type="button" data-r="100" aria-pressed="false">100 m</button>
+      </div>
+      <dl>
+        <div><dt>Radius</dt><dd id="r-val">4 m</dd></div>
+        <div><dt>Speed</dt><dd id="v-val">10.00 m/s</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Speed is 20 / square root of radius. Radius is in metres. Speed is in m/s.</li>
+        <li>The mark is 4.00 m/s. A hit is within 0.05 m/s.</li>
+        <li>25 m is the hit. The line says <code>The speed meets the mark.</code></li>
+        <li>4 m reads 10.00 m/s. 16 m reads 5.00 m/s. 64 m reads 2.50 m/s. 100 m reads 2.00 m/s.</li>
+        <li>Those four miss. The line says <code>The speed misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

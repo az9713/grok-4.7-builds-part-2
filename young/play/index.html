@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Young</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Young · one bar</p>
+    <h1>Set the strain to 3.00.</h1>
+    <p class="lead">A bar stretches under a load. You choose the force. Relative strain on this page is that force divided by 4.</p>
+  </header>
+  <div class="layout">
+    <canvas id="bar" width="680" height="420" aria-label="A stretched bar and a strain column."></canvas>
+    <section>
+      <p class="label">Force</p>
+      <div class="picks" id="bin">
+        <button type="button" data-f="4" aria-pressed="true">4 N</button>
+        <button type="button" data-f="8" aria-pressed="false">8 N</button>
+        <button type="button" data-f="12" aria-pressed="false">12 N</button>
+        <button type="button" data-f="16" aria-pressed="false">16 N</button>
+        <button type="button" data-f="20" aria-pressed="false">20 N</button>
+      </div>
+      <dl>
+        <div><dt>Force</dt><dd id="f-val">4 N</dd></div>
+        <div><dt>Strain</dt><dd id="s-val">1.00</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Relative strain is force / 4. Force is in newtons. The readout has no unit.</li>
+        <li>The mark is 3.00. A hit is within 0.02.</li>
+        <li>12 N is the hit. The line says <code>The strain meets the mark.</code></li>
+        <li>4 N reads 1.00. 8 N reads 2.00. 16 N reads 4.00. 20 N reads 5.00.</li>
+        <li>Those four miss. The line says <code>The strain misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

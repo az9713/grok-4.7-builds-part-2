@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Reynolds</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Reynolds · one pipe</p>
+    <h1>Set the number to 400.</h1>
+    <p class="lead">Flow runs through a pipe. You choose the speed. The Reynolds number on this page is 50 times that speed.</p>
+  </header>
+  <div class="layout">
+    <canvas id="pipe" width="680" height="420" aria-label="A pipe and a Reynolds column."></canvas>
+    <section>
+      <p class="label">Speed</p>
+      <div class="picks" id="bin">
+        <button type="button" data-v="2" aria-pressed="true">2 m/s</button>
+        <button type="button" data-v="4" aria-pressed="false">4 m/s</button>
+        <button type="button" data-v="8" aria-pressed="false">8 m/s</button>
+        <button type="button" data-v="10" aria-pressed="false">10 m/s</button>
+        <button type="button" data-v="16" aria-pressed="false">16 m/s</button>
+      </div>
+      <dl>
+        <div><dt>Speed</dt><dd id="v-val">2 m/s</dd></div>
+        <div><dt>Reynolds</dt><dd id="n-val">100</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The Reynolds number is 50 × speed. Speed is in m/s.</li>
+        <li>The mark is 400. A hit is within 1.</li>
+        <li>8 m/s is the hit. The line says <code>The number meets the mark.</code></li>
+        <li>2 m/s reads 100. 4 m/s reads 200. 10 m/s reads 500. 16 m/s reads 800.</li>
+        <li>Those four miss. The line says <code>The number misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
