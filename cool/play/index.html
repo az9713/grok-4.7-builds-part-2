@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Cool · one hot block</p>
+    <h1>Set the temperature to 40.0 °C.</h1>
+    <p class="lead">You choose the time. Temperature in °C is 800 divided by (10 + minutes).</p>
+  </header>
+  <div class="layout">
+    <canvas id="bulb" width="680" height="420" aria-label="A thermometer, heat lines, and a temperature column."></canvas>
+    <section>
+      <p class="label">Time</p>
+      <div class="picks" id="bin">
+        <button type="button" data-m="5" aria-pressed="true">5 minutes</button>
+        <button type="button" data-m="10" aria-pressed="false">10 minutes</button>
+        <button type="button" data-m="15" aria-pressed="false">15 minutes</button>
+        <button type="button" data-m="20" aria-pressed="false">20 minutes</button>
+        <button type="button" data-m="40" aria-pressed="false">40 minutes</button>
+      </div>
+      <dl>
+        <div><dt>Time</dt><dd id="m-val">5 min</dd></div>
+        <div><dt>Temperature</dt><dd id="c-val">53.3 °C</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Temperature is 800 / (10 + minutes) °C.</li>
+        <li>The mark is 40.0 °C. A hit is within 0.05 °C.</li>
+        <li>10 minutes is the hit. The line says <code>The temperature meets the mark.</code></li>
+        <li>5 minutes reads 53.3 °C. 15 minutes reads 32.0 °C. 20 minutes reads 26.7 °C. 40 minutes reads 16.0 °C.</li>
+        <li>Those four miss. The line says <code>The temperature misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

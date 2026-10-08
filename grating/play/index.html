@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Grating</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Grating · one ray</p>
+    <h1>Set the angle to 30.0°.</h1>
+    <p class="lead">You choose the order. The angle in degrees is the arcsine of that order divided by 8.</p>
+  </header>
+  <div class="layout">
+    <canvas id="grate" width="680" height="420" aria-label="A grating, a ray, and an angle column."></canvas>
+    <section>
+      <p class="label">Order</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="2" aria-pressed="true">Order 2</button>
+        <button type="button" data-n="3" aria-pressed="false">Order 3</button>
+        <button type="button" data-n="4" aria-pressed="false">Order 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Order 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Order 6</button>
+      </div>
+      <dl>
+        <div><dt>Order</dt><dd id="n-val">2</dd></div>
+        <div><dt>Angle</dt><dd id="a-val">14.5°</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The angle in degrees is asin(order / 8).</li>
+        <li>The mark is 30.0°. A hit is within 0.05°.</li>
+        <li>Order 4 is the hit. The line says <code>The angle meets the mark.</code></li>
+        <li>Order 2 reads 14.5°. Order 3 reads 22.0°. Order 5 reads 38.7°. Order 6 reads 48.6°.</li>
+        <li>Those four miss. The line says <code>The angle misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

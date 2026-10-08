@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Shunt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Shunt · two resistors</p>
+    <h1>Set the pair to 6.00 Ω.</h1>
+    <p class="lead">One resistor stays at 12 Ω. You choose the other resistor. The parallel value is (R × 12) / (R + 12) ohms.</p>
+  </header>
+  <div class="layout">
+    <canvas id="pair" width="680" height="420" aria-label="Two parallel resistors and a resistance column."></canvas>
+    <section>
+      <p class="label">Chosen resistor</p>
+      <div class="picks" id="bin">
+        <button type="button" data-r="4" aria-pressed="true">4 Ω</button>
+        <button type="button" data-r="6" aria-pressed="false">6 Ω</button>
+        <button type="button" data-r="12" aria-pressed="false">12 Ω</button>
+        <button type="button" data-r="24" aria-pressed="false">24 Ω</button>
+        <button type="button" data-r="60" aria-pressed="false">60 Ω</button>
+      </div>
+      <dl>
+        <div><dt>Chosen</dt><dd id="r-val">4 Ω</dd></div>
+        <div><dt>Parallel</dt><dd id="p-val">3.00 Ω</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>One resistor stays at 12 Ω.</li>
+        <li>The parallel value is (R × 12) / (R + 12) ohms.</li>
+        <li>The mark is 6.00 Ω. A hit is within 0.005 Ω.</li>
+        <li>12 Ω is the hit. The line says <code>The resistance meets the mark.</code></li>
+        <li>4 Ω reads 3.00 Ω. 6 Ω reads 4.00 Ω. 24 Ω reads 8.00 Ω. 60 Ω reads 10.00 Ω.</li>
+        <li>Those four miss. The line says <code>The resistance misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

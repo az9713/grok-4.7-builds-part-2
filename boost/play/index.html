@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Boost</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Boost · one line</p>
+    <h1>Set the sum to 0.75 c.</h1>
+    <p class="lead">One speed stays at 0.50 c. You choose the second speed. The sum is (0.50 + v) / (1 + 0.50 × v).</p>
+  </header>
+  <div class="layout">
+    <canvas id="track" width="680" height="420" aria-label="Two speeds on a track and a sum column."></canvas>
+    <section>
+      <p class="label">Second speed</p>
+      <div class="picks" id="bin">
+        <button type="button" data-v="0.2" aria-pressed="true">0.20 c</button>
+        <button type="button" data-v="0.4" aria-pressed="false">0.40 c</button>
+        <button type="button" data-v="0.5" aria-pressed="false">0.50 c</button>
+        <button type="button" data-v="0.6" aria-pressed="false">0.60 c</button>
+        <button type="button" data-v="0.8" aria-pressed="false">0.80 c</button>
+      </div>
+      <dl>
+        <div><dt>Second speed</dt><dd id="v-val">0.20 c</dd></div>
+        <div><dt>Sum</dt><dd id="s-val">0.64 c</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>One speed stays at 0.50 c.</li>
+        <li>The sum is (0.50 + v) / (1 + 0.50 × v). v is the second speed, in units of c.</li>
+        <li>The mark is 0.75 c. A hit is within 0.005 c.</li>
+        <li>0.40 c is the hit. The line says <code>The speed meets the mark.</code></li>
+        <li>0.20 c reads 0.64 c. 0.50 c reads 0.80 c. 0.60 c reads 0.85 c. 0.80 c reads 0.93 c.</li>
+        <li>Those four miss. The line says <code>The speed misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

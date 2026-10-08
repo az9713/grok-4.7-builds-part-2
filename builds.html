@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">Ninety-four browser builds. Seventy-six of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">Ninety-eight browser builds. Eighty of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1442,6 +1442,68 @@
       <li>The mark is 18.0 J. A hit is within 0.2 J.</li>
       <li>6 A says <code>The energy meets the mark.</code> The readout is 18.0 J.</li>
       <li>2 A reads 2.0 J. 4 A reads 8.0 J. 8 A reads 32.0 J. 10 A reads 50.0 J. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="cool">
+    <p class="kind">Game</p>
+    <h2>95 Cool</h2>
+    <p class="open"><a href="cool/play/">Open Cool</a></p>
+    <h3>What it is</h3>
+    <p>A hot block cools. You set the time. The page shows the temperature.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Temperature is 800 / (10 + minutes) °C.</li>
+      <li>The mark is 40.0 °C. A hit is within 0.05 °C.</li>
+      <li>10 minutes says <code>The temperature meets the mark.</code> The readout is 40.0 °C.</li>
+      <li>5 minutes reads 53.3 °C. 15 minutes reads 32.0 °C. 20 minutes reads 26.7 °C. 40 minutes reads 16.0 °C. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="grating">
+    <p class="kind">Game</p>
+    <h2>96 Grating</h2>
+    <p class="open"><a href="grating/play/">Open Grating</a></p>
+    <h3>What it is</h3>
+    <p>Light meets a grating. You set the order. The page shows the angle.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The angle in degrees is asin(order / 8).</li>
+      <li>The mark is 30.0°. A hit is within 0.05°.</li>
+      <li>Order 4 says <code>The angle meets the mark.</code> The readout is 30.0°.</li>
+      <li>Order 2 reads 14.5°. Order 3 reads 22.0°. Order 5 reads 38.7°. Order 6 reads 48.6°. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="boost">
+    <p class="kind">Game</p>
+    <h2>97 Boost</h2>
+    <p class="open"><a href="boost/play/">Open Boost</a></p>
+    <h3>What it is</h3>
+    <p>Two speeds add along one line. One speed stays at 0.50 c. You set the second speed. The page shows the sum.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>One speed stays at 0.50 c.</li>
+      <li>The sum is (0.50 + v) / (1 + 0.50 × v). v is the second speed, in units of c.</li>
+      <li>The mark is 0.75 c. A hit is within 0.005 c.</li>
+      <li>0.40 c says <code>The speed meets the mark.</code> The readout is 0.75 c.</li>
+      <li>0.20 c reads 0.64 c. 0.50 c reads 0.80 c. 0.60 c reads 0.85 c. 0.80 c reads 0.93 c. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="shunt">
+    <p class="kind">Game</p>
+    <h2>98 Shunt</h2>
+    <p class="open"><a href="shunt/play/">Open Shunt</a></p>
+    <h3>What it is</h3>
+    <p>Two resistors share the same nodes. One resistor stays at 12 Ω. You set the other resistor. The page shows the parallel value.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>One resistor stays at 12 Ω.</li>
+      <li>The parallel value is (R × 12) / (R + 12) ohms.</li>
+      <li>The mark is 6.00 Ω. A hit is within 0.005 Ω.</li>
+      <li>12 Ω says <code>The resistance meets the mark.</code> The readout is 6.00 Ω.</li>
+      <li>4 Ω reads 3.00 Ω. 6 Ω reads 4.00 Ω. 24 Ω reads 8.00 Ω. 60 Ω reads 10.00 Ω. All four miss.</li>
     </ol>
   </article>
 </body>
