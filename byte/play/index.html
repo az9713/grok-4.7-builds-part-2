@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Byte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Byte · power of two</p>
+    <h1>Set the power to 64.</h1>
+    <p class="lead">You choose the exponent. The power is 2 raised to that exponent.</p>
+  </header>
+  <div class="layout">
+    <canvas id="lamps" width="680" height="420" aria-label="Exponent blocks and a power column."></canvas>
+    <section>
+      <p class="label">Exponent</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="4" aria-pressed="true">Power 4</button>
+        <button type="button" data-n="5" aria-pressed="false">Power 5</button>
+        <button type="button" data-n="6" aria-pressed="false">Power 6</button>
+        <button type="button" data-n="7" aria-pressed="false">Power 7</button>
+        <button type="button" data-n="8" aria-pressed="false">Power 8</button>
+      </div>
+      <dl>
+        <div><dt>Exponent</dt><dd id="n-val">Power 4</dd></div>
+        <div><dt>Power</dt><dd id="p-val">16</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The power is 2 raised to the exponent.</li>
+        <li>The mark is 64. A hit is within 0.5.</li>
+        <li>Power 6 is the hit. The line says <code>The power meets the mark.</code></li>
+        <li>Power 4 reads 16. Power 5 reads 32. Power 7 reads 128. Power 8 reads 256.</li>
+        <li>Those four miss. The line says <code>The power misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
