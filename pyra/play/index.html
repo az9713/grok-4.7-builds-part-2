@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pyra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Pyra · square pyramid</p>
+    <h1>Set the stack to 55 balls.</h1>
+    <p class="lead">You choose the number of square layers. The ball count is layers times (layers plus 1) times (2 times layers plus 1), divided by 6.</p>
+  </header>
+  <div class="layout">
+    <canvas id="stack" width="680" height="420" aria-label="A square stack of balls and a count column."></canvas>
+    <section>
+      <p class="label">Layers</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="2" aria-pressed="true">2 layers</button>
+        <button type="button" data-n="3" aria-pressed="false">3 layers</button>
+        <button type="button" data-n="4" aria-pressed="false">4 layers</button>
+        <button type="button" data-n="5" aria-pressed="false">5 layers</button>
+        <button type="button" data-n="6" aria-pressed="false">6 layers</button>
+      </div>
+      <dl>
+        <div><dt>Layers</dt><dd id="n-val">2 layers</dd></div>
+        <div><dt>Balls</dt><dd id="b-val">5 balls</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The ball count is layers × (layers + 1) × (2 × layers + 1) / 6.</li>
+        <li>The mark is 55 balls. A hit is within 0.5 balls.</li>
+        <li>5 layers is the hit. The line says <code>The stack meets the mark.</code></li>
+        <li>2 layers reads 5 balls. 3 layers reads 14 balls. 4 layers reads 30 balls. 6 layers reads 91 balls.</li>
+        <li>Those four miss. The line says <code>The stack misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

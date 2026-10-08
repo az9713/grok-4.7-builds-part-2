@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Miter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Miter · interior angle</p>
+    <h1>Set the angle to 120°.</h1>
+    <p class="lead">You choose the number of sides. The interior angle is 180 times (sides minus 2), divided by the sides.</p>
+  </header>
+  <div class="layout">
+    <canvas id="polygon" width="680" height="420" aria-label="A regular polygon and an angle column."></canvas>
+    <section>
+      <p class="label">Sides</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="3" aria-pressed="true">3 sides</button>
+        <button type="button" data-n="4" aria-pressed="false">4 sides</button>
+        <button type="button" data-n="5" aria-pressed="false">5 sides</button>
+        <button type="button" data-n="6" aria-pressed="false">6 sides</button>
+        <button type="button" data-n="8" aria-pressed="false">8 sides</button>
+      </div>
+      <dl>
+        <div><dt>Sides</dt><dd id="n-val">3 sides</dd></div>
+        <div><dt>Interior angle</dt><dd id="a-val">60°</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The interior angle in degrees is 180 × (sides - 2) / sides.</li>
+        <li>The mark is 120°. A hit is within 0.5°.</li>
+        <li>6 sides is the hit. The line says <code>The angle meets the mark.</code></li>
+        <li>3 sides reads 60°. 4 sides reads 90°. 5 sides reads 108°. 8 sides reads 135°.</li>
+        <li>Those four miss. The line says <code>The angle misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

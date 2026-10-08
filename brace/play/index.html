@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Brace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Brace · right triangle</p>
+    <h1>Set the span to 5.00 m.</h1>
+    <p class="lead">You choose one leg. The other leg stays at 3 m. The span is the square root of 9 plus the square of the chosen leg.</p>
+  </header>
+  <div class="layout">
+    <canvas id="triangle" width="680" height="420" aria-label="A right triangle and a span column."></canvas>
+    <section>
+      <p class="label">Chosen leg</p>
+      <div class="picks" id="bin">
+        <button type="button" data-m="0" aria-pressed="true">0 m</button>
+        <button type="button" data-m="4" aria-pressed="false">4 m</button>
+        <button type="button" data-m="8" aria-pressed="false">8 m</button>
+        <button type="button" data-m="12" aria-pressed="false">12 m</button>
+        <button type="button" data-m="15" aria-pressed="false">15 m</button>
+      </div>
+      <dl>
+        <div><dt>Chosen leg</dt><dd id="m-val">0 m</dd></div>
+        <div><dt>Span</dt><dd id="s-val">3.00 m</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The fixed leg is 3 m. The span in metres is the square root of 9 + leg × leg.</li>
+        <li>The mark is 5.00 m. A hit is within 0.005 m.</li>
+        <li>4 m is the hit. The line says <code>The span meets the mark.</code></li>
+        <li>0 m reads 3.00 m. 8 m reads 8.54 m. 12 m reads 12.37 m. 15 m reads 15.30 m.</li>
+        <li>Those four miss. The line says <code>The span misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

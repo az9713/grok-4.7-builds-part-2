@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Link</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Link · posts in a ring</p>
+    <h1>Set the mesh to 15 links.</h1>
+    <p class="lead">You choose the number of posts. Each post links to every other post. The count is posts times (posts minus 1), divided by 2.</p>
+  </header>
+  <div class="layout">
+    <canvas id="posts" width="680" height="420" aria-label="Posts joined by links and a count column."></canvas>
+    <section>
+      <p class="label">Posts</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="3" aria-pressed="true">3 posts</button>
+        <button type="button" data-n="4" aria-pressed="false">4 posts</button>
+        <button type="button" data-n="5" aria-pressed="false">5 posts</button>
+        <button type="button" data-n="6" aria-pressed="false">6 posts</button>
+        <button type="button" data-n="8" aria-pressed="false">8 posts</button>
+      </div>
+      <dl>
+        <div><dt>Posts</dt><dd id="n-val">3 posts</dd></div>
+        <div><dt>Links</dt><dd id="k-val">3 links</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The link count is posts × (posts - 1) / 2.</li>
+        <li>The mark is 15 links. A hit is within 0.5 links.</li>
+        <li>6 posts is the hit. The line says <code>The mesh meets the mark.</code></li>
+        <li>3 posts reads 3 links. 4 posts reads 6 links. 5 posts reads 10 links. 8 posts reads 28 links.</li>
+        <li>Those four miss. The line says <code>The mesh misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
