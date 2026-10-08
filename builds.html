@@ -46,7 +46,7 @@
 <body>
   <p class="meta"><a href="index.html">Back to the demos</a></p>
   <h1>What each build is</h1>
-  <p class="meta">One hundred two browser builds. Eighty-four of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
+  <p class="meta">One hundred six browser builds. Eighty-eight of them are games. Each game section lists the rules the page uses. The other pages are films, shops, labs, checks, reports, or instruments.</p>
 
   <article id="service-door">
     <p class="kind">Game</p>
@@ -1564,6 +1564,66 @@
       <li>The mark is 27 mL. A hit is within 0.5 mL.</li>
       <li>3 cm says <code>The volume meets the mark.</code> The readout is 27 mL.</li>
       <li>1 cm reads 1 mL. 2 cm reads 8 mL. 4 cm reads 64 mL. 5 cm reads 125 mL. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="proj">
+    <p class="kind">Game</p>
+    <h2>103 Proj</h2>
+    <p class="open"><a href="proj/play/">Open Proj</a></p>
+    <h3>What it is</h3>
+    <p>A post casts a shadow. You set the angle. The page shows the shadow length.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Shadow length in cm is 10 × cos(angle). The angle is in degrees.</li>
+      <li>The mark is 5.00 cm. A hit is within 0.005 cm.</li>
+      <li>60° says <code>The length meets the mark.</code> The readout is 5.00 cm.</li>
+      <li>0° reads 10.00 cm. 30° reads 8.66 cm. 45° reads 7.07 cm. 90° reads 0.00 cm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="bit">
+    <p class="kind">Game</p>
+    <h2>104 Bit</h2>
+    <p class="open"><a href="bit/play/">Open Bit</a></p>
+    <h3>What it is</h3>
+    <p>A set of states. You set the number of states. The page shows the bit count.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The bit count is log2 of the number of states.</li>
+      <li>The mark is 3.00 bits. A hit is within 0.005 bits.</li>
+      <li>8 states says <code>The count meets the mark.</code> The readout is 3.00 bits.</li>
+      <li>2 states reads 1.00 bits. 4 states reads 2.00 bits. 16 states reads 4.00 bits. 32 states reads 5.00 bits. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="compton">
+    <p class="kind">Game</p>
+    <h2>105 Compton</h2>
+    <p class="open"><a href="compton/play/">Open Compton</a></p>
+    <h3>What it is</h3>
+    <p>A photon scatters. You set the angle. The page shows the wavelength shift.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>The shift in pm is 12 × (1 − cos(angle)). The angle is in degrees.</li>
+      <li>The mark is 6.00 pm. A hit is within 0.005 pm.</li>
+      <li>60° says <code>The shift meets the mark.</code> The readout is 6.00 pm.</li>
+      <li>0° reads 0.00 pm. 90° reads 12.00 pm. 120° reads 18.00 pm. 180° reads 24.00 pm. All four miss.</li>
+    </ol>
+  </article>
+
+  <article id="scale">
+    <p class="kind">Game</p>
+    <h2>106 Scale</h2>
+    <p class="open"><a href="scale/play/">Open Scale</a></p>
+    <h3>What it is</h3>
+    <p>Two thermometers. You set Celsius. The page shows Fahrenheit.</p>
+    <h3>Rules</h3>
+    <ol>
+      <li>Fahrenheit is 32 + 1.8 × Celsius.</li>
+      <li>The mark is 68.0 °F. A hit is within 0.05 °F.</li>
+      <li>20 °C says <code>The reading meets the mark.</code> The readout is 68.0 °F.</li>
+      <li>0 °C reads 32.0 °F. 10 °C reads 50.0 °F. 40 °C reads 104.0 °F. 100 °C reads 212.0 °F. All four miss.</li>
     </ol>
   </article>
 </body>

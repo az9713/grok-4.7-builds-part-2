@@ -1,0 +1,36 @@
+:root {
+  --bg: #10141c;
+  --ink: #eef0f6;
+  --dim: #a8b0c4;
+  --accent: #88a0e0;
+  --line: #242838;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font: 17px/1.45 "Palatino Linotype", Palatino, Georgia, serif;
+  max-width: 1080px; margin: 0 auto; padding: 28px 16px 64px;
+}
+.kicker, h2, dt, .label {
+  font: 12px/1.2 Consolas, "Cascadia Mono", monospace;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim);
+}
+h1 { font-weight: 500; font-size: 40px; line-height: 1.05; margin: 8px 0; }
+h2 { color: var(--accent); margin-top: 22px; }
+.lead { max-width: 42em; }
+.layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr); gap: 20px; align-items: start; }
+canvas { width: 100%; height: auto; background: #0c1018; border: 1px solid var(--line); }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+button { font: 15px/1.2 Consolas, monospace; color: var(--ink); background: transparent; border: 1px solid var(--line); padding: 8px 10px; }
+button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+dl { margin: 0; display: grid; gap: 6px; }
+dl div { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); }
+dd { margin: 0; font: 16px/1.3 Consolas, monospace; }
+#status { min-height: 3.2em; }
+ol { padding-left: 1.2em; }
+li { margin: 0 0 8px; }
+code { font-family: Consolas, monospace; font-size: 0.92em; }
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+}

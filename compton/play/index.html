@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Compton</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Compton · one photon</p>
+    <h1>Set the shift to 6.00 pm.</h1>
+    <p class="lead">You choose the scatter angle. The shift in pm is 12 times (1 minus the cosine of that angle). The angle is in degrees.</p>
+  </header>
+  <div class="layout">
+    <canvas id="scatter" width="680" height="420" aria-label="A target, a scattered ray, and a shift column."></canvas>
+    <section>
+      <p class="label">Angle</p>
+      <div class="picks" id="bin">
+        <button type="button" data-d="0" aria-pressed="true">0°</button>
+        <button type="button" data-d="60" aria-pressed="false">60°</button>
+        <button type="button" data-d="90" aria-pressed="false">90°</button>
+        <button type="button" data-d="120" aria-pressed="false">120°</button>
+        <button type="button" data-d="180" aria-pressed="false">180°</button>
+      </div>
+      <dl>
+        <div><dt>Angle</dt><dd id="d-val">0°</dd></div>
+        <div><dt>Shift</dt><dd id="s-val">0.00 pm</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The shift in pm is 12 × (1 − cos(angle)). The angle is in degrees.</li>
+        <li>The mark is 6.00 pm. A hit is within 0.005 pm.</li>
+        <li>60° is the hit. The line says <code>The shift meets the mark.</code></li>
+        <li>0° reads 0.00 pm. 90° reads 12.00 pm. 120° reads 18.00 pm. 180° reads 24.00 pm.</li>
+        <li>Those four miss. The line says <code>The shift misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

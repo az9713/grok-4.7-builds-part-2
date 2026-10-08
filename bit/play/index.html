@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Bit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Bit · one set</p>
+    <h1>Set the count to 3.00 bits.</h1>
+    <p class="lead">You choose the number of states. The bit count is the base-2 logarithm of that number.</p>
+  </header>
+  <div class="layout">
+    <canvas id="cells" width="680" height="420" aria-label="State cells and a bit column."></canvas>
+    <section>
+      <p class="label">States</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="2" aria-pressed="true">2 states</button>
+        <button type="button" data-n="4" aria-pressed="false">4 states</button>
+        <button type="button" data-n="8" aria-pressed="false">8 states</button>
+        <button type="button" data-n="16" aria-pressed="false">16 states</button>
+        <button type="button" data-n="32" aria-pressed="false">32 states</button>
+      </div>
+      <dl>
+        <div><dt>States</dt><dd id="n-val">2</dd></div>
+        <div><dt>Bits</dt><dd id="b-val">1.00 bits</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The bit count is log2 of the number of states.</li>
+        <li>The mark is 3.00 bits. A hit is within 0.005 bits.</li>
+        <li>8 states is the hit. The line says <code>The count meets the mark.</code></li>
+        <li>2 states reads 1.00 bits. 4 states reads 2.00 bits. 16 states reads 4.00 bits. 32 states reads 5.00 bits.</li>
+        <li>Those four miss. The line says <code>The count misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

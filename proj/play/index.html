@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Proj</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Proj · one post</p>
+    <h1>Set the shadow to 5.00 cm.</h1>
+    <p class="lead">You choose the angle. Shadow length in cm is 10 times the cosine of that angle. The angle is in degrees.</p>
+  </header>
+  <div class="layout">
+    <canvas id="post" width="680" height="420" aria-label="A post, a shadow, and a length column."></canvas>
+    <section>
+      <p class="label">Angle</p>
+      <div class="picks" id="bin">
+        <button type="button" data-d="0" aria-pressed="true">0°</button>
+        <button type="button" data-d="30" aria-pressed="false">30°</button>
+        <button type="button" data-d="45" aria-pressed="false">45°</button>
+        <button type="button" data-d="60" aria-pressed="false">60°</button>
+        <button type="button" data-d="90" aria-pressed="false">90°</button>
+      </div>
+      <dl>
+        <div><dt>Angle</dt><dd id="d-val">0°</dd></div>
+        <div><dt>Shadow</dt><dd id="l-val">10.00 cm</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Shadow length in cm is 10 × cos(angle). The angle is in degrees.</li>
+        <li>The mark is 5.00 cm. A hit is within 0.005 cm.</li>
+        <li>60° is the hit. The line says <code>The length meets the mark.</code></li>
+        <li>0° reads 10.00 cm. 30° reads 8.66 cm. 45° reads 7.07 cm. 90° reads 0.00 cm.</li>
+        <li>Those four miss. The line says <code>The length misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
