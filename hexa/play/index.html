@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Hexa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Hexa · six-term sum</p>
+    <h1>Set the hexanacci to 161.</h1>
+    <p class="lead">You choose the term. Term 1 is 1. Term 2 is 1. Term 3 is 1. Term 4 is 1. Term 5 is 1. Term 6 is 1. Each later term adds the six terms before it.</p>
+  </header>
+  <div class="layout">
+    <canvas id="sum6" width="680" height="420" aria-label="Term blocks, six skip marks, and a count column."></canvas>
+    <section>
+      <p class="label">Term</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="10" aria-pressed="true">Term 10</button>
+        <button type="button" data-n="11" aria-pressed="false">Term 11</button>
+        <button type="button" data-n="12" aria-pressed="false">Term 12</button>
+        <button type="button" data-n="13" aria-pressed="false">Term 13</button>
+        <button type="button" data-n="14" aria-pressed="false">Term 14</button>
+      </div>
+      <dl>
+        <div><dt>Term</dt><dd id="n-val">Term 10</dd></div>
+        <div><dt>Hexanacci</dt><dd id="t-val">41</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>Term 1 is 1. Term 2 is 1. Term 3 is 1. Term 4 is 1. Term 5 is 1. Term 6 is 1. Each later term adds the six terms before it.</li>
+        <li>The mark is 161. A hit is within 0.5.</li>
+        <li>Term 12 is the hit. The line says <code>The hexanacci meets the mark.</code></li>
+        <li>Term 10 reads 41. Term 11 reads 81. Term 13 reads 321. Term 14 reads 636.</li>
+        <li>Those four miss. The line says <code>The hexanacci misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

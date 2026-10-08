@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Hend</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="kicker">Hend · choose eleven</p>
+    <h1>Set the undecad to 1365.</h1>
+    <p class="lead">You choose the group size. The undecad is the group times (the group minus 1) times (the group minus 2) times (the group minus 3) times (the group minus 4) times (the group minus 5) times (the group minus 6) times (the group minus 7) times (the group minus 8) times (the group minus 9) times (the group minus 10), divided by 39916800.</p>
+  </header>
+  <div class="layout">
+    <canvas id="elev" width="680" height="420" aria-label="Group dots, a hendecagon, and a count column."></canvas>
+    <section>
+      <p class="label">Group</p>
+      <div class="picks" id="bin">
+        <button type="button" data-n="13" aria-pressed="true">Group 13</button>
+        <button type="button" data-n="14" aria-pressed="false">Group 14</button>
+        <button type="button" data-n="15" aria-pressed="false">Group 15</button>
+        <button type="button" data-n="16" aria-pressed="false">Group 16</button>
+        <button type="button" data-n="17" aria-pressed="false">Group 17</button>
+      </div>
+      <dl>
+        <div><dt>Group</dt><dd id="n-val">Group 13</dd></div>
+        <div><dt>Undecad</dt><dd id="o-val">78</dd></div>
+      </dl>
+      <p id="status" role="status"></p>
+      <h2>Rules</h2>
+      <ol>
+        <li>The undecad is group × (group − 1) × (group − 2) × (group − 3) × (group − 4) × (group − 5) × (group − 6) × (group − 7) × (group − 8) × (group − 9) × (group − 10) / 39916800.</li>
+        <li>The mark is 1365. A hit is within 0.5.</li>
+        <li>Group 15 is the hit. The line says <code>The undecad meets the mark.</code></li>
+        <li>Group 13 reads 78. Group 14 reads 364. Group 16 reads 4368. Group 17 reads 12376.</li>
+        <li>Those four miss. The line says <code>The undecad misses the mark.</code></li>
+      </ol>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
